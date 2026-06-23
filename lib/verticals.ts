@@ -1,0 +1,17483 @@
+// AUTO-GENERATED from live openapi.json across all PulseNetwork verticals.
+// 67 verticals, 661 endpoints. Regenerate with /tmp/gen-verticals.cjs
+
+export interface VerticalEndpoint {
+  action: string;
+  description: string;
+  params: Record<string, { type: string; description: string; required: boolean; example?: string }>;
+  path: string;
+  price: string;
+}
+
+export interface Vertical {
+  name: string;
+  baseUrl: string;
+  description: string;
+  globalCoverage: string;
+  endpoints: VerticalEndpoint[];
+}
+
+export const VERTICALS: Record<string, Vertical> = {
+  "alphapulse": {
+    "name": "AlphaPulse",
+    "baseUrl": "https://alphapulse-omega.vercel.app",
+    "description": "Global alternative trading intelligence API. AI-synthesized signal provider rankings, managed account analysis, copy trading discovery, expert advisor (EA/robot) vetting, multi-asset arbitrage, crypto",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "discover",
+        "path": "/api/alpha/discover",
+        "price": "$0.10",
+        "description": "Cross-platform provider discovery",
+        "params": {
+          "instrument": {
+            "type": "string",
+            "description": "instrument",
+            "required": false
+          },
+          "type": {
+            "type": "string",
+            "description": "signal|copy|EA|managed|vault|any",
+            "required": false
+          },
+          "max_drawdown": {
+            "type": "string",
+            "description": "max_drawdown",
+            "required": false
+          },
+          "min_track_record": {
+            "type": "string",
+            "description": "min_track_record",
+            "required": false
+          },
+          "min_return": {
+            "type": "string",
+            "description": "min_return",
+            "required": false
+          },
+          "region": {
+            "type": "string",
+            "description": "region",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "signals",
+        "path": "/api/alpha/signals",
+        "price": "$0.10",
+        "description": "Signal provider discovery",
+        "params": {
+          "instrument": {
+            "type": "string",
+            "description": "instrument",
+            "required": false
+          },
+          "platform": {
+            "type": "string",
+            "description": "platform",
+            "required": false
+          },
+          "max_drawdown": {
+            "type": "string",
+            "description": "max_drawdown",
+            "required": false
+          },
+          "min_weeks": {
+            "type": "string",
+            "description": "min_weeks",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "ea",
+        "path": "/api/alpha/ea",
+        "price": "$0.10",
+        "description": "Expert Advisor discovery",
+        "params": {
+          "instrument": {
+            "type": "string",
+            "description": "instrument",
+            "required": false
+          },
+          "platform": {
+            "type": "string",
+            "description": "platform",
+            "required": false
+          },
+          "max_drawdown": {
+            "type": "string",
+            "description": "max_drawdown",
+            "required": false
+          },
+          "strategy": {
+            "type": "string",
+            "description": "strategy",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "copy",
+        "path": "/api/alpha/copy",
+        "price": "$0.10",
+        "description": "Copy trading discovery",
+        "params": {
+          "instrument": {
+            "type": "string",
+            "description": "instrument",
+            "required": false
+          },
+          "platform": {
+            "type": "string",
+            "description": "platform",
+            "required": false
+          },
+          "max_drawdown": {
+            "type": "string",
+            "description": "max_drawdown",
+            "required": false
+          },
+          "min_copiers": {
+            "type": "string",
+            "description": "min_copiers",
+            "required": false
+          },
+          "region": {
+            "type": "string",
+            "description": "region",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "managed",
+        "path": "/api/alpha/managed",
+        "price": "$0.10",
+        "description": "Managed account discovery",
+        "params": {
+          "instrument": {
+            "type": "string",
+            "description": "instrument",
+            "required": false
+          },
+          "region": {
+            "type": "string",
+            "description": "region",
+            "required": false
+          },
+          "min_investment": {
+            "type": "string",
+            "description": "min_investment",
+            "required": false
+          },
+          "max_drawdown": {
+            "type": "string",
+            "description": "max_drawdown",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "vaults",
+        "path": "/api/alpha/vaults",
+        "price": "$0.10",
+        "description": "DeFi vault discovery",
+        "params": {
+          "protocol": {
+            "type": "string",
+            "description": "protocol",
+            "required": false
+          },
+          "min_tvl": {
+            "type": "string",
+            "description": "min_tvl",
+            "required": false
+          },
+          "strategy": {
+            "type": "string",
+            "description": "strategy",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "vet",
+        "path": "/api/alpha/vet",
+        "price": "$0.10",
+        "description": "Provider due diligence",
+        "params": {
+          "provider": {
+            "type": "string",
+            "description": "provider",
+            "required": true
+          },
+          "platform": {
+            "type": "string",
+            "description": "platform",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "broker",
+        "path": "/api/alpha/broker",
+        "price": "$0.10",
+        "description": "IB-approved broker recommendation",
+        "params": {
+          "region": {
+            "type": "string",
+            "description": "region",
+            "required": false
+          },
+          "use_case": {
+            "type": "string",
+            "description": "use_case",
+            "required": false
+          },
+          "instrument": {
+            "type": "string",
+            "description": "instrument",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "asia",
+        "path": "/api/alpha/asia",
+        "price": "$0.10",
+        "description": "Asia-Pacific copy trading discovery",
+        "params": {
+          "instrument": {
+            "type": "string",
+            "description": "instrument",
+            "required": false
+          },
+          "region": {
+            "type": "string",
+            "description": "region",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "alternative",
+        "path": "/api/alpha/alternative",
+        "price": "$0.10",
+        "description": "Alternative and niche strategies",
+        "params": {
+          "category": {
+            "type": "string",
+            "description": "category",
+            "required": false
+          },
+          "us_accessible": {
+            "type": "string",
+            "description": "us_accessible",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "compare",
+        "path": "/api/alpha/compare",
+        "price": "$0.10",
+        "description": "Side-by-side provider comparison",
+        "params": {
+          "providers": {
+            "type": "string",
+            "description": "Comma-separated provider names (min 2)",
+            "required": true
+          },
+          "type": {
+            "type": "string",
+            "description": "type",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "arbipulse": {
+    "name": "ArbiPulse",
+    "baseUrl": "https://arbipulse.vercel.app",
+    "description": "12 endpoints scanning arbitrage opportunities across DeFi yield spreads, DEX price differentials, perpetual funding rates, sports surebets, ETF/NAV gaps, and commodity regional pricing. Execution-tier",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "scanner",
+        "path": "/api/scanner",
+        "price": "$0.10",
+        "description": "Unified Arbitrage Scanner",
+        "params": {
+          "category": {
+            "type": "string",
+            "description": "category",
+            "required": false,
+            "example": "all"
+          },
+          "min_profit_usd": {
+            "type": "string",
+            "description": "min_profit_usd",
+            "required": false
+          },
+          "chain": {
+            "type": "string",
+            "description": "chain",
+            "required": false,
+            "example": "all"
+          }
+        }
+      },
+      {
+        "action": "defi",
+        "path": "/api/defi",
+        "price": "$0.10",
+        "description": "DeFi Yield Arbitrage",
+        "params": {
+          "asset": {
+            "type": "string",
+            "description": "asset",
+            "required": false,
+            "example": "all"
+          },
+          "chain": {
+            "type": "string",
+            "description": "chain",
+            "required": false,
+            "example": "all"
+          },
+          "min_spread_bps": {
+            "type": "string",
+            "description": "min_spread_bps",
+            "required": false
+          },
+          "stablecoin_only": {
+            "type": "string",
+            "description": "stablecoin_only",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "perps",
+        "path": "/api/perps",
+        "price": "$0.10",
+        "description": "Perpetual Futures Funding Rate Carry",
+        "params": {
+          "asset": {
+            "type": "string",
+            "description": "asset",
+            "required": false,
+            "example": "all"
+          },
+          "min_apy": {
+            "type": "string",
+            "description": "min_apy",
+            "required": false
+          },
+          "platform": {
+            "type": "string",
+            "description": "platform",
+            "required": false,
+            "example": "all"
+          }
+        }
+      },
+      {
+        "action": "flash",
+        "path": "/api/flash",
+        "price": "$0.10",
+        "description": "Flash Loan Strategy Builder",
+        "params": {
+          "protocol": {
+            "type": "string",
+            "description": "protocol",
+            "required": false,
+            "example": "aave"
+          },
+          "asset": {
+            "type": "string",
+            "description": "asset",
+            "required": false,
+            "example": "USDC"
+          },
+          "amount": {
+            "type": "string",
+            "description": "amount",
+            "required": false
+          },
+          "chain": {
+            "type": "string",
+            "description": "chain",
+            "required": false,
+            "example": "ethereum"
+          },
+          "strategy": {
+            "type": "string",
+            "description": "strategy",
+            "required": false,
+            "example": "dex-arb"
+          },
+          "receiver": {
+            "type": "string",
+            "description": "receiver",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "sports",
+        "path": "/api/sports",
+        "price": "$0.10",
+        "description": "Sports Surebet Scanner",
+        "params": {
+          "sport": {
+            "type": "string",
+            "description": "sport",
+            "required": false,
+            "example": "soccer"
+          },
+          "region": {
+            "type": "string",
+            "description": "region",
+            "required": false
+          },
+          "min_profit_pct": {
+            "type": "string",
+            "description": "min_profit_pct",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "crypto",
+        "path": "/api/crypto",
+        "price": "$0.10",
+        "description": "CEX Spot Price Arbitrage",
+        "params": {
+          "pair": {
+            "type": "string",
+            "description": "pair",
+            "required": false
+          },
+          "amount_usd": {
+            "type": "string",
+            "description": "amount_usd",
+            "required": false
+          },
+          "exchanges": {
+            "type": "string",
+            "description": "exchanges",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "dex",
+        "path": "/api/dex",
+        "price": "$0.10",
+        "description": "DEX Price Arbitrage",
+        "params": {
+          "token": {
+            "type": "string",
+            "description": "token",
+            "required": false,
+            "example": "WETH"
+          },
+          "amount_usd": {
+            "type": "string",
+            "description": "amount_usd",
+            "required": false
+          },
+          "chains": {
+            "type": "string",
+            "description": "chains",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "execute",
+        "path": "/api/execute",
+        "price": "$0.10",
+        "description": "Execution Package Builder",
+        "params": {
+          "opportunity_type": {
+            "type": "string",
+            "description": "opportunity_type",
+            "required": true,
+            "example": "perps"
+          },
+          "asset": {
+            "type": "string",
+            "description": "asset",
+            "required": false
+          },
+          "amount_usd": {
+            "type": "string",
+            "description": "amount_usd",
+            "required": false
+          },
+          "wallet_address": {
+            "type": "string",
+            "description": "wallet_address",
+            "required": false
+          },
+          "chain": {
+            "type": "string",
+            "description": "chain",
+            "required": false,
+            "example": "ethereum"
+          },
+          "slippage_bps": {
+            "type": "string",
+            "description": "slippage_bps",
+            "required": false
+          },
+          "long_venue": {
+            "type": "string",
+            "description": "long_venue",
+            "required": false
+          },
+          "short_venue": {
+            "type": "string",
+            "description": "short_venue",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "calculator",
+        "path": "/api/calculator",
+        "price": "$0.10",
+        "description": "Arbitrage Profit Calculator",
+        "params": {
+          "trade_size_usd": {
+            "type": "string",
+            "description": "trade_size_usd",
+            "required": false
+          },
+          "entry_price": {
+            "type": "string",
+            "description": "entry_price",
+            "required": false
+          },
+          "exit_price": {
+            "type": "string",
+            "description": "exit_price",
+            "required": false
+          },
+          "arb_type": {
+            "type": "string",
+            "description": "arb_type",
+            "required": false,
+            "example": "spot"
+          },
+          "taker_fee_bps": {
+            "type": "string",
+            "description": "taker_fee_bps",
+            "required": false
+          },
+          "gas_usd": {
+            "type": "string",
+            "description": "gas_usd",
+            "required": false
+          },
+          "slippage_bps": {
+            "type": "string",
+            "description": "slippage_bps",
+            "required": false
+          },
+          "flash_fee_bps": {
+            "type": "string",
+            "description": "flash_fee_bps",
+            "required": false
+          },
+          "bridge_fee_usd": {
+            "type": "string",
+            "description": "bridge_fee_usd",
+            "required": false
+          },
+          "withdrawal_fee_usd": {
+            "type": "string",
+            "description": "withdrawal_fee_usd",
+            "required": false
+          },
+          "days": {
+            "type": "string",
+            "description": "days",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "etf",
+        "path": "/api/etf",
+        "price": "$0.10",
+        "description": "ETF/NAV Premium-Discount Tracker",
+        "params": {
+          "ticker": {
+            "type": "string",
+            "description": "ticker",
+            "required": false
+          },
+          "region": {
+            "type": "string",
+            "description": "region",
+            "required": false,
+            "example": "us"
+          },
+          "type": {
+            "type": "string",
+            "description": "type",
+            "required": false,
+            "example": "equity"
+          }
+        }
+      },
+      {
+        "action": "commodity",
+        "path": "/api/commodity",
+        "price": "$0.10",
+        "description": "Commodity Regional Arbitrage",
+        "params": {
+          "commodity": {
+            "type": "string",
+            "description": "commodity",
+            "required": false,
+            "example": "oil"
+          },
+          "unit": {
+            "type": "string",
+            "description": "unit",
+            "required": false,
+            "example": "bbl"
+          },
+          "regions": {
+            "type": "string",
+            "description": "regions",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "pairs",
+        "path": "/api/pairs",
+        "price": "$0.10",
+        "description": "Statistical Arbitrage (Pairs Trading)",
+        "params": {
+          "asset_a": {
+            "type": "string",
+            "description": "asset_a",
+            "required": false
+          },
+          "asset_b": {
+            "type": "string",
+            "description": "asset_b",
+            "required": false
+          },
+          "asset_class": {
+            "type": "string",
+            "description": "asset_class",
+            "required": false,
+            "example": "crypto"
+          },
+          "lookback_days": {
+            "type": "string",
+            "description": "lookback_days",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "autopulse": {
+    "name": "AutoPulse",
+    "baseUrl": "https://autopulse-navy.vercel.app",
+    "description": "Automotive intelligence API — 10 endpoints powered by NHTSA, EPA, and live market data. Safety recalls, reliability analysis, DIY repair guides, vehicle comparison, market value, EV break-even, dealer",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "recall",
+        "path": "/api/auto/recall",
+        "price": "$0.10",
+        "description": "NHTSA safety recall lookup",
+        "params": {
+          "vin": {
+            "type": "string",
+            "description": "17-character VIN",
+            "required": false
+          },
+          "year": {
+            "type": "string",
+            "description": "year",
+            "required": false
+          },
+          "make": {
+            "type": "string",
+            "description": "make",
+            "required": false
+          },
+          "model": {
+            "type": "string",
+            "description": "model",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "problems",
+        "path": "/api/auto/problems",
+        "price": "$0.10",
+        "description": "Known problems and reliability analysis",
+        "params": {
+          "year": {
+            "type": "string",
+            "description": "year",
+            "required": true
+          },
+          "make": {
+            "type": "string",
+            "description": "make",
+            "required": true
+          },
+          "model": {
+            "type": "string",
+            "description": "model",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "repair",
+        "path": "/api/auto/repair",
+        "price": "$0.10",
+        "description": "DIY repair guide",
+        "params": {
+          "vehicle": {
+            "type": "string",
+            "description": "Vehicle descriptor (e.g. 2020-toyota-camry)",
+            "required": true
+          },
+          "job": {
+            "type": "string",
+            "description": "Repair job (e.g. brake-pads, oil-change, cabin-air-filter)",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "compare",
+        "path": "/api/auto/compare",
+        "price": "$0.10",
+        "description": "Vehicle comparison",
+        "params": {
+          "vehicles": {
+            "type": "string",
+            "description": "Comma-separated vehicles (e.g. Toyota RAV4,Honda CR-V,Mazda CX-5)",
+            "required": true
+          },
+          "year": {
+            "type": "string",
+            "description": "year",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "value",
+        "path": "/api/auto/value",
+        "price": "$0.10",
+        "description": "Market value estimate",
+        "params": {
+          "vin": {
+            "type": "string",
+            "description": "vin",
+            "required": false
+          },
+          "year": {
+            "type": "string",
+            "description": "year",
+            "required": false
+          },
+          "make": {
+            "type": "string",
+            "description": "make",
+            "required": false
+          },
+          "model": {
+            "type": "string",
+            "description": "model",
+            "required": false
+          },
+          "mileage": {
+            "type": "string",
+            "description": "mileage",
+            "required": false
+          },
+          "condition": {
+            "type": "string",
+            "description": "condition",
+            "required": false,
+            "example": "excellent"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "ev-breakeven",
+        "path": "/api/auto/ev-breakeven",
+        "price": "$0.10",
+        "description": "EV break-even analysis vs. gas vehicle",
+        "params": {
+          "ev_model": {
+            "type": "string",
+            "description": "EV model name (e.g. Tesla Model 3, Chevrolet Bolt, Ford F-150 Lightning)",
+            "required": true
+          },
+          "gas_vehicle": {
+            "type": "string",
+            "description": "Gas vehicle for comparison (e.g. Toyota Camry, Honda CR-V)",
+            "required": false
+          },
+          "state": {
+            "type": "string",
+            "description": "US state for state-level incentives and electricity rates",
+            "required": false
+          },
+          "annual_miles": {
+            "type": "string",
+            "description": "Annual mileage (default: 12,000)",
+            "required": false
+          },
+          "electricity_rate": {
+            "type": "string",
+            "description": "Local electricity rate in $/kWh",
+            "required": false
+          },
+          "gas_price": {
+            "type": "string",
+            "description": "Local gas price in $/gallon",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "negotiate",
+        "path": "/api/auto/negotiate",
+        "price": "$0.10",
+        "description": "Car buying negotiation guide",
+        "params": {
+          "make": {
+            "type": "string",
+            "description": "make",
+            "required": true
+          },
+          "model": {
+            "type": "string",
+            "description": "model",
+            "required": true
+          },
+          "year": {
+            "type": "string",
+            "description": "year",
+            "required": false
+          },
+          "trim": {
+            "type": "string",
+            "description": "trim",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "inspect",
+        "path": "/api/auto/inspect",
+        "price": "$0.10",
+        "description": "Pre-purchase inspection checklist",
+        "params": {
+          "year": {
+            "type": "string",
+            "description": "year",
+            "required": false
+          },
+          "make": {
+            "type": "string",
+            "description": "make",
+            "required": false
+          },
+          "model": {
+            "type": "string",
+            "description": "model",
+            "required": false
+          },
+          "mileage": {
+            "type": "string",
+            "description": "mileage",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "parts",
+        "path": "/api/auto/parts",
+        "price": "$0.10",
+        "description": "Parts pricing and sourcing",
+        "params": {
+          "vehicle": {
+            "type": "string",
+            "description": "Vehicle descriptor (e.g. 2019-honda-accord)",
+            "required": true
+          },
+          "part": {
+            "type": "string",
+            "description": "Part name (e.g. brake-pads, alternator, water-pump)",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "tco",
+        "path": "/api/auto/tco",
+        "price": "$0.10",
+        "description": "Total cost of ownership (5-year)",
+        "params": {
+          "year": {
+            "type": "string",
+            "description": "year",
+            "required": false
+          },
+          "make": {
+            "type": "string",
+            "description": "make",
+            "required": false
+          },
+          "model": {
+            "type": "string",
+            "description": "model",
+            "required": false
+          },
+          "purchase_price": {
+            "type": "string",
+            "description": "Purchase price in USD",
+            "required": false
+          },
+          "annual_miles": {
+            "type": "string",
+            "description": "annual_miles",
+            "required": false
+          },
+          "state": {
+            "type": "string",
+            "description": "state",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "biopulse": {
+    "name": "BioPulse",
+    "baseUrl": "https://biopulse-nine.vercel.app",
+    "description": "Global biodiversity intelligence API. GBIF + IUCN + eBird + iNaturalist data synthesis. Species profiles, IUCN conservation status, sighting reports, birding hotspots, migration tracking, endangered s",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "species",
+        "path": "/api/bio/species",
+        "price": "$0.10",
+        "description": "Species profile",
+        "params": {
+          "species": {
+            "type": "string",
+            "description": "Common or scientific name",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "sightings",
+        "path": "/api/bio/sightings",
+        "price": "$0.10",
+        "description": "Recent wildlife sightings",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": false
+          },
+          "lat": {
+            "type": "string",
+            "description": "lat",
+            "required": false
+          },
+          "lng": {
+            "type": "string",
+            "description": "lng",
+            "required": false
+          },
+          "radius": {
+            "type": "string",
+            "description": "Radius in km (max 100, default 25)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "birding",
+        "path": "/api/bio/birding",
+        "price": "$0.10",
+        "description": "Birding intelligence",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": false
+          },
+          "lat": {
+            "type": "string",
+            "description": "lat",
+            "required": false
+          },
+          "lng": {
+            "type": "string",
+            "description": "lng",
+            "required": false
+          },
+          "dist": {
+            "type": "string",
+            "description": "Search radius in km (max 50, default 25)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "invasive",
+        "path": "/api/bio/invasive",
+        "price": "$0.10",
+        "description": "Invasive species alerts",
+        "params": {
+          "region": {
+            "type": "string",
+            "description": "Country, state, province, or region name",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "endangered",
+        "path": "/api/bio/endangered",
+        "price": "$0.10",
+        "description": "Endangered species profile",
+        "params": {
+          "species": {
+            "type": "string",
+            "description": "species",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "hotspot",
+        "path": "/api/bio/hotspot",
+        "price": "$0.10",
+        "description": "Biodiversity hotspot guide",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": false
+          },
+          "lat": {
+            "type": "string",
+            "description": "lat",
+            "required": false
+          },
+          "lng": {
+            "type": "string",
+            "description": "lng",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "identify",
+        "path": "/api/bio/identify",
+        "price": "$0.10",
+        "description": "Species identification",
+        "params": {
+          "description": {
+            "type": "string",
+            "description": "What you observed — size, color, behavior, habitat",
+            "required": true
+          },
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": false
+          },
+          "group": {
+            "type": "string",
+            "description": "bird | mammal | reptile | amphibian | insect | plant | other",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "migrate",
+        "path": "/api/bio/migrate",
+        "price": "$0.10",
+        "description": "Migration intelligence",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": false
+          },
+          "lat": {
+            "type": "string",
+            "description": "lat",
+            "required": false
+          },
+          "lng": {
+            "type": "string",
+            "description": "lng",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "marine",
+        "path": "/api/bio/marine",
+        "price": "$0.10",
+        "description": "Marine biodiversity",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "Coastal or ocean location (e.g. Great Barrier Reef, Monterey Bay, Raja Ampat)",
+            "required": false
+          },
+          "lat": {
+            "type": "string",
+            "description": "lat",
+            "required": false
+          },
+          "lng": {
+            "type": "string",
+            "description": "lng",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "buildpulse": {
+    "name": "BuildPulse",
+    "baseUrl": "https://buildpulse-alpha.vercel.app",
+    "description": "BuildPulse — home construction and renovation intelligence: project cost estimates, contractor vetting, permit requirements, material pricing, ROI projections, and inspection checklists. US-focused wi",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "code",
+        "path": "/api/build/code",
+        "price": "$0.10",
+        "description": "/api/build/code",
+        "params": {
+          "project": {
+            "type": "string",
+            "description": "project",
+            "required": false
+          },
+          "state": {
+            "type": "string",
+            "description": "state",
+            "required": false
+          },
+          "city": {
+            "type": "string",
+            "description": "city",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "compare",
+        "path": "/api/build/compare",
+        "price": "$0.10",
+        "description": "/api/build/compare",
+        "params": {
+          "projects": {
+            "type": "string",
+            "description": "projects",
+            "required": false
+          },
+          "budget": {
+            "type": "string",
+            "description": "budget",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "contractor",
+        "path": "/api/build/contractor",
+        "price": "$0.10",
+        "description": "/api/build/contractor",
+        "params": {
+          "trade": {
+            "type": "string",
+            "description": "trade",
+            "required": false
+          },
+          "project": {
+            "type": "string",
+            "description": "project",
+            "required": false
+          },
+          "zip": {
+            "type": "string",
+            "description": "zip",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "estimate",
+        "path": "/api/build/estimate",
+        "price": "$0.10",
+        "description": "/api/build/estimate",
+        "params": {
+          "project": {
+            "type": "string",
+            "description": "project",
+            "required": false
+          },
+          "sqft": {
+            "type": "string",
+            "description": "sqft",
+            "required": false
+          },
+          "zip": {
+            "type": "string",
+            "description": "zip",
+            "required": false
+          },
+          "quality": {
+            "type": "string",
+            "description": "quality",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "inspect",
+        "path": "/api/build/inspect",
+        "price": "$0.10",
+        "description": "/api/build/inspect",
+        "params": {
+          "stage": {
+            "type": "string",
+            "description": "stage",
+            "required": false
+          },
+          "project": {
+            "type": "string",
+            "description": "project",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "materials",
+        "path": "/api/build/materials",
+        "price": "$0.10",
+        "description": "/api/build/materials",
+        "params": {
+          "project": {
+            "type": "string",
+            "description": "project",
+            "required": false
+          },
+          "sqft": {
+            "type": "string",
+            "description": "sqft",
+            "required": false
+          },
+          "material": {
+            "type": "string",
+            "description": "material",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "permit",
+        "path": "/api/build/permit",
+        "price": "$0.10",
+        "description": "/api/build/permit",
+        "params": {
+          "project": {
+            "type": "string",
+            "description": "project",
+            "required": false
+          },
+          "state": {
+            "type": "string",
+            "description": "state",
+            "required": false
+          },
+          "city": {
+            "type": "string",
+            "description": "city",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "roi",
+        "path": "/api/build/roi",
+        "price": "$0.10",
+        "description": "BuildPulse project ROI analysis — resale value, rental income, payback period, and alternatives",
+        "params": {
+          "project": {
+            "type": "string",
+            "description": "project",
+            "required": false
+          },
+          "zip": {
+            "type": "string",
+            "description": "zip",
+            "required": false
+          },
+          "home_value": {
+            "type": "string",
+            "description": "home_value",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "schedule",
+        "path": "/api/build/schedule",
+        "price": "$0.10",
+        "description": "/api/build/schedule",
+        "params": {
+          "project": {
+            "type": "string",
+            "description": "project",
+            "required": false
+          },
+          "start": {
+            "type": "string",
+            "description": "start",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "subcontractor",
+        "path": "/api/build/subcontractor",
+        "price": "$0.10",
+        "description": "/api/build/subcontractor",
+        "params": {
+          "trade": {
+            "type": "string",
+            "description": "trade",
+            "required": false
+          },
+          "project": {
+            "type": "string",
+            "description": "project",
+            "required": false
+          },
+          "zip": {
+            "type": "string",
+            "description": "zip",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "careerpulse": {
+    "name": "CareerPulse",
+    "baseUrl": "https://careerpulse.vercel.app",
+    "description": "Global career intelligence API serving the world's 3.5 billion workers. 10 endpoints: salary benchmarking (any role + any country, sourced from BLS, OECD, ILO, Glassdoor, Levels.fyi), industry outlook",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "salary",
+        "path": "/api/career/salary",
+        "price": "$0.10",
+        "description": "Salary benchmarking — any role, any country, any experience level",
+        "params": {
+          "title": {
+            "type": "string",
+            "description": "title",
+            "required": true,
+            "example": "Product Manager"
+          },
+          "location": {
+            "type": "string",
+            "description": "City, region, or country — global coverage",
+            "required": true,
+            "example": "Berlin, Germany"
+          },
+          "yoe": {
+            "type": "string",
+            "description": "Years of experience",
+            "required": false,
+            "example": "5"
+          },
+          "lang": {
+            "type": "string",
+            "description": "BCP-47 language code — response in any language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "outlook",
+        "path": "/api/career/outlook",
+        "price": "$0.10",
+        "description": "Industry job market outlook — growth, hiring trends, top employers by country",
+        "params": {
+          "sector": {
+            "type": "string",
+            "description": "sector",
+            "required": true,
+            "example": "renewable energy"
+          },
+          "country": {
+            "type": "string",
+            "description": "Country for localized outlook — defaults to global",
+            "required": false,
+            "example": "Germany"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "skills-gap",
+        "path": "/api/career/skills-gap",
+        "price": "$0.10",
+        "description": "Skills gap analysis — exact skills needed to reach your target role",
+        "params": {
+          "current": {
+            "type": "string",
+            "description": "current",
+            "required": true,
+            "example": "Data Analyst"
+          },
+          "target": {
+            "type": "string",
+            "description": "target",
+            "required": true,
+            "example": "Machine Learning Engineer"
+          },
+          "country": {
+            "type": "string",
+            "description": "country",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "resume",
+        "path": "/api/career/resume",
+        "price": "$0.10",
+        "description": "ATS-optimized resume intelligence — keywords, format, and recruiter intel by role",
+        "params": {
+          "role": {
+            "type": "string",
+            "description": "role",
+            "required": true,
+            "example": "Marketing Manager"
+          },
+          "industry": {
+            "type": "string",
+            "description": "industry",
+            "required": false,
+            "example": "SaaS"
+          },
+          "country": {
+            "type": "string",
+            "description": "Target country — enables country-specific format norms",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "negotiate",
+        "path": "/api/career/negotiate",
+        "price": "$0.10",
+        "description": "Salary negotiation playbook — counter-offer strategy and exact scripts",
+        "params": {
+          "offer": {
+            "type": "string",
+            "description": "Offer amount in local currency",
+            "required": true
+          },
+          "title": {
+            "type": "string",
+            "description": "title",
+            "required": true
+          },
+          "location": {
+            "type": "string",
+            "description": "City/country for market rate and cultural context",
+            "required": false
+          },
+          "company": {
+            "type": "string",
+            "description": "company",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "transition",
+        "path": "/api/career/transition",
+        "price": "$0.10",
+        "description": "Career transition roadmap — transferable skills analysis and step-by-step pivot plan",
+        "params": {
+          "from": {
+            "type": "string",
+            "description": "from",
+            "required": true,
+            "example": "high school teacher"
+          },
+          "to": {
+            "type": "string",
+            "description": "to",
+            "required": true,
+            "example": "UX designer"
+          },
+          "country": {
+            "type": "string",
+            "description": "country",
+            "required": false
+          },
+          "timeline": {
+            "type": "string",
+            "description": "Desired transition timeline — e.g. 6 months, 1 year",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "remote",
+        "path": "/api/career/remote",
+        "price": "$0.10",
+        "description": "Remote work intelligence — best remote roles, companies, and cross-border setup",
+        "params": {
+          "role": {
+            "type": "string",
+            "description": "role",
+            "required": true,
+            "example": "software engineer"
+          },
+          "country": {
+            "type": "string",
+            "description": "Your country — for visa/tax implications of working remotely for foreign companies",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "certify",
+        "path": "/api/career/certify",
+        "price": "$0.10",
+        "description": "Certification roadmap — highest-ROI certs in order, with study resources",
+        "params": {
+          "role": {
+            "type": "string",
+            "description": "role",
+            "required": true,
+            "example": "cloud architect"
+          },
+          "current_certs": {
+            "type": "string",
+            "description": "Comma-separated existing certifications",
+            "required": false
+          },
+          "country": {
+            "type": "string",
+            "description": "country",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "interview",
+        "path": "/api/career/interview",
+        "price": "$0.10",
+        "description": "Interview preparation — questions, frameworks, and company research intel",
+        "params": {
+          "role": {
+            "type": "string",
+            "description": "role",
+            "required": true,
+            "example": "Senior Product Manager"
+          },
+          "company": {
+            "type": "string",
+            "description": "company",
+            "required": false
+          },
+          "country": {
+            "type": "string",
+            "description": "Adjusts for cultural interview norms",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "layoff",
+        "path": "/api/career/layoff",
+        "price": "$0.10",
+        "description": "Layoff support — severance review, legal rights, benefits continuation, next steps",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "country",
+            "required": true,
+            "example": "United Kingdom"
+          },
+          "industry": {
+            "type": "string",
+            "description": "industry",
+            "required": false
+          },
+          "tenure": {
+            "type": "string",
+            "description": "Years at company — affects severance expectations and legal entitlements",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "chronicapulse": {
+    "name": "ChronicaPulse",
+    "baseUrl": "https://chronicapulse.vercel.app",
+    "description": "Global genealogy and historical archive intelligence API. Full-text search across Chronicling America (1770–1963 US newspapers), Library of Congress, Trove (Australia), British Newspaper Archive, Euro",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "search",
+        "path": "/api/chronica/search",
+        "price": "$0.10",
+        "description": "Archive search",
+        "params": {
+          "q": {
+            "type": "string",
+            "description": "Search query",
+            "required": true
+          },
+          "year_start": {
+            "type": "string",
+            "description": "year_start",
+            "required": false
+          },
+          "year_end": {
+            "type": "string",
+            "description": "year_end",
+            "required": false
+          },
+          "state": {
+            "type": "string",
+            "description": "state",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "person",
+        "path": "/api/chronica/person",
+        "price": "$0.10",
+        "description": "Person research",
+        "params": {
+          "name": {
+            "type": "string",
+            "description": "name",
+            "required": true
+          },
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": false
+          },
+          "year_start": {
+            "type": "string",
+            "description": "year_start",
+            "required": false
+          },
+          "year_end": {
+            "type": "string",
+            "description": "year_end",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "obituary",
+        "path": "/api/chronica/obituary",
+        "price": "$0.10",
+        "description": "Obituary research",
+        "params": {
+          "name": {
+            "type": "string",
+            "description": "name",
+            "required": true
+          },
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": false
+          },
+          "year": {
+            "type": "string",
+            "description": "year",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "event",
+        "path": "/api/chronica/event",
+        "price": "$0.10",
+        "description": "Historical event coverage",
+        "params": {
+          "event": {
+            "type": "string",
+            "description": "event",
+            "required": true
+          },
+          "year_start": {
+            "type": "string",
+            "description": "year_start",
+            "required": false
+          },
+          "year_end": {
+            "type": "string",
+            "description": "year_end",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "place",
+        "path": "/api/chronica/place",
+        "price": "$0.10",
+        "description": "Place history",
+        "params": {
+          "place": {
+            "type": "string",
+            "description": "place",
+            "required": true
+          },
+          "year_start": {
+            "type": "string",
+            "description": "year_start",
+            "required": false
+          },
+          "year_end": {
+            "type": "string",
+            "description": "year_end",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "immigration",
+        "path": "/api/chronica/immigration",
+        "price": "$0.10",
+        "description": "Immigration research",
+        "params": {
+          "name": {
+            "type": "string",
+            "description": "name",
+            "required": false
+          },
+          "origin": {
+            "type": "string",
+            "description": "Country of origin",
+            "required": false
+          },
+          "destination": {
+            "type": "string",
+            "description": "US destination city",
+            "required": false
+          },
+          "year": {
+            "type": "string",
+            "description": "Approximate arrival year",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "military",
+        "path": "/api/chronica/military",
+        "price": "$0.10",
+        "description": "Military service research",
+        "params": {
+          "name": {
+            "type": "string",
+            "description": "name",
+            "required": true
+          },
+          "conflict": {
+            "type": "string",
+            "description": "Civil War | WWI | WWII | Korean War | Vietnam",
+            "required": false
+          },
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "business",
+        "path": "/api/chronica/business",
+        "price": "$0.10",
+        "description": "Business history",
+        "params": {
+          "business": {
+            "type": "string",
+            "description": "business",
+            "required": true
+          },
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": false
+          },
+          "era": {
+            "type": "string",
+            "description": "era",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "timeline",
+        "path": "/api/chronica/timeline",
+        "price": "$0.10",
+        "description": "Chronological timeline",
+        "params": {
+          "subject": {
+            "type": "string",
+            "description": "subject",
+            "required": true
+          },
+          "type": {
+            "type": "string",
+            "description": "type",
+            "required": false,
+            "example": "person"
+          },
+          "year_start": {
+            "type": "string",
+            "description": "year_start",
+            "required": false
+          },
+          "year_end": {
+            "type": "string",
+            "description": "year_end",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "clearcarepulse": {
+    "name": "ClearCarePulse",
+    "baseUrl": "https://clear-care-pulse.vercel.app",
+    "description": "Healthcare price transparency and cost navigation API. AI-synthesized procedure price search, cash-pay alternatives, hospital quality scoring, out-of-pocket estimation, insurance negotiation scripts, ",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "search",
+        "path": "/api/care/search",
+        "price": "$0.10",
+        "description": "Procedure price search",
+        "params": {
+          "procedure": {
+            "type": "string",
+            "description": "Procedure name in plain English — e.g., 'knee MRI', 'colonoscopy', 'hip replacement'",
+            "required": true
+          },
+          "zip": {
+            "type": "string",
+            "description": "Patient zip code for geographic search",
+            "required": true
+          },
+          "radius": {
+            "type": "string",
+            "description": "Search radius in miles",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (e.g., 'Spanish')",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "hospital",
+        "path": "/api/care/hospital",
+        "price": "$0.10",
+        "description": "Hospital price lookup",
+        "params": {
+          "hospital": {
+            "type": "string",
+            "description": "Hospital name — e.g., 'Cleveland Clinic', 'Stanford Medical Center'",
+            "required": true
+          },
+          "procedure": {
+            "type": "string",
+            "description": "Procedure name",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "episode",
+        "path": "/api/care/episode",
+        "price": "$0.10",
+        "description": "Total episode cost breakdown",
+        "params": {
+          "procedure": {
+            "type": "string",
+            "description": "procedure",
+            "required": true
+          },
+          "deductible": {
+            "type": "string",
+            "description": "Annual deductible in USD",
+            "required": false
+          },
+          "deductible_met": {
+            "type": "string",
+            "description": "Deductible already met this year in USD",
+            "required": false
+          },
+          "coinsurance": {
+            "type": "string",
+            "description": "Patient coinsurance % (default: 20)",
+            "required": false
+          },
+          "oop_max": {
+            "type": "string",
+            "description": "Annual out-of-pocket maximum in USD",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "oop",
+        "path": "/api/care/oop",
+        "price": "$0.10",
+        "description": "Out-of-pocket cost calculator",
+        "params": {
+          "procedure": {
+            "type": "string",
+            "description": "procedure",
+            "required": true
+          },
+          "procedure_cost": {
+            "type": "string",
+            "description": "Known procedure cost in USD",
+            "required": false
+          },
+          "plan_type": {
+            "type": "string",
+            "description": "Plan type (Bronze, Silver, Gold, Platinum, employer)",
+            "required": false
+          },
+          "deductible": {
+            "type": "string",
+            "description": "deductible",
+            "required": false
+          },
+          "deductible_met": {
+            "type": "string",
+            "description": "deductible_met",
+            "required": false
+          },
+          "coinsurance": {
+            "type": "string",
+            "description": "coinsurance",
+            "required": false
+          },
+          "oop_max": {
+            "type": "string",
+            "description": "oop_max",
+            "required": false
+          },
+          "oop_spent": {
+            "type": "string",
+            "description": "OOP already spent this year in USD",
+            "required": false
+          },
+          "hsa": {
+            "type": "string",
+            "description": "Has HSA (true/false)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "alternatives",
+        "path": "/api/care/alternatives",
+        "price": "$0.10",
+        "description": "Lower-cost care site alternatives",
+        "params": {
+          "procedure": {
+            "type": "string",
+            "description": "procedure",
+            "required": true
+          },
+          "zip": {
+            "type": "string",
+            "description": "zip",
+            "required": false
+          },
+          "current_setting": {
+            "type": "string",
+            "description": "Where currently scheduled (default: hospital outpatient)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "negotiate",
+        "path": "/api/care/negotiate",
+        "price": "$0.10",
+        "description": "Medical bill negotiation guide",
+        "params": {
+          "procedure": {
+            "type": "string",
+            "description": "procedure",
+            "required": true
+          },
+          "bill_amount": {
+            "type": "string",
+            "description": "Bill amount in USD",
+            "required": false
+          },
+          "hospital": {
+            "type": "string",
+            "description": "hospital",
+            "required": false
+          },
+          "insured": {
+            "type": "string",
+            "description": "insured",
+            "required": false
+          },
+          "income": {
+            "type": "string",
+            "description": "Annual income in USD (for charity care eligibility)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "dental",
+        "path": "/api/care/dental",
+        "price": "$0.10",
+        "description": "Dental cost intelligence",
+        "params": {
+          "procedure": {
+            "type": "string",
+            "description": "Dental procedure — e.g., 'crown', 'root canal', 'implant', 'deep cleaning'",
+            "required": true
+          },
+          "zip": {
+            "type": "string",
+            "description": "zip",
+            "required": false
+          },
+          "has_insurance": {
+            "type": "string",
+            "description": "has_insurance",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "cosmetic",
+        "path": "/api/care/cosmetic",
+        "price": "$0.10",
+        "description": "Cosmetic procedure cost intelligence",
+        "params": {
+          "procedure": {
+            "type": "string",
+            "description": "Cosmetic procedure — e.g., 'rhinoplasty', 'breast augmentation', 'botox', 'liposuction'",
+            "required": true
+          },
+          "location": {
+            "type": "string",
+            "description": "City or region for geographic adjustment",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "climatepulse": {
+    "name": "ClimatePulse",
+    "baseUrl": "https://climatepulse-six.vercel.app",
+    "description": "Global climate and weather intelligence API. Open-Meteo real-time weather + AI synthesis. Severe weather assessment, air quality monitoring, wildfire smoke tracking, agricultural grow-day modeling, cl",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "now",
+        "path": "/api/climate/now",
+        "price": "$0.10",
+        "description": "Current conditions",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "City name or location (e.g. Denver, CO)",
+            "required": true
+          },
+          "units": {
+            "type": "string",
+            "description": "Defaults to imperial (°F, mph, inches)",
+            "required": false,
+            "example": "imperial"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "forecast",
+        "path": "/api/climate/forecast",
+        "price": "$0.10",
+        "description": "Multi-day forecast",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": true
+          },
+          "days": {
+            "type": "string",
+            "description": "Number of days (1–7, default 7)",
+            "required": false
+          },
+          "units": {
+            "type": "string",
+            "description": "units",
+            "required": false,
+            "example": "imperial"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "activity",
+        "path": "/api/climate/activity",
+        "price": "$0.10",
+        "description": "Activity weather assessment",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": true
+          },
+          "activity": {
+            "type": "string",
+            "description": "activity",
+            "required": true,
+            "example": "hiking"
+          },
+          "units": {
+            "type": "string",
+            "description": "units",
+            "required": false,
+            "example": "imperial"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "severe",
+        "path": "/api/climate/severe",
+        "price": "$0.10",
+        "description": "Severe weather and preparedness",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": true
+          },
+          "units": {
+            "type": "string",
+            "description": "units",
+            "required": false,
+            "example": "imperial"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "compare",
+        "path": "/api/climate/compare",
+        "price": "$0.10",
+        "description": "Location climate comparison",
+        "params": {
+          "locations": {
+            "type": "string",
+            "description": "Comma-separated list of 2–4 locations (e.g. Miami,Seattle,Denver)",
+            "required": true
+          },
+          "purpose": {
+            "type": "string",
+            "description": "Comparison purpose (e.g. vacation, relocation, sports)",
+            "required": false
+          },
+          "units": {
+            "type": "string",
+            "description": "units",
+            "required": false,
+            "example": "imperial"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "air",
+        "path": "/api/climate/air",
+        "price": "$0.10",
+        "description": "Real-time air quality + health risk assessment",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "City, address, or lat,lon",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "smoke",
+        "path": "/api/climate/smoke",
+        "price": "$0.10",
+        "description": "Wildfire smoke tracking and respiratory risk assessment",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "grow",
+        "path": "/api/climate/grow",
+        "price": "$0.10",
+        "description": "Agricultural grow-day modeling and frost date analysis",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": true
+          },
+          "crop": {
+            "type": "string",
+            "description": "Target crop or plant type",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "event",
+        "path": "/api/climate/event",
+        "price": "$0.10",
+        "description": "Event weather suitability and planning assessment",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": true
+          },
+          "date": {
+            "type": "string",
+            "description": "date",
+            "required": false
+          },
+          "event_type": {
+            "type": "string",
+            "description": "event_type",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "clinicalintelpulse": {
+    "name": "ClinicalIntelPulse",
+    "baseUrl": "https://clinicalintelpulse.vercel.app",
+    "description": "Pharmaceutical pipeline and clinical trial intelligence API. Synthesizes 400,000+ registered trials from ClinicalTrials.gov with FDA OpenFDA, PubMed, and real-time news. All endpoints require x402 pay",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "pipeline-scan",
+        "path": "/api/clinical/pipeline-scan",
+        "price": "$0.10",
+        "description": "Phase 2/3 pipeline scan",
+        "params": {
+          "phase": {
+            "type": "string",
+            "description": "phase",
+            "required": false,
+            "example": "phase2"
+          },
+          "status": {
+            "type": "string",
+            "description": "status",
+            "required": false,
+            "example": "active"
+          }
+        }
+      },
+      {
+        "action": "approval-outlook",
+        "path": "/api/clinical/approval-outlook",
+        "price": "$0.10",
+        "description": "FDA/EMA approval probability",
+        "params": {
+          "horizon": {
+            "type": "string",
+            "description": "horizon",
+            "required": false,
+            "example": "12m"
+          },
+          "agency": {
+            "type": "string",
+            "description": "agency",
+            "required": false,
+            "example": "FDA"
+          }
+        }
+      },
+      {
+        "action": "sponsor-intel",
+        "path": "/api/clinical/sponsor-intel",
+        "price": "$0.10",
+        "description": "Pharma/biotech pipeline intelligence",
+        "params": {
+          "sponsor": {
+            "type": "string",
+            "description": "Company name — e.g. 'Moderna' | 'Alnylam' | 'Vertex Pharmaceuticals'",
+            "required": false
+          },
+          "focus": {
+            "type": "string",
+            "description": "focus",
+            "required": false,
+            "example": "pipeline"
+          }
+        }
+      },
+      {
+        "action": "disease-landscape",
+        "path": "/api/clinical/disease-landscape",
+        "price": "$0.10",
+        "description": "Full disease landscape report",
+        "params": {
+          "depth": {
+            "type": "string",
+            "description": "depth",
+            "required": false,
+            "example": "standard"
+          }
+        }
+      },
+      {
+        "action": "trial-brief",
+        "path": "/api/clinical/trial-brief",
+        "price": "$0.10",
+        "description": "Clinical trial deep dive by NCT ID",
+        "params": {
+          "nct_id": {
+            "type": "string",
+            "description": "NCT identifier — e.g. NCT04368728",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "mechanism-map",
+        "path": "/api/clinical/mechanism-map",
+        "price": "$0.10",
+        "description": "Drug target and MOA landscape",
+        "params": {
+          "mechanism": {
+            "type": "string",
+            "description": "Optional focus — e.g. 'BTK inhibitor' | 'CAR-T' | 'IL-17'",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "global-trials",
+        "path": "/api/clinical/global-trials",
+        "price": "$0.10",
+        "description": "Global clinical trial landscape",
+        "params": {
+          "region": {
+            "type": "string",
+            "description": "region",
+            "required": false,
+            "example": "global"
+          }
+        }
+      },
+      {
+        "action": "failure-analysis",
+        "path": "/api/clinical/failure-analysis",
+        "price": "$0.10",
+        "description": "Clinical trial failure analysis",
+        "params": {}
+      },
+      {
+        "action": "patient-finder",
+        "path": "/api/clinical/patient-finder",
+        "price": "$0.10",
+        "description": "Recruiting trial finder (plain language)",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Optional country filter — e.g. 'United States' | 'Germany' | 'Australia'",
+            "required": false
+          },
+          "phase": {
+            "type": "string",
+            "description": "phase",
+            "required": false,
+            "example": "phase2"
+          }
+        }
+      },
+      {
+        "action": "deal-signal",
+        "path": "/api/clinical/deal-signal",
+        "price": "$0.10",
+        "description": "Biotech M&A and licensing deal signals",
+        "params": {
+          "deal_type": {
+            "type": "string",
+            "description": "deal_type",
+            "required": false,
+            "example": "acquisition"
+          },
+          "stage": {
+            "type": "string",
+            "description": "stage",
+            "required": false,
+            "example": "phase2"
+          }
+        }
+      }
+    ]
+  },
+  "collectablespulse": {
+    "name": "CollectablesPulse",
+    "baseUrl": "https://collectablespulse.vercel.app",
+    "description": "Global collectibles market intelligence API. AI-synthesized valuations for sports cards, coins, comics, vinyl records, Pokémon/MTG/TCGs, sneakers, watches, signed memorabilia, and trading cards. Real-",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "value",
+        "path": "/api/collect/value",
+        "price": "$0.10",
+        "description": "Current market value by grade/condition",
+        "params": {
+          "item": {
+            "type": "string",
+            "description": "Collectible description (e.g. '1952 Topps Mickey Mantle')",
+            "required": true
+          },
+          "grade": {
+            "type": "string",
+            "description": "Grade or condition (e.g. 'PSA 10', 'CGC 9.8', 'raw Near Mint')",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "grade",
+        "path": "/api/collect/grade",
+        "price": "$0.10",
+        "description": "Grading service guide",
+        "params": {
+          "item": {
+            "type": "string",
+            "description": "item",
+            "required": true
+          },
+          "service": {
+            "type": "string",
+            "description": "Preferred service (PSA|BGS|CGC|PCGS|NGC|etc)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "authenticate",
+        "path": "/api/collect/authenticate",
+        "price": "$0.10",
+        "description": "Authentication guide — spot fakes, trusted services",
+        "params": {
+          "item": {
+            "type": "string",
+            "description": "item",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "invest",
+        "path": "/api/collect/invest",
+        "price": "$0.10",
+        "description": "Investment signal — buy/hold/sell with analysis",
+        "params": {
+          "item": {
+            "type": "string",
+            "description": "item",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "compare",
+        "path": "/api/collect/compare",
+        "price": "$0.10",
+        "description": "Head-to-head investment comparison",
+        "params": {
+          "item1": {
+            "type": "string",
+            "description": "item1",
+            "required": true
+          },
+          "item2": {
+            "type": "string",
+            "description": "item2",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "sell",
+        "path": "/api/collect/sell",
+        "price": "$0.10",
+        "description": "Where and how to sell for maximum value",
+        "params": {
+          "item": {
+            "type": "string",
+            "description": "item",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "storage",
+        "path": "/api/collect/storage",
+        "price": "$0.10",
+        "description": "Preservation and storage guide",
+        "params": {
+          "item": {
+            "type": "string",
+            "description": "item",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "insurance",
+        "path": "/api/collect/insurance",
+        "price": "$0.10",
+        "description": "Collectibles insurance guide",
+        "params": {
+          "item": {
+            "type": "string",
+            "description": "item",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "compliancepulse": {
+    "name": "CompliancePulse",
+    "baseUrl": "https://compliancepulse-eight.vercel.app",
+    "description": "Global regulatory intelligence API. 8 endpoints: data privacy law (145+ jurisdictions; privacy endpoint includes Cookiebot/OneTrust/Usercentrics consent tool links), KYC/AML requirements, corporate co",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "privacy",
+        "path": "/api/comply/privacy",
+        "price": "$0.10",
+        "description": "Data privacy law by jurisdiction",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Country or jurisdiction — e.g. Germany, California, China, Brazil, Singapore. Also accepts 'jurisdiction'",
+            "required": true
+          },
+          "context": {
+            "type": "string",
+            "description": "Business context — e.g. SaaS company, healthcare, e-commerce, fintech",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "kyc",
+        "path": "/api/comply/kyc",
+        "price": "$0.10",
+        "description": "KYC/AML requirements by jurisdiction",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Country or jurisdiction. Also accepts 'jurisdiction'",
+            "required": true
+          },
+          "sector": {
+            "type": "string",
+            "description": "fintech | banking | crypto | real-estate | legal | accounting | casino",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "corporate",
+        "path": "/api/comply/corporate",
+        "price": "$0.10",
+        "description": "Corporate compliance and entity setup",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Country or jurisdiction. Also accepts 'jurisdiction'",
+            "required": true
+          },
+          "entity_type": {
+            "type": "string",
+            "description": "Entity type — e.g. Ltd, GmbH, BV, SAS, Pvt Ltd, LLC",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "employment",
+        "path": "/api/comply/employment",
+        "price": "$0.10",
+        "description": "Employment law and HR compliance",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Country or jurisdiction. Also accepts 'jurisdiction'",
+            "required": true
+          },
+          "worker_type": {
+            "type": "string",
+            "description": "contractor | employee | freelancer | gig — focus the classification risk analysis. Also accepts 'type'",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "sector",
+        "path": "/api/comply/sector",
+        "price": "$0.10",
+        "description": "Industry-specific regulatory compliance",
+        "params": {
+          "sector": {
+            "type": "string",
+            "description": "Industry sector — fintech | crypto | banking | insurance | healthcare | food | ai | real-estate | investment-management. Also accepts 'indus",
+            "required": true
+          },
+          "country": {
+            "type": "string",
+            "description": "Country or jurisdiction for country-specific rules. Also accepts 'jurisdiction'",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "cyber",
+        "path": "/api/comply/cyber",
+        "price": "$0.10",
+        "description": "Cybersecurity compliance requirements",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Country or jurisdiction. Also accepts 'jurisdiction'",
+            "required": false
+          },
+          "framework": {
+            "type": "string",
+            "description": "NIS2 | DORA | NIST | ISO27001 | SOC2 | CMMC — or omit for country-based analysis",
+            "required": false
+          },
+          "sector": {
+            "type": "string",
+            "description": "Sector context — financial services, healthcare, energy, etc.",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "esg",
+        "path": "/api/comply/esg",
+        "price": "$0.10",
+        "description": "ESG and sustainability reporting requirements",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Country or jurisdiction. Also accepts 'jurisdiction'",
+            "required": true
+          },
+          "company_size": {
+            "type": "string",
+            "description": "large | medium | small — determines which mandatory frameworks apply. Also accepts 'size'",
+            "required": false
+          },
+          "sector": {
+            "type": "string",
+            "description": "Industry sector — affects CSRD materiality and CBAM applicability",
+            "required": false
+          },
+          "listed": {
+            "type": "string",
+            "description": "true | false — listed companies have additional disclosure requirements",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "news",
+        "path": "/api/comply/news",
+        "price": "$0.10",
+        "description": "Regulatory intelligence and enforcement news",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Filter by jurisdiction. Also accepts 'jurisdiction'",
+            "required": false
+          },
+          "topic": {
+            "type": "string",
+            "description": "privacy | kyc | corporate | employment | sector | cyber | esg | all",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "cryptopulse": {
+    "name": "CryptoPulse",
+    "baseUrl": "https://cryptopulse-xi-five.vercel.app",
+    "description": "Global cryptocurrency intelligence API. 10 endpoints: DeFi yield farming across Ethereum/Base/Arbitrum/Solana (DeFiLlama live TVL + APY), personalized strategy builder, crypto security framework (with",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "yield",
+        "path": "/api/yield",
+        "price": "$0.10",
+        "description": "DeFi yield intelligence",
+        "params": {
+          "chain": {
+            "type": "string",
+            "description": "Filter by chain: ethereum, base, arbitrum, berachain, solana, or all",
+            "required": false
+          },
+          "risk": {
+            "type": "string",
+            "description": "Risk profile filter",
+            "required": false,
+            "example": "conservative"
+          }
+        }
+      },
+      {
+        "action": "strategy",
+        "path": "/api/strategy",
+        "price": "$0.10",
+        "description": "Personalized DeFi strategy builder",
+        "params": {
+          "capital": {
+            "type": "string",
+            "description": "Capital in USD",
+            "required": false
+          },
+          "risk": {
+            "type": "string",
+            "description": "risk",
+            "required": false,
+            "example": "conservative"
+          },
+          "chain": {
+            "type": "string",
+            "description": "chain",
+            "required": false
+          },
+          "goal": {
+            "type": "string",
+            "description": "goal",
+            "required": false,
+            "example": "yield"
+          },
+          "timeframe": {
+            "type": "string",
+            "description": "Investment timeframe in days",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "security",
+        "path": "/api/security",
+        "price": "$0.10",
+        "description": "Crypto security framework",
+        "params": {
+          "value_tier": {
+            "type": "string",
+            "description": "value_tier",
+            "required": false,
+            "example": "small"
+          },
+          "setup": {
+            "type": "string",
+            "description": "Current custody setup description",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "threats",
+        "path": "/api/threats",
+        "price": "$0.10",
+        "description": "Crypto threat intelligence",
+        "params": {
+          "category": {
+            "type": "string",
+            "description": "Threat category: phishing, drainer, sim_swap, rug_pull, flash_loan, or all",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "exchange",
+        "path": "/api/exchange",
+        "price": "$0.10",
+        "description": "Exchange comparison",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "country",
+            "required": false
+          },
+          "priority": {
+            "type": "string",
+            "description": "priority",
+            "required": false,
+            "example": "fees"
+          },
+          "experience": {
+            "type": "string",
+            "description": "experience",
+            "required": false,
+            "example": "beginner"
+          }
+        }
+      },
+      {
+        "action": "tax",
+        "path": "/api/tax",
+        "price": "$0.10",
+        "description": "Crypto tax guidance",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "country",
+            "required": false
+          },
+          "activities": {
+            "type": "string",
+            "description": "Comma-separated: hold, trade, defi, mining, staking, nft, business",
+            "required": false
+          },
+          "tax_year": {
+            "type": "string",
+            "description": "Tax year e.g. 2026. Defaults to current year.",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "onboard",
+        "path": "/api/onboard",
+        "price": "$0.10",
+        "description": "First-time buyer onboarding guide",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "country",
+            "required": false
+          },
+          "goal": {
+            "type": "string",
+            "description": "goal",
+            "required": false,
+            "example": "invest"
+          },
+          "experience": {
+            "type": "string",
+            "description": "experience",
+            "required": false,
+            "example": "complete_beginner"
+          }
+        }
+      },
+      {
+        "action": "spend",
+        "path": "/api/spend",
+        "price": "$0.10",
+        "description": "Crypto spending guide",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "country",
+            "required": false
+          },
+          "use_case": {
+            "type": "string",
+            "description": "use_case",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "banking",
+        "path": "/api/banking",
+        "price": "$0.10",
+        "description": "Crypto-friendly banking guide",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "country",
+            "required": false
+          },
+          "profile": {
+            "type": "string",
+            "description": "profile",
+            "required": false,
+            "example": "personal"
+          }
+        }
+      },
+      {
+        "action": "merchant",
+        "path": "/api/merchant",
+        "price": "$0.10",
+        "description": "Merchant crypto payment setup",
+        "params": {
+          "business_type": {
+            "type": "string",
+            "description": "business_type",
+            "required": false
+          },
+          "country": {
+            "type": "string",
+            "description": "country",
+            "required": false
+          },
+          "integration": {
+            "type": "string",
+            "description": "integration",
+            "required": false,
+            "example": "ecommerce"
+          }
+        }
+      }
+    ]
+  },
+  "cyberpulse": {
+    "name": "CyberPulse",
+    "baseUrl": "https://cyberpulse-six.vercel.app",
+    "description": "Global cybersecurity intelligence API — CVE briefs, vulnerability scanning, CISA KEV, OSINT, threat intelligence, ransomware tracking, breach checks, compliance gap analysis, dark web monitoring, and ",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "cve-brief",
+        "path": "/api/cyber/cve-brief",
+        "price": "$0.10",
+        "description": "CVE deep-dive — CVSS, exploitation status, patch urgency, remediation",
+        "params": {
+          "cve": {
+            "type": "string",
+            "description": "CVE ID — e.g. CVE-2024-3400 | CVE-2023-44487 | CVE-2021-44228",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language: en|es|fr|de|ja|zh|ko|pt|ar|hi (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "vuln-scan",
+        "path": "/api/cyber/vuln-scan",
+        "price": "$0.10",
+        "description": "Vulnerability scan — all known CVEs for any software + version",
+        "params": {
+          "software": {
+            "type": "string",
+            "description": "Software name — e.g. Apache Log4j | OpenSSL | Spring Boot | Ivanti Connect Secure",
+            "required": true
+          },
+          "version": {
+            "type": "string",
+            "description": "Version string — e.g. 2.14.0 | 3.0.8",
+            "required": false
+          },
+          "ecosystem": {
+            "type": "string",
+            "description": "Package ecosystem — npm | PyPI | Maven | Go | crates.io | NuGet",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "cisa-kev",
+        "path": "/api/cyber/cisa-kev",
+        "price": "$0.10",
+        "description": "CISA KEV — Known Exploited Vulnerabilities catalog search",
+        "params": {
+          "vendor": {
+            "type": "string",
+            "description": "Vendor/product name — e.g. Cisco | Ivanti | Microsoft | Palo Alto | Fortinet",
+            "required": false
+          },
+          "days": {
+            "type": "string",
+            "description": "Entries added in last N days (default: 90)",
+            "required": false
+          },
+          "filter": {
+            "type": "string",
+            "description": "ransomware | recent (alternative to vendor search)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "osint",
+        "path": "/api/cyber/osint",
+        "price": "$0.10",
+        "description": "OSINT — domain and IP intelligence for authorized defensive use",
+        "params": {
+          "target": {
+            "type": "string",
+            "description": "Domain or public IP — e.g. example.com | 8.8.8.8",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "threat-intel",
+        "path": "/api/cyber/threat-intel",
+        "price": "$0.10",
+        "description": "Threat intelligence — global threat actors and campaigns by sector and region",
+        "params": {
+          "industry": {
+            "type": "string",
+            "description": "Sector — e.g. healthcare | finance | energy | manufacturing | government | education",
+            "required": true
+          },
+          "region": {
+            "type": "string",
+            "description": "Region — e.g. North America | Europe | Southeast Asia | MENA | Sub-Saharan Africa | Global (default: Global)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "ransomware-intel",
+        "path": "/api/cyber/ransomware-intel",
+        "price": "$0.10",
+        "description": "Ransomware intelligence — group profiles, victim patterns, TTPs, defensive playbook",
+        "params": {
+          "group": {
+            "type": "string",
+            "description": "Ransomware group name — e.g. LockBit | ALPHV | Cl0p | RansomHub (omit for landscape overview)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "breach-check",
+        "path": "/api/cyber/breach-check",
+        "price": "$0.10",
+        "description": "Breach check — domain breach history and credential exposure intelligence",
+        "params": {
+          "domain": {
+            "type": "string",
+            "description": "Domain to check — e.g. example.com",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "compliance-gap",
+        "path": "/api/cyber/compliance-gap",
+        "price": "$0.10",
+        "description": "Compliance gap analysis — global security frameworks (SOC2, ISO27001, GDPR, NIS2, PDPA, POPIA, LGPD...)",
+        "params": {
+          "framework": {
+            "type": "string",
+            "description": "Compliance framework",
+            "required": true,
+            "example": "SOC2"
+          },
+          "sector": {
+            "type": "string",
+            "description": "Industry sector — e.g. healthcare | finance | SaaS | e-commerce",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "dark-web-monitor",
+        "path": "/api/cyber/dark-web-monitor",
+        "price": "$0.10",
+        "description": "Dark web monitor — brand and domain underground intelligence (ethical OSINT)",
+        "params": {
+          "brand": {
+            "type": "string",
+            "description": "Brand name or domain — e.g. acme.com | MyCompany",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "attack-surface",
+        "path": "/api/cyber/attack-surface",
+        "price": "$0.10",
+        "description": "Attack surface assessment — external risk analysis for authorized defensive use",
+        "params": {
+          "company": {
+            "type": "string",
+            "description": "Company name — e.g. Acme Corporation",
+            "required": true
+          },
+          "domain": {
+            "type": "string",
+            "description": "Primary domain — e.g. acme.com",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "dealpulse": {
+    "name": "DealPulse",
+    "baseUrl": "https://dealpulse-weld.vercel.app",
+    "description": "Global deal intelligence API. AI-synthesized best deals, price history, coupon discovery, cashback optimization, subscription audits, credit card stack analysis, grocery savings, student discounts, an",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "store",
+        "path": "/api/deals/store",
+        "price": "$0.10",
+        "description": "Store coupon codes and promotions",
+        "params": {
+          "store": {
+            "type": "string",
+            "description": "Store or restaurant name (e.g. Target, Chilis, Nike)",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "item",
+        "path": "/api/deals/item",
+        "price": "$0.10",
+        "description": "Best deal on a specific product",
+        "params": {
+          "query": {
+            "type": "string",
+            "description": "Product name or description (e.g. 65 inch TV, AirPods Pro)",
+            "required": true
+          },
+          "budget": {
+            "type": "string",
+            "description": "Maximum budget in USD",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "compare",
+        "path": "/api/deals/compare",
+        "price": "$0.10",
+        "description": "Live price comparison across retailers",
+        "params": {
+          "item": {
+            "type": "string",
+            "description": "Specific product name (e.g. Samsung 65 inch QN90B, Dyson V15)",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "event",
+        "path": "/api/deals/event",
+        "price": "$0.10",
+        "description": "Sale event intelligence",
+        "params": {
+          "event": {
+            "type": "string",
+            "description": "Sale event name (e.g. black-friday, prime-day, cyber-monday)",
+            "required": true
+          },
+          "category": {
+            "type": "string",
+            "description": "Product category filter (e.g. electronics, appliances, clothing)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "subscriptions",
+        "path": "/api/deals/subscriptions",
+        "price": "$0.10",
+        "description": "Subscription audit — cancel vs. keep analysis with cost savings",
+        "params": {
+          "services": {
+            "type": "string",
+            "description": "services",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "cards",
+        "path": "/api/deals/cards",
+        "price": "$0.10",
+        "description": "Credit card cashback optimization for a purchase or category",
+        "params": {
+          "category": {
+            "type": "string",
+            "description": "category",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "stack",
+        "path": "/api/deals/stack",
+        "price": "$0.10",
+        "description": "Deal stacking — combine sale + coupon + cashback for maximum savings",
+        "params": {
+          "query": {
+            "type": "string",
+            "description": "query",
+            "required": false
+          },
+          "retailer": {
+            "type": "string",
+            "description": "retailer",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "student",
+        "path": "/api/deals/student",
+        "price": "$0.10",
+        "description": "Student discounts on software, services, food, and travel",
+        "params": {
+          "category": {
+            "type": "string",
+            "description": "category",
+            "required": false
+          },
+          "country": {
+            "type": "string",
+            "description": "country",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "history",
+        "path": "/api/deals/history",
+        "price": "$0.10",
+        "description": "Price history and best-time-to-buy analysis for a product",
+        "params": {
+          "query": {
+            "type": "string",
+            "description": "query",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "debtpulse": {
+    "name": "DebtPulse",
+    "baseUrl": "https://debtpulse.vercel.app",
+    "description": "Global debt elimination intelligence. All endpoints require x402 payment (USDC on Base mainnet) via the PAYMENT-SIGNATURE header. Supports US, UK, Australia, and Canada jurisdictions. Add ?lang= for a",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "payoff",
+        "path": "/api/debt/payoff",
+        "price": "$0.10",
+        "description": "Payoff calculator",
+        "params": {
+          "debts": {
+            "type": "string",
+            "description": "JSON array: [{creditor, balance, rate, minPayment}]",
+            "required": true
+          },
+          "extra_payment": {
+            "type": "string",
+            "description": "Additional monthly payment amount in USD",
+            "required": false
+          },
+          "method": {
+            "type": "string",
+            "description": "method",
+            "required": false,
+            "example": "avalanche"
+          }
+        }
+      },
+      {
+        "action": "snapshot",
+        "path": "/api/debt/snapshot",
+        "price": "$0.10",
+        "description": "Debt burden snapshot",
+        "params": {
+          "debts": {
+            "type": "string",
+            "description": "JSON array of debts",
+            "required": true
+          },
+          "income": {
+            "type": "string",
+            "description": "Monthly income in USD",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "negotiate",
+        "path": "/api/debt/negotiate",
+        "price": "$0.10",
+        "description": "Creditor negotiation playbook",
+        "params": {
+          "creditor": {
+            "type": "string",
+            "description": "Creditor name (e.g., Capital One, Chase, Midland Credit)",
+            "required": true
+          },
+          "balance": {
+            "type": "string",
+            "description": "Current balance in USD",
+            "required": true
+          },
+          "months_behind": {
+            "type": "string",
+            "description": "Number of months behind on payments",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "settle",
+        "path": "/api/debt/settle",
+        "price": "$0.10",
+        "description": "Debt settlement analysis",
+        "params": {
+          "creditor": {
+            "type": "string",
+            "description": "creditor",
+            "required": true
+          },
+          "balance": {
+            "type": "string",
+            "description": "balance",
+            "required": true
+          },
+          "months_behind": {
+            "type": "string",
+            "description": "months_behind",
+            "required": false
+          },
+          "debt_type": {
+            "type": "string",
+            "description": "debt_type",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "collections",
+        "path": "/api/debt/collections",
+        "price": "$0.10",
+        "description": "Debt collector rights",
+        "params": {
+          "collector": {
+            "type": "string",
+            "description": "Collection agency name",
+            "required": false
+          },
+          "situation": {
+            "type": "string",
+            "description": "situation",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "statute",
+        "path": "/api/debt/statute",
+        "price": "$0.10",
+        "description": "Statute of limitations lookup",
+        "params": {
+          "debt_type": {
+            "type": "string",
+            "description": "credit_card | medical | student_loan | auto | personal_loan",
+            "required": false
+          },
+          "state": {
+            "type": "string",
+            "description": "US state code (e.g., TX, CA)",
+            "required": false
+          },
+          "province": {
+            "type": "string",
+            "description": "CA province or AU state code",
+            "required": false
+          },
+          "last_payment": {
+            "type": "string",
+            "description": "Date of last payment (YYYY-MM-DD) for expiry calculation",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "garnishment",
+        "path": "/api/debt/garnishment",
+        "price": "$0.10",
+        "description": "Wage garnishment analysis",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "state",
+            "required": false
+          },
+          "debt_type": {
+            "type": "string",
+            "description": "debt_type",
+            "required": false
+          },
+          "income": {
+            "type": "string",
+            "description": "income",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "student",
+        "path": "/api/debt/student",
+        "price": "$0.10",
+        "description": "Student loan strategy",
+        "params": {
+          "balance": {
+            "type": "string",
+            "description": "balance",
+            "required": true
+          },
+          "type": {
+            "type": "string",
+            "description": "type",
+            "required": false,
+            "example": "federal"
+          },
+          "income": {
+            "type": "string",
+            "description": "income",
+            "required": false
+          },
+          "employer_type": {
+            "type": "string",
+            "description": "government | nonprofit | private (for PSLF eligibility)",
+            "required": false
+          },
+          "province": {
+            "type": "string",
+            "description": "CA province or UK plan type",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "credit",
+        "path": "/api/debt/credit",
+        "price": "$0.10",
+        "description": "Credit repair roadmap",
+        "params": {
+          "score": {
+            "type": "string",
+            "description": "score",
+            "required": true
+          },
+          "negatives": {
+            "type": "string",
+            "description": "Comma-separated list of negative items",
+            "required": false
+          },
+          "goal": {
+            "type": "string",
+            "description": "goal",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "build-credit",
+        "path": "/api/debt/build-credit",
+        "price": "$0.10",
+        "description": "Credit building strategy",
+        "params": {
+          "score": {
+            "type": "string",
+            "description": "score",
+            "required": false
+          },
+          "goal_score": {
+            "type": "string",
+            "description": "goal_score",
+            "required": false
+          },
+          "income": {
+            "type": "string",
+            "description": "income",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "dispute",
+        "path": "/api/debt/dispute",
+        "price": "$0.10",
+        "description": "Credit dispute guide",
+        "params": {
+          "negative_items": {
+            "type": "string",
+            "description": "negative_items",
+            "required": false
+          },
+          "bureau": {
+            "type": "string",
+            "description": "bureau",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "insolvency",
+        "path": "/api/debt/insolvency",
+        "price": "$0.10",
+        "description": "Insolvency analysis",
+        "params": {
+          "income": {
+            "type": "string",
+            "description": "income",
+            "required": false
+          },
+          "debts": {
+            "type": "string",
+            "description": "debts",
+            "required": false
+          },
+          "assets": {
+            "type": "string",
+            "description": "assets",
+            "required": false
+          },
+          "state": {
+            "type": "string",
+            "description": "state",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "medical",
+        "path": "/api/debt/medical",
+        "price": "$0.10",
+        "description": "Medical bill negotiation",
+        "params": {
+          "bill_amount": {
+            "type": "string",
+            "description": "bill_amount",
+            "required": true
+          },
+          "situation": {
+            "type": "string",
+            "description": "situation",
+            "required": false,
+            "example": "uninsured"
+          },
+          "insurance": {
+            "type": "string",
+            "description": "insurance",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "tax",
+        "path": "/api/debt/tax",
+        "price": "$0.10",
+        "description": "Tax debt relief",
+        "params": {
+          "amount_owed": {
+            "type": "string",
+            "description": "amount_owed",
+            "required": true
+          },
+          "years_behind": {
+            "type": "string",
+            "description": "years_behind",
+            "required": false
+          },
+          "situation": {
+            "type": "string",
+            "description": "situation",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "bnpl",
+        "path": "/api/debt/bnpl",
+        "price": "$0.10",
+        "description": "BNPL true cost analysis",
+        "params": {
+          "platform": {
+            "type": "string",
+            "description": "platform",
+            "required": true,
+            "example": "Affirm"
+          },
+          "balance": {
+            "type": "string",
+            "description": "balance",
+            "required": true
+          },
+          "payments_remaining": {
+            "type": "string",
+            "description": "payments_remaining",
+            "required": false
+          },
+          "payment_amount": {
+            "type": "string",
+            "description": "payment_amount",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "payday",
+        "path": "/api/debt/payday",
+        "price": "$0.10",
+        "description": "Payday loan escape",
+        "params": {
+          "balance": {
+            "type": "string",
+            "description": "balance",
+            "required": true
+          },
+          "fee_rate": {
+            "type": "string",
+            "description": "Fee rate (e.g., '$15 per $100')",
+            "required": false
+          },
+          "state": {
+            "type": "string",
+            "description": "state",
+            "required": false
+          },
+          "lender": {
+            "type": "string",
+            "description": "lender",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "mortgage-relief",
+        "path": "/api/debt/mortgage-relief",
+        "price": "$0.10",
+        "description": "Mortgage relief options",
+        "params": {
+          "months_behind": {
+            "type": "string",
+            "description": "months_behind",
+            "required": false
+          },
+          "servicer": {
+            "type": "string",
+            "description": "servicer",
+            "required": false
+          },
+          "loan_type": {
+            "type": "string",
+            "description": "Conventional | FHA | VA | USDA",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "consolidate",
+        "path": "/api/debt/consolidate",
+        "price": "$0.10",
+        "description": "Debt consolidation analysis",
+        "params": {
+          "debts": {
+            "type": "string",
+            "description": "debts",
+            "required": true
+          },
+          "credit_score": {
+            "type": "string",
+            "description": "credit_score",
+            "required": true
+          },
+          "income": {
+            "type": "string",
+            "description": "income",
+            "required": false
+          },
+          "homeowner": {
+            "type": "string",
+            "description": "homeowner",
+            "required": false,
+            "example": "true"
+          }
+        }
+      },
+      {
+        "action": "priority",
+        "path": "/api/debt/priority",
+        "price": "$0.10",
+        "description": "Multi-factor debt priority",
+        "params": {
+          "debts": {
+            "type": "string",
+            "description": "debts",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "rights",
+        "path": "/api/debt/rights",
+        "price": "$0.10",
+        "description": "Consumer debt rights",
+        "params": {}
+      },
+      {
+        "action": "freedom-roadmap",
+        "path": "/api/debt/freedom-roadmap",
+        "price": "$0.10",
+        "description": "Debt freedom roadmap",
+        "params": {
+          "debts": {
+            "type": "string",
+            "description": "debts",
+            "required": true
+          },
+          "income": {
+            "type": "string",
+            "description": "Monthly income in USD",
+            "required": true
+          },
+          "savings": {
+            "type": "string",
+            "description": "savings",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "econsignalpulse": {
+    "name": "EconSignalPulse",
+    "baseUrl": "https://econsignalpulse.vercel.app",
+    "description": "Alternative economic intelligence API covering 190+ countries. Combines World Bank Open Data, IMF Datamapper forecasts, satellite nighttime lights research, and AIS shipping signals to produce institu",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "nightlights",
+        "path": "/api/econsignal/nightlights",
+        "price": "$0.10",
+        "description": "Satellite nighttime lights vs official GDP",
+        "params": {
+          "period": {
+            "type": "string",
+            "description": "Analysis period",
+            "required": false,
+            "example": "1y"
+          }
+        }
+      },
+      {
+        "action": "gdp-tracker",
+        "path": "/api/econsignal/gdp-tracker",
+        "price": "$0.10",
+        "description": "GDP tracker — history + IMF forecasts",
+        "params": {}
+      },
+      {
+        "action": "inflation-signals",
+        "path": "/api/econsignal/inflation-signals",
+        "price": "$0.10",
+        "description": "Multi-source inflation signals",
+        "params": {}
+      },
+      {
+        "action": "country-brief",
+        "path": "/api/econsignal/country-brief",
+        "price": "$0.10",
+        "description": "Full sovereign intelligence brief",
+        "params": {
+          "focus": {
+            "type": "string",
+            "description": "Analysis focus area",
+            "required": false,
+            "example": "investment"
+          }
+        }
+      },
+      {
+        "action": "divergence",
+        "path": "/api/econsignal/divergence",
+        "price": "$0.10",
+        "description": "Official stats vs alternative data divergence",
+        "params": {}
+      },
+      {
+        "action": "recession-signals",
+        "path": "/api/econsignal/recession-signals",
+        "price": "$0.10",
+        "description": "Recession probability signals",
+        "params": {}
+      },
+      {
+        "action": "frontier-intel",
+        "path": "/api/econsignal/frontier-intel",
+        "price": "$0.10",
+        "description": "Frontier and emerging market intelligence",
+        "params": {
+          "lens": {
+            "type": "string",
+            "description": "Intelligence lens",
+            "required": false,
+            "example": "investment"
+          }
+        }
+      },
+      {
+        "action": "trade-flows",
+        "path": "/api/econsignal/trade-flows",
+        "price": "$0.10",
+        "description": "Global trade flow analysis",
+        "params": {
+          "partner": {
+            "type": "string",
+            "description": "Optional trade partner country for bilateral analysis — e.g. 'United States' | 'China' | 'Germany'",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "credit-stress",
+        "path": "/api/econsignal/credit-stress",
+        "price": "$0.10",
+        "description": "Sovereign credit and banking stress",
+        "params": {}
+      },
+      {
+        "action": "sanctions-impact",
+        "path": "/api/econsignal/sanctions-impact",
+        "price": "$0.10",
+        "description": "Sanctions impact measurement",
+        "params": {
+          "regime": {
+            "type": "string",
+            "description": "Sanctions regime to analyze",
+            "required": false,
+            "example": "OFAC"
+          }
+        }
+      }
+    ]
+  },
+  "edupulse": {
+    "name": "EduPulse",
+    "baseUrl": "https://edupulse-xi-blond.vercel.app",
+    "description": "Global education intelligence API — 10 endpoints for students, test-takers, and lifelong learners worldwide. Study guide generation (any subject, any grade level, 190+ countries), adaptive quiz with e",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "guide",
+        "path": "/api/study/guide",
+        "price": "$0.10",
+        "description": "Study guide generation — any subject, any grade, any country",
+        "params": {
+          "grade": {
+            "type": "string",
+            "description": "Grade level: K, 1-12",
+            "required": true
+          },
+          "subject": {
+            "type": "string",
+            "description": "Subject (algebra, biology, chemistry, history, etc.)",
+            "required": true
+          },
+          "topic": {
+            "type": "string",
+            "description": "Specific topic within the subject",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language code (e.g. es, fr, zh, ja)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "quiz",
+        "path": "/api/study/quiz",
+        "price": "$0.10",
+        "description": "Practice quiz with adaptive difficulty and answer explanations",
+        "params": {
+          "grade": {
+            "type": "string",
+            "description": "grade",
+            "required": true
+          },
+          "subject": {
+            "type": "string",
+            "description": "subject",
+            "required": true
+          },
+          "topic": {
+            "type": "string",
+            "description": "topic",
+            "required": true
+          },
+          "questions": {
+            "type": "string",
+            "description": "questions",
+            "required": false
+          },
+          "difficulty": {
+            "type": "string",
+            "description": "difficulty",
+            "required": false,
+            "example": "easy"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "explain",
+        "path": "/api/study/explain",
+        "price": "$0.10",
+        "description": "Concept explainer — any topic at any level from 5th grade to PhD",
+        "params": {
+          "concept": {
+            "type": "string",
+            "description": "concept",
+            "required": true
+          },
+          "grade": {
+            "type": "string",
+            "description": "grade",
+            "required": false
+          },
+          "audience": {
+            "type": "string",
+            "description": "e.g. 'nursing student', 'Series 7 candidate', 'adult learner'",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "schedule",
+        "path": "/api/study/schedule",
+        "price": "$0.10",
+        "description": "Backwards-planned study schedule — from exam date to today, with daily tasks",
+        "params": {
+          "exam": {
+            "type": "string",
+            "description": "exam",
+            "required": true,
+            "example": "NCLEX"
+          },
+          "date": {
+            "type": "string",
+            "description": "Exam date YYYY-MM-DD",
+            "required": true
+          },
+          "hours_per_week": {
+            "type": "string",
+            "description": "hours_per_week",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "prep",
+        "path": "/api/exam/prep",
+        "price": "$0.10",
+        "description": "Exam-style practice questions — 200+ exams, rubric-matched difficulty",
+        "params": {
+          "exam": {
+            "type": "string",
+            "description": "exam",
+            "required": true
+          },
+          "topic": {
+            "type": "string",
+            "description": "topic",
+            "required": true
+          },
+          "questions": {
+            "type": "string",
+            "description": "questions",
+            "required": false
+          },
+          "difficulty": {
+            "type": "string",
+            "description": "difficulty",
+            "required": false,
+            "example": "easy"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "flashcards",
+        "path": "/api/exam/flashcards",
+        "price": "$0.10",
+        "description": "Spaced-repetition flashcard set — import into Anki or Quizlet",
+        "params": {
+          "exam": {
+            "type": "string",
+            "description": "exam",
+            "required": true
+          },
+          "topic": {
+            "type": "string",
+            "description": "topic",
+            "required": true
+          },
+          "section": {
+            "type": "string",
+            "description": "Exam section (e.g. FAR for CPA)",
+            "required": false
+          },
+          "count": {
+            "type": "string",
+            "description": "count",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "exam-explain",
+        "path": "/api/exam/explain",
+        "price": "$0.10",
+        "description": "Exam format explainer — complete breakdown of any exam structure and strategy",
+        "params": {
+          "exam": {
+            "type": "string",
+            "description": "exam",
+            "required": true
+          },
+          "question_type": {
+            "type": "string",
+            "description": "e.g. NGN, logic-games, task-based-simulation, data-sufficiency",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "mock",
+        "path": "/api/exam/mock",
+        "price": "$0.10",
+        "description": "Full mock exam simulation — timed, scored, with performance report",
+        "params": {
+          "exam": {
+            "type": "string",
+            "description": "exam",
+            "required": true
+          },
+          "duration": {
+            "type": "string",
+            "description": "Duration in minutes",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "misconception",
+        "path": "/api/study/misconception",
+        "price": "$0.10",
+        "description": "Misconception diagnosis — pinpoints the exact knowledge gap behind a wrong answer",
+        "params": {
+          "question": {
+            "type": "string",
+            "description": "The exam/study question",
+            "required": true
+          },
+          "answer": {
+            "type": "string",
+            "description": "The student's wrong answer",
+            "required": true
+          },
+          "subject": {
+            "type": "string",
+            "description": "subject",
+            "required": false
+          },
+          "level": {
+            "type": "string",
+            "description": "Grade level or exam type",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "grade",
+        "path": "/api/exam/grade",
+        "price": "$0.10",
+        "description": "Rubric-based exam grading — written response scoring with detailed feedback",
+        "params": {
+          "exam": {
+            "type": "string",
+            "description": "Exam type (e.g. Bar, CPA-BEC, GRE, LSAT)",
+            "required": true,
+            "example": "Bar"
+          },
+          "question": {
+            "type": "string",
+            "description": "question",
+            "required": true
+          },
+          "response": {
+            "type": "string",
+            "description": "The student response to grade",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "esgpulse": {
+    "name": "ESGPulse",
+    "baseUrl": "https://esgpulse.vercel.app",
+    "description": "AI-powered ESG and sustainability intelligence: CSRD compliance roadmaps, EU Taxonomy alignment, supply chain due diligence, emissions analysis, greenwashing risk, and ESG disclosure guidance. All end",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "csrd",
+        "path": "/api/esg/csrd",
+        "price": "$0.10",
+        "description": "CSRD compliance roadmap",
+        "params": {
+          "sector": {
+            "type": "string",
+            "description": "Industry sector (retail, manufacturing, financial-services, technology, energy, healthcare, etc.)",
+            "required": false
+          },
+          "employees": {
+            "type": "string",
+            "description": "Number of employees (e.g. 500, 5000)",
+            "required": false
+          },
+          "turnover": {
+            "type": "string",
+            "description": "Annual turnover in EUR (e.g. 250000000 for €250M)",
+            "required": false
+          },
+          "jurisdiction": {
+            "type": "string",
+            "description": "Company's primary jurisdiction",
+            "required": false
+          },
+          "listed": {
+            "type": "string",
+            "description": "Whether the company is publicly listed",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (ISO 639-1)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "framework",
+        "path": "/api/esg/framework",
+        "price": "$0.10",
+        "description": "ESG framework navigator",
+        "params": {
+          "company_type": {
+            "type": "string",
+            "description": "Type of organization",
+            "required": false,
+            "example": "large-public"
+          },
+          "jurisdiction": {
+            "type": "string",
+            "description": "Primary regulatory jurisdiction",
+            "required": false
+          },
+          "sector": {
+            "type": "string",
+            "description": "Industry sector",
+            "required": false
+          },
+          "goal": {
+            "type": "string",
+            "description": "Primary reporting goal",
+            "required": false,
+            "example": "compliance"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "company",
+        "path": "/api/esg/company",
+        "price": "$0.10",
+        "description": "Company ESG intelligence",
+        "params": {
+          "company": {
+            "type": "string",
+            "description": "Company name (e.g. Apple, Unilever, HSBC)",
+            "required": true
+          },
+          "focus": {
+            "type": "string",
+            "description": "focus",
+            "required": false,
+            "example": "all"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "emissions",
+        "path": "/api/esg/emissions",
+        "price": "$0.10",
+        "description": "Carbon and emissions intelligence",
+        "params": {
+          "entity": {
+            "type": "string",
+            "description": "Company or entity name (optional)",
+            "required": false
+          },
+          "sector": {
+            "type": "string",
+            "description": "Industry sector for benchmark data",
+            "required": false
+          },
+          "scope": {
+            "type": "string",
+            "description": "scope",
+            "required": false,
+            "example": "all"
+          },
+          "goal": {
+            "type": "string",
+            "description": "goal",
+            "required": false,
+            "example": "measure"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "sector",
+        "path": "/api/esg/sector",
+        "price": "$0.10",
+        "description": "SASB sector ESG materiality",
+        "params": {
+          "sector": {
+            "type": "string",
+            "description": "Industry sector (Technology, Financial Services, Health Care, Energy, Consumer Goods, etc.)",
+            "required": true
+          },
+          "focus": {
+            "type": "string",
+            "description": "focus",
+            "required": false,
+            "example": "all"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "taxonomy",
+        "path": "/api/esg/taxonomy",
+        "price": "$0.10",
+        "description": "EU Taxonomy alignment check",
+        "params": {
+          "activity": {
+            "type": "string",
+            "description": "Specific economic activity (e.g. solar energy generation, manufacture of cement)",
+            "required": false
+          },
+          "sector": {
+            "type": "string",
+            "description": "Industry sector if activity not specified",
+            "required": false
+          },
+          "objective": {
+            "type": "string",
+            "description": "EU Taxonomy environmental objective to assess",
+            "required": false,
+            "example": "all"
+          },
+          "entity_type": {
+            "type": "string",
+            "description": "entity_type",
+            "required": false,
+            "example": "corporate"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "supply-chain",
+        "path": "/api/esg/supply-chain",
+        "price": "$0.10",
+        "description": "Supply chain ESG due diligence",
+        "params": {
+          "company": {
+            "type": "string",
+            "description": "Company name for specific analysis",
+            "required": false
+          },
+          "sector": {
+            "type": "string",
+            "description": "Industry sector for risk profile",
+            "required": false
+          },
+          "origin_countries": {
+            "type": "string",
+            "description": "Comma-separated list of sourcing countries (e.g. CN,BD,VN)",
+            "required": false
+          },
+          "scope": {
+            "type": "string",
+            "description": "scope",
+            "required": false,
+            "example": "full"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "score",
+        "path": "/api/esg/score",
+        "price": "$0.10",
+        "description": "ESG score intelligence",
+        "params": {
+          "company": {
+            "type": "string",
+            "description": "Company name for specific intelligence",
+            "required": false
+          },
+          "rater": {
+            "type": "string",
+            "description": "rater",
+            "required": false,
+            "example": "all"
+          },
+          "sector": {
+            "type": "string",
+            "description": "Industry sector for benchmark context",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "greenwashing",
+        "path": "/api/esg/greenwashing",
+        "price": "$0.10",
+        "description": "Greenwashing risk detector",
+        "params": {
+          "claims": {
+            "type": "string",
+            "description": "Sustainability claims to analyze (e.g. 'carbon neutral by 2030, eco-friendly packaging')",
+            "required": false
+          },
+          "company": {
+            "type": "string",
+            "description": "Company name for controversy research",
+            "required": false
+          },
+          "jurisdiction": {
+            "type": "string",
+            "description": "jurisdiction",
+            "required": false,
+            "example": "EU"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "disclosure",
+        "path": "/api/esg/disclosure",
+        "price": "$0.10",
+        "description": "ESG disclosure builder",
+        "params": {
+          "framework": {
+            "type": "string",
+            "description": "framework",
+            "required": false,
+            "example": "CSRD"
+          },
+          "sector": {
+            "type": "string",
+            "description": "Industry sector for sector-specific data points",
+            "required": false
+          },
+          "topic": {
+            "type": "string",
+            "description": "topic",
+            "required": false,
+            "example": "all"
+          },
+          "format": {
+            "type": "string",
+            "description": "format",
+            "required": false,
+            "example": "guide"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "fanpulse": {
+    "name": "FanPulse",
+    "baseUrl": "https://fanpulse-tau.vercel.app",
+    "description": "Global fandom intelligence API. AI-synthesized fan guides, lore analysis, collectibles valuation, discography deep-dives, character analysis, easter egg discovery, quiz generation, and timeline recons",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "lore",
+        "path": "/api/fan/lore",
+        "price": "$0.10",
+        "description": "Deep canon lore Q&A",
+        "params": {
+          "franchise": {
+            "type": "string",
+            "description": "franchise",
+            "required": true
+          },
+          "query": {
+            "type": "string",
+            "description": "query",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "character",
+        "path": "/api/fan/character",
+        "price": "$0.10",
+        "description": "Character or artist deep profile",
+        "params": {
+          "franchise": {
+            "type": "string",
+            "description": "franchise",
+            "required": true
+          },
+          "name": {
+            "type": "string",
+            "description": "name",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "quiz",
+        "path": "/api/fan/quiz",
+        "price": "$0.10",
+        "description": "AI-generated trivia set",
+        "params": {
+          "franchise": {
+            "type": "string",
+            "description": "franchise",
+            "required": true
+          },
+          "topic": {
+            "type": "string",
+            "description": "topic",
+            "required": false
+          },
+          "difficulty": {
+            "type": "string",
+            "description": "easy|medium|hard|mixed",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "easter-eggs",
+        "path": "/api/fan/easter-eggs",
+        "price": "$0.10",
+        "description": "Easter egg and hidden meaning analysis",
+        "params": {
+          "artist": {
+            "type": "string",
+            "description": "For music artists",
+            "required": false
+          },
+          "franchise": {
+            "type": "string",
+            "description": "For film/TV franchises",
+            "required": false
+          },
+          "album": {
+            "type": "string",
+            "description": "album",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "discography",
+        "path": "/api/fan/discography",
+        "price": "$0.10",
+        "description": "Artist discography deep dive",
+        "params": {
+          "artist": {
+            "type": "string",
+            "description": "artist",
+            "required": true
+          },
+          "focus": {
+            "type": "string",
+            "description": "focus",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "sorting",
+        "path": "/api/fan/sorting",
+        "price": "$0.10",
+        "description": "Personality-based character/faction sorting",
+        "params": {
+          "franchise": {
+            "type": "string",
+            "description": "franchise",
+            "required": true
+          },
+          "personality": {
+            "type": "string",
+            "description": "personality",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "timeline",
+        "path": "/api/fan/timeline",
+        "price": "$0.10",
+        "description": "Canonical franchise timeline",
+        "params": {
+          "franchise": {
+            "type": "string",
+            "description": "franchise",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "collect",
+        "path": "/api/fan/collect",
+        "price": "$0.10",
+        "description": "Collectibles and memorabilia market intelligence",
+        "params": {
+          "franchise": {
+            "type": "string",
+            "description": "franchise",
+            "required": false
+          },
+          "artist": {
+            "type": "string",
+            "description": "artist",
+            "required": false
+          },
+          "item_type": {
+            "type": "string",
+            "description": "vinyl|photocards|figures|signed|comics|cards|props|memorabilia|general",
+            "required": false
+          },
+          "item": {
+            "type": "string",
+            "description": "item",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "compare",
+        "path": "/api/fan/compare",
+        "price": "$0.10",
+        "description": "Decisive cross-franchise or cross-artist comparison",
+        "params": {
+          "subject1": {
+            "type": "string",
+            "description": "subject1",
+            "required": true
+          },
+          "subject2": {
+            "type": "string",
+            "description": "subject2",
+            "required": true
+          },
+          "type": {
+            "type": "string",
+            "description": "character|franchise|artist|album",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "fieldpulse": {
+    "name": "FieldPulse",
+    "baseUrl": "https://fieldpulse-tan.vercel.app",
+    "description": "Global precision agriculture intelligence API. Synthesizes satellite NDVI data, Open-Meteo soil/weather data, USDA WASDE, FAO, and EPPO into structured, actionable intelligence for growers, agronomist",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "yield-forecast",
+        "path": "/api/yield-forecast",
+        "price": "$0.10",
+        "description": "Yield and production forecast for any crop and region",
+        "params": {
+          "crop": {
+            "type": "string",
+            "description": "Crop: wheat, corn, rice, soybeans, cotton, coffee, cocoa, palm-oil, canola, barley, sorghum",
+            "required": true
+          },
+          "region": {
+            "type": "string",
+            "description": "Named region: 'Black Sea', 'US Midwest', 'Brazil Mato Grosso', 'India Punjab', 'EU', 'Australia', 'Global'",
+            "required": false
+          },
+          "lat": {
+            "type": "string",
+            "description": "Latitude (alternative to region name)",
+            "required": false
+          },
+          "lon": {
+            "type": "string",
+            "description": "Longitude (alternative to region name)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language ISO 639-1",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "weather-risk",
+        "path": "/api/weather-risk",
+        "price": "$0.10",
+        "description": "7-14 day crop-specific weather risk assessment",
+        "params": {
+          "lat": {
+            "type": "string",
+            "description": "Field latitude",
+            "required": true
+          },
+          "lon": {
+            "type": "string",
+            "description": "Field longitude",
+            "required": true
+          },
+          "crop": {
+            "type": "string",
+            "description": "Crop being assessed",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "soil-intel",
+        "path": "/api/soil-intel",
+        "price": "$0.10",
+        "description": "Live soil moisture, temperature, and evapotranspiration intelligence",
+        "params": {
+          "lat": {
+            "type": "string",
+            "description": "Field latitude",
+            "required": true
+          },
+          "lon": {
+            "type": "string",
+            "description": "Field longitude",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "pest-disease",
+        "path": "/api/pest-disease",
+        "price": "$0.10",
+        "description": "Pest and disease risk assessment with outbreak alerts",
+        "params": {
+          "crop": {
+            "type": "string",
+            "description": "Crop: wheat, rice, corn, potato, coffee, cocoa, soybean, cotton, etc.",
+            "required": true
+          },
+          "region": {
+            "type": "string",
+            "description": "Named region (e.g. 'Punjab India', 'Mekong Delta Vietnam', 'Ethiopian Highlands')",
+            "required": false
+          },
+          "lat": {
+            "type": "string",
+            "description": "Field latitude",
+            "required": false
+          },
+          "lon": {
+            "type": "string",
+            "description": "Field longitude",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "irrigation",
+        "path": "/api/irrigation",
+        "price": "$0.10",
+        "description": "ET0-based irrigation recommendation and water budget",
+        "params": {
+          "lat": {
+            "type": "string",
+            "description": "Field latitude",
+            "required": true
+          },
+          "lon": {
+            "type": "string",
+            "description": "Field longitude",
+            "required": true
+          },
+          "crop": {
+            "type": "string",
+            "description": "Crop type (affects crop coefficient Kc)",
+            "required": false
+          },
+          "soil_type": {
+            "type": "string",
+            "description": "Soil type: sandy, loam, clay, silt-loam, sandy-loam, clay-loam",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "commodity-outlook",
+        "path": "/api/commodity-outlook",
+        "price": "$0.10",
+        "description": "Agricultural commodity market outlook and price intelligence",
+        "params": {
+          "crop": {
+            "type": "string",
+            "description": "Commodity: wheat, corn, soybeans, rice, cotton, coffee, cocoa, sugar, canola, palm-oil, barley, oats",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "input-cost",
+        "path": "/api/input-cost",
+        "price": "$0.10",
+        "description": "Fertilizer, seed, and crop protection cost intelligence",
+        "params": {
+          "crop": {
+            "type": "string",
+            "description": "Crop: corn, wheat, soybeans, rice, cotton, canola, sugarcane, coffee, cocoa, potato",
+            "required": true
+          },
+          "region": {
+            "type": "string",
+            "description": "Region: 'US Corn Belt', 'Brazil', 'EU', 'India', 'Australia', 'Black Sea', 'Southeast Asia', etc.",
+            "required": false
+          },
+          "hectares": {
+            "type": "string",
+            "description": "Farm size in hectares (optional — enables total cost estimate)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "planting-window",
+        "path": "/api/planting-window",
+        "price": "$0.10",
+        "description": "Optimal planting window based on soil temperature and frost dates",
+        "params": {
+          "lat": {
+            "type": "string",
+            "description": "Field latitude",
+            "required": true
+          },
+          "lon": {
+            "type": "string",
+            "description": "Field longitude",
+            "required": true
+          },
+          "crop": {
+            "type": "string",
+            "description": "Crop to plant: corn, wheat, soybeans, rice, cotton, sunflower, canola, potatoes, tomatoes, etc.",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "season-brief",
+        "path": "/api/season-brief",
+        "price": "$0.10",
+        "description": "Comprehensive seasonal agricultural intelligence brief",
+        "params": {
+          "crop": {
+            "type": "string",
+            "description": "Crop: wheat, corn, soybeans, rice, coffee, cocoa, cotton, sugar, palm-oil, canola, barley",
+            "required": true
+          },
+          "region": {
+            "type": "string",
+            "description": "Focus region: 'Global', 'US', 'South America', 'Black Sea', 'EU', 'Asia', 'Sub-Saharan Africa', 'Australia'",
+            "required": false
+          },
+          "lat": {
+            "type": "string",
+            "description": "Lat (alternative to region name for field-level context)",
+            "required": false
+          },
+          "lon": {
+            "type": "string",
+            "description": "Lon",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "filingspulse": {
+    "name": "FilingsPulse",
+    "baseUrl": "https://filingspulse.vercel.app",
+    "description": "Global SEC/EDGAR and international filings intelligence API. AI-synthesized plain-language summaries of 10-K, 10-Q, 8-K, S-1/IPO filings. Insider ownership tracking, red flag detection, institutional ",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "exchange",
+        "path": "/api/filings/exchange",
+        "price": "$0.10",
+        "description": "Exchange-specific filing intelligence — any listed company worldwide",
+        "params": {
+          "company": {
+            "type": "string",
+            "description": "Company name or local ticker (e.g. LVMH, Samsung Electronics, Tata Consultancy Services)",
+            "required": true
+          },
+          "exchange": {
+            "type": "string",
+            "description": "Exchange code — enables precise source targeting and jurisdiction-correct filing terminology",
+            "required": false,
+            "example": "NYSE"
+          },
+          "query": {
+            "type": "string",
+            "description": "Optional focus topic (e.g. revenue growth, ESG, M&A)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "summary",
+        "path": "/api/filings/summary",
+        "price": "$0.10",
+        "description": "10-K / Annual Report plain-language summary",
+        "params": {
+          "ticker": {
+            "type": "string",
+            "description": "Stock ticker (works for US; use company name for international)",
+            "required": false
+          },
+          "company": {
+            "type": "string",
+            "description": "Company name — works globally (e.g. Apple, HSBC, Toyota, Reliance Industries)",
+            "required": false
+          },
+          "form_type": {
+            "type": "string",
+            "description": "form_type",
+            "required": false,
+            "example": "10-K"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "insider",
+        "path": "/api/filings/insider",
+        "price": "$0.10",
+        "description": "Insider trading signal — Form 4 analysis",
+        "params": {
+          "ticker": {
+            "type": "string",
+            "description": "ticker",
+            "required": false
+          },
+          "company": {
+            "type": "string",
+            "description": "company",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "ownership",
+        "path": "/api/filings/ownership",
+        "price": "$0.10",
+        "description": "Institutional ownership and 13F analysis",
+        "params": {
+          "ticker": {
+            "type": "string",
+            "description": "ticker",
+            "required": false
+          },
+          "company": {
+            "type": "string",
+            "description": "company",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "ipo",
+        "path": "/api/filings/ipo",
+        "price": "$0.10",
+        "description": "IPO / S-1 prospectus deep dive",
+        "params": {
+          "company": {
+            "type": "string",
+            "description": "company",
+            "required": false
+          },
+          "ticker": {
+            "type": "string",
+            "description": "ticker",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "8k",
+        "path": "/api/filings/8k",
+        "price": "$0.10",
+        "description": "Material event analysis (8-K and equivalents)",
+        "params": {
+          "ticker": {
+            "type": "string",
+            "description": "ticker",
+            "required": false
+          },
+          "company": {
+            "type": "string",
+            "description": "company",
+            "required": false
+          },
+          "event": {
+            "type": "string",
+            "description": "earnings | executive_change | merger | restatement | debt | cybersecurity | guidance_change",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "redflags",
+        "path": "/api/filings/redflags",
+        "price": "$0.10",
+        "description": "Forensic accounting red flag scan",
+        "params": {
+          "ticker": {
+            "type": "string",
+            "description": "ticker",
+            "required": false
+          },
+          "company": {
+            "type": "string",
+            "description": "company",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "compare",
+        "path": "/api/filings/compare",
+        "price": "$0.10",
+        "description": "Side-by-side competitor comparison from filings",
+        "params": {
+          "ticker1": {
+            "type": "string",
+            "description": "ticker1",
+            "required": false
+          },
+          "ticker2": {
+            "type": "string",
+            "description": "ticker2",
+            "required": false
+          },
+          "company1": {
+            "type": "string",
+            "description": "company1",
+            "required": false
+          },
+          "company2": {
+            "type": "string",
+            "description": "company2",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "search",
+        "path": "/api/filings/search",
+        "price": "$0.10",
+        "description": "Full-text filing search across all public databases",
+        "params": {
+          "query": {
+            "type": "string",
+            "description": "Any topic, risk, disclosure theme, or specific language (e.g. 'artificial intelligence risk factors', 'going concern', 'China supply chain e",
+            "required": true
+          },
+          "form_type": {
+            "type": "string",
+            "description": "form_type",
+            "required": false,
+            "example": "10-K"
+          },
+          "date_from": {
+            "type": "string",
+            "description": "YYYY-MM-DD",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "findpulse": {
+    "name": "FindPulse",
+    "baseUrl": "https://findpulse-omega.vercel.app",
+    "description": "Universal finder and discovery API. AI-synthesized best product recommendations, alternative product discovery, grant and scholarship search, used/refurbished alternatives, hidden deals, local busines",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "product",
+        "path": "/api/find/product",
+        "price": "$0.10",
+        "description": "Best product for use case",
+        "params": {
+          "use_case": {
+            "type": "string",
+            "description": "use_case",
+            "required": true
+          },
+          "budget": {
+            "type": "string",
+            "description": "budget",
+            "required": false
+          },
+          "preferences": {
+            "type": "string",
+            "description": "preferences",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "compare",
+        "path": "/api/find/compare",
+        "price": "$0.10",
+        "description": "Head-to-head product comparison",
+        "params": {
+          "products": {
+            "type": "string",
+            "description": "products",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "alternative",
+        "path": "/api/find/alternative",
+        "price": "$0.10",
+        "description": "Cheaper alternatives",
+        "params": {
+          "product": {
+            "type": "string",
+            "description": "product",
+            "required": true
+          },
+          "budget": {
+            "type": "string",
+            "description": "budget",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "hidden",
+        "path": "/api/find/hidden",
+        "price": "$0.10",
+        "description": "Hidden gem products",
+        "params": {
+          "category": {
+            "type": "string",
+            "description": "category",
+            "required": true
+          },
+          "use_case": {
+            "type": "string",
+            "description": "use_case",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "used",
+        "path": "/api/find/used",
+        "price": "$0.10",
+        "description": "Used/refurbished sourcing guide",
+        "params": {
+          "product": {
+            "type": "string",
+            "description": "product",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "local",
+        "path": "/api/find/local",
+        "price": "$0.10",
+        "description": "Local professional vetting",
+        "params": {
+          "service": {
+            "type": "string",
+            "description": "service",
+            "required": true
+          },
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "grant",
+        "path": "/api/find/grant",
+        "price": "$0.10",
+        "description": "Grant and funding finder",
+        "params": {
+          "category": {
+            "type": "string",
+            "description": "category",
+            "required": true
+          },
+          "demographic": {
+            "type": "string",
+            "description": "demographic",
+            "required": false
+          },
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "scholarship",
+        "path": "/api/find/scholarship",
+        "price": "$0.10",
+        "description": "Scholarship finder",
+        "params": {
+          "field": {
+            "type": "string",
+            "description": "field",
+            "required": false
+          },
+          "profile": {
+            "type": "string",
+            "description": "profile",
+            "required": false
+          },
+          "state": {
+            "type": "string",
+            "description": "state",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "rental",
+        "path": "/api/find/rental",
+        "price": "$0.10",
+        "description": "Rent vs buy analysis",
+        "params": {
+          "item": {
+            "type": "string",
+            "description": "item",
+            "required": true
+          },
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": false
+          },
+          "frequency": {
+            "type": "string",
+            "description": "frequency",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "recall",
+        "path": "/api/find/recall",
+        "price": "$0.10",
+        "description": "Product recall lookup",
+        "params": {
+          "product": {
+            "type": "string",
+            "description": "product",
+            "required": true
+          }
+        }
+      }
+    ]
+  },
+  "fitpulse": {
+    "name": "FitPulse",
+    "baseUrl": "https://fitpulse-vert.vercel.app",
+    "description": "Global fitness intelligence API. Evidence-based workout programming, nutrition science, supplement efficacy analysis, injury recovery protocols, race training plans, sleep optimization, plateau-breaki",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "workout",
+        "path": "/api/fit/workout",
+        "price": "$0.10",
+        "description": "Custom workout plan",
+        "params": {
+          "goal": {
+            "type": "string",
+            "description": "e.g. muscle-gain, fat-loss, strength, endurance, general-fitness",
+            "required": true
+          },
+          "equipment": {
+            "type": "string",
+            "description": "e.g. full gym, dumbbells-only, bodyweight (default: full gym)",
+            "required": false
+          },
+          "level": {
+            "type": "string",
+            "description": "level",
+            "required": false,
+            "example": "beginner"
+          },
+          "days": {
+            "type": "string",
+            "description": "Days per week (default: 4)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "exercise",
+        "path": "/api/fit/exercise",
+        "price": "$0.10",
+        "description": "Exercise form guide",
+        "params": {
+          "exercise": {
+            "type": "string",
+            "description": "e.g. barbell-squat, push-up, romanian-deadlift, pull-up",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "nutrition",
+        "path": "/api/fit/nutrition",
+        "price": "$0.10",
+        "description": "Macro and nutrition targets",
+        "params": {
+          "goal": {
+            "type": "string",
+            "description": "e.g. muscle-gain, fat-loss, maintenance, athletic-performance",
+            "required": true
+          },
+          "weight": {
+            "type": "string",
+            "description": "Body weight in lbs",
+            "required": false
+          },
+          "activity": {
+            "type": "string",
+            "description": "activity",
+            "required": false,
+            "example": "sedentary"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "supplement",
+        "path": "/api/fit/supplement",
+        "price": "$0.10",
+        "description": "Evidence-based supplement analysis",
+        "params": {
+          "goal": {
+            "type": "string",
+            "description": "e.g. muscle-gain, fat-loss, endurance, recovery, general-health",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "recover",
+        "path": "/api/fit/recover",
+        "price": "$0.10",
+        "description": "Injury recovery protocol",
+        "params": {
+          "injury": {
+            "type": "string",
+            "description": "e.g. sprained-ankle, pulled-hamstring, rotator-cuff, shin-splints, runners-knee",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "supplements",
+        "path": "/api/fit/supplements",
+        "price": "$0.10",
+        "description": "Evidence-graded supplement efficacy tier list by goal",
+        "params": {
+          "goal": {
+            "type": "string",
+            "description": "Fitness goal (muscle-gain, fat-loss, endurance, recovery, general-health)",
+            "required": false
+          },
+          "budget": {
+            "type": "string",
+            "description": "Monthly budget for supplements (e.g. $50, $100, $200)",
+            "required": false
+          },
+          "restrictions": {
+            "type": "string",
+            "description": "Dietary restrictions or intolerances (vegan, lactose-free, etc.)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "rehab",
+        "path": "/api/fit/rehab",
+        "price": "$0.10",
+        "description": "Sports medicine rehabilitation protocol",
+        "params": {
+          "injury": {
+            "type": "string",
+            "description": "Injury description (e.g. ACL tear, rotator cuff strain, Achilles tendinopathy)",
+            "required": true
+          },
+          "sport": {
+            "type": "string",
+            "description": "Target sport or activity for return-to-sport phase",
+            "required": false
+          },
+          "fitness_level": {
+            "type": "string",
+            "description": "Pre-injury fitness level (recreational, competitive, elite)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "sleep",
+        "path": "/api/fit/sleep",
+        "price": "$0.10",
+        "description": "Athletic sleep optimization and CBT-I protocol",
+        "params": {
+          "issue": {
+            "type": "string",
+            "description": "Sleep issue (e.g. trouble falling asleep, early waking, poor recovery despite sleep, jet-lag)",
+            "required": false
+          },
+          "training_schedule": {
+            "type": "string",
+            "description": "Training schedule context (e.g. morning workouts, evening training, two-a-days)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "plateau",
+        "path": "/api/fit/plateau",
+        "price": "$0.10",
+        "description": "Training plateau analysis and breakthrough protocol",
+        "params": {
+          "goal": {
+            "type": "string",
+            "description": "Goal that has plateaued (muscle-gain, fat-loss, strength, endurance, body-recomposition)",
+            "required": true
+          },
+          "duration": {
+            "type": "string",
+            "description": "How long the plateau has lasted (e.g. 6 weeks, 3 months)",
+            "required": false
+          },
+          "current_routine": {
+            "type": "string",
+            "description": "Brief description of current training and diet approach",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "race",
+        "path": "/api/fit/race",
+        "price": "$0.10",
+        "description": "Race training plan built backwards from event date",
+        "params": {
+          "race_type": {
+            "type": "string",
+            "description": "Race type (5K, 10K, half-marathon, marathon, triathlon-sprint, triathlon-olympic, ironman, OCR)",
+            "required": true
+          },
+          "race_date": {
+            "type": "string",
+            "description": "Race date (YYYY-MM-DD) — plan is built backwards from this date",
+            "required": true
+          },
+          "current_fitness": {
+            "type": "string",
+            "description": "Current fitness level and recent training context",
+            "required": false
+          },
+          "runs_per_week": {
+            "type": "string",
+            "description": "Available training days per week",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "footballpulse": {
+    "name": "FootballPulse",
+    "baseUrl": "https://footballpulse-six.vercel.app",
+    "description": "Global football/soccer betting intelligence API — match previews, Asian handicap, live in-play intel, value bets, accumulators, league stats, player intelligence, corner/booking markets, clean sheet p",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "match-preview",
+        "path": "/api/match-preview",
+        "price": "$0.15",
+        "description": "Match preview — team form, H2H, injuries, xG comparison, key battles, predicted score, and primary bet",
+        "params": {
+          "home": {
+            "type": "string",
+            "description": "home",
+            "required": true
+          },
+          "away": {
+            "type": "string",
+            "description": "away",
+            "required": true
+          },
+          "league": {
+            "type": "string",
+            "description": "league",
+            "required": false
+          },
+          "date": {
+            "type": "string",
+            "description": "date",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "value-bets",
+        "path": "/api/value-bets",
+        "price": "$0.15",
+        "description": "Value bets — EV analysis across 1X2, BTTS, over/under 2.5, and Asian handicap for any matchday",
+        "params": {
+          "league": {
+            "type": "string",
+            "description": "e.g. PL, PD, BL1, SA, FL1, CL",
+            "required": true
+          },
+          "date": {
+            "type": "string",
+            "description": "date",
+            "required": false
+          },
+          "market": {
+            "type": "string",
+            "description": "market",
+            "required": false,
+            "example": "all"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "asian-handicap",
+        "path": "/api/asian-handicap",
+        "price": "$0.15",
+        "description": "Asian handicap — quarter/half-ball line selection, Pinnacle/Macau intelligence, sharp money indicators",
+        "params": {
+          "home": {
+            "type": "string",
+            "description": "home",
+            "required": true
+          },
+          "away": {
+            "type": "string",
+            "description": "away",
+            "required": true
+          },
+          "line": {
+            "type": "string",
+            "description": "e.g. -0.5, +1.5, -1.75",
+            "required": false
+          },
+          "league": {
+            "type": "string",
+            "description": "league",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "live-intel",
+        "path": "/api/live-intel",
+        "price": "$0.15",
+        "description": "Live in-play intelligence — momentum, xG trajectory, dangerous attacks, substitution impact, in-play bets",
+        "params": {
+          "home": {
+            "type": "string",
+            "description": "home",
+            "required": true
+          },
+          "away": {
+            "type": "string",
+            "description": "away",
+            "required": true
+          },
+          "minute": {
+            "type": "string",
+            "description": "minute",
+            "required": false
+          },
+          "score": {
+            "type": "string",
+            "description": "e.g. 1-0",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "accumulator",
+        "path": "/api/accumulator",
+        "price": "$0.15",
+        "description": "Accumulator builder — evidence-based multi-match parlay with EV analysis, banker pick, stake guide",
+        "params": {
+          "leagues": {
+            "type": "string",
+            "description": "leagues",
+            "required": false
+          },
+          "date": {
+            "type": "string",
+            "description": "date",
+            "required": false
+          },
+          "strategy": {
+            "type": "string",
+            "description": "strategy",
+            "required": false,
+            "example": "value"
+          },
+          "max_legs": {
+            "type": "string",
+            "description": "max_legs",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "league-pulse",
+        "path": "/api/league-pulse",
+        "price": "$0.10",
+        "description": "League intelligence — standings, top scorers, over/under rates, BTTS rates, betting angles",
+        "params": {
+          "league": {
+            "type": "string",
+            "description": "e.g. PL, PD, BL1, SA, FL1, CL, DED, PPL, BSA",
+            "required": true
+          },
+          "season": {
+            "type": "string",
+            "description": "season",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "player-intel",
+        "path": "/api/player-intel",
+        "price": "$0.10",
+        "description": "Player intelligence — goals, assists, xG, injury status, market value, FPL value, card risk",
+        "params": {
+          "player": {
+            "type": "string",
+            "description": "player",
+            "required": true
+          },
+          "team": {
+            "type": "string",
+            "description": "team",
+            "required": false
+          },
+          "league": {
+            "type": "string",
+            "description": "league",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "corner-cards",
+        "path": "/api/corner-cards",
+        "price": "$0.10",
+        "description": "Specialty markets — corner statistics, booking points, referee tendencies, over/under probability",
+        "params": {
+          "home": {
+            "type": "string",
+            "description": "home",
+            "required": true
+          },
+          "away": {
+            "type": "string",
+            "description": "away",
+            "required": true
+          },
+          "referee": {
+            "type": "string",
+            "description": "referee",
+            "required": false
+          },
+          "competition": {
+            "type": "string",
+            "description": "competition",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "clean-sheet",
+        "path": "/api/clean-sheet",
+        "price": "$0.10",
+        "description": "Clean sheet probability — GK stats, defensive metrics, BTTS probability, under 2.5 market analysis",
+        "params": {
+          "team": {
+            "type": "string",
+            "description": "team",
+            "required": true
+          },
+          "league": {
+            "type": "string",
+            "description": "league",
+            "required": false
+          },
+          "home_away": {
+            "type": "string",
+            "description": "home_away",
+            "required": false,
+            "example": "home"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "transfer-watch",
+        "path": "/api/transfer-watch",
+        "price": "$0.10",
+        "description": "Transfer market intelligence — rumours with credibility ratings, squad impact, market valuations",
+        "params": {
+          "team": {
+            "type": "string",
+            "description": "team",
+            "required": false
+          },
+          "player": {
+            "type": "string",
+            "description": "player",
+            "required": false
+          },
+          "league": {
+            "type": "string",
+            "description": "league",
+            "required": false
+          },
+          "window": {
+            "type": "string",
+            "description": "window",
+            "required": false,
+            "example": "summer"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "franchisepulse": {
+    "name": "FranchisePulse",
+    "baseUrl": "https://franchisepulse-six.vercel.app",
+    "description": "Global franchise intelligence API. AI-synthesized franchise discovery, FDD analysis, total cost modeling, SBA loan analysis, resale valuation, online/absentee franchise opportunities, and franchise br",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "fdd",
+        "path": "/api/franchise/fdd",
+        "price": "$0.10",
+        "description": "Franchise Disclosure Document analysis",
+        "params": {
+          "franchisor": {
+            "type": "string",
+            "description": "franchisor",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "discover",
+        "path": "/api/franchise/discover",
+        "price": "$0.10",
+        "description": "Franchise opportunity discovery",
+        "params": {
+          "industry": {
+            "type": "string",
+            "description": "industry",
+            "required": false
+          },
+          "investment_max": {
+            "type": "string",
+            "description": "investment_max",
+            "required": false
+          },
+          "type": {
+            "type": "string",
+            "description": "new_unit|resale|both",
+            "required": false
+          },
+          "territory": {
+            "type": "string",
+            "description": "territory",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "compare",
+        "path": "/api/franchise/compare",
+        "price": "$0.10",
+        "description": "Side-by-side franchise comparison",
+        "params": {
+          "concepts": {
+            "type": "string",
+            "description": "Comma-separated franchise names (min 2)",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "vet",
+        "path": "/api/franchise/vet",
+        "price": "$0.10",
+        "description": "Franchise due diligence",
+        "params": {
+          "franchisor": {
+            "type": "string",
+            "description": "franchisor",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "total-cost",
+        "path": "/api/franchise/total-cost",
+        "price": "$0.10",
+        "description": "All-in investment and cost analysis",
+        "params": {
+          "franchisor": {
+            "type": "string",
+            "description": "franchisor",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "resale",
+        "path": "/api/franchise/resale",
+        "price": "$0.10",
+        "description": "Existing franchise units for sale",
+        "params": {
+          "industry": {
+            "type": "string",
+            "description": "industry",
+            "required": false
+          },
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": false
+          },
+          "max_price": {
+            "type": "string",
+            "description": "max_price",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "online",
+        "path": "/api/franchise/online",
+        "price": "$0.10",
+        "description": "Online business acquisition discovery",
+        "params": {
+          "category": {
+            "type": "string",
+            "description": "SaaS|content|ecommerce|newsletter|app|service",
+            "required": false
+          },
+          "min_revenue": {
+            "type": "string",
+            "description": "min_revenue",
+            "required": false
+          },
+          "max_multiple": {
+            "type": "string",
+            "description": "max_multiple",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "sba",
+        "path": "/api/franchise/sba",
+        "price": "$0.10",
+        "description": "SBA eligibility and franchise financing",
+        "params": {
+          "franchisor": {
+            "type": "string",
+            "description": "franchisor",
+            "required": false
+          },
+          "loan_amount": {
+            "type": "string",
+            "description": "loan_amount",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "broker",
+        "path": "/api/franchise/broker",
+        "price": "$0.10",
+        "description": "Franchise broker and consultant guidance",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": false
+          },
+          "specialty": {
+            "type": "string",
+            "description": "specialty",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "gamepulse": {
+    "name": "GamePulse",
+    "baseUrl": "https://gamepulse-zeta.vercel.app",
+    "description": "Global gaming intelligence API. AI-synthesized meta analysis, tier lists, gaming hardware recommendations, PC specs optimization, esports match predictions, TCG card valuations (MTG, Pokémon, Yu-Gi-Oh",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "deals",
+        "path": "/api/gaming/deals",
+        "price": "$0.10",
+        "description": "Game deals",
+        "params": {
+          "genre": {
+            "type": "string",
+            "description": "e.g. rpg, action, strategy, fps",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "worth-it",
+        "path": "/api/gaming/worth-it",
+        "price": "$0.10",
+        "description": "Buy or wait verdict",
+        "params": {
+          "game": {
+            "type": "string",
+            "description": "Game title or slug e.g. elden-ring, cyberpunk-2077",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "meta",
+        "path": "/api/gaming/meta",
+        "price": "$0.10",
+        "description": "Game meta analysis",
+        "params": {
+          "game": {
+            "type": "string",
+            "description": "game",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "trending",
+        "path": "/api/gaming/trending",
+        "price": "$0.10",
+        "description": "Trending games",
+        "params": {}
+      },
+      {
+        "action": "setup",
+        "path": "/api/gaming/setup",
+        "price": "$0.10",
+        "description": "PC gaming setup",
+        "params": {
+          "budget": {
+            "type": "string",
+            "description": "Budget in USD ($200-$10,000)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "price",
+        "path": "/api/cards/price",
+        "price": "$0.10",
+        "description": "Card price analysis",
+        "params": {
+          "card": {
+            "type": "string",
+            "description": "card",
+            "required": true
+          },
+          "game": {
+            "type": "string",
+            "description": "game",
+            "required": false,
+            "example": "pokemon"
+          }
+        }
+      },
+      {
+        "action": "invest",
+        "path": "/api/cards/invest",
+        "price": "$0.10",
+        "description": "Set investment analysis",
+        "params": {
+          "set": {
+            "type": "string",
+            "description": "set",
+            "required": true
+          },
+          "game": {
+            "type": "string",
+            "description": "game",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "deal",
+        "path": "/api/cards/deal",
+        "price": "$0.10",
+        "description": "eBay card deal finder",
+        "params": {
+          "card": {
+            "type": "string",
+            "description": "card",
+            "required": false
+          },
+          "game": {
+            "type": "string",
+            "description": "game",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "matches",
+        "path": "/api/esports/matches",
+        "price": "$0.10",
+        "description": "Esports matches",
+        "params": {
+          "game": {
+            "type": "string",
+            "description": "game",
+            "required": false,
+            "example": "lol"
+          }
+        }
+      },
+      {
+        "action": "team",
+        "path": "/api/esports/team",
+        "price": "$0.10",
+        "description": "Esports team profile",
+        "params": {
+          "name": {
+            "type": "string",
+            "description": "name",
+            "required": true
+          },
+          "game": {
+            "type": "string",
+            "description": "game",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "betting",
+        "path": "/api/esports/betting",
+        "price": "$0.10",
+        "description": "Esports betting analysis",
+        "params": {
+          "game": {
+            "type": "string",
+            "description": "game",
+            "required": false
+          },
+          "match": {
+            "type": "string",
+            "description": "match",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "tournament",
+        "path": "/api/esports/tournament",
+        "price": "$0.10",
+        "description": "Tournament breakdown",
+        "params": {
+          "name": {
+            "type": "string",
+            "description": "name",
+            "required": true
+          },
+          "game": {
+            "type": "string",
+            "description": "game",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "geopoliticalpulse": {
+    "name": "GeopoliticalPulse",
+    "baseUrl": "https://geopoliticalpulse.vercel.app",
+    "description": "Real-time geopolitical intelligence for investors, compliance teams, and AI agents. Political risk, conflict monitoring, sanctions, elections, trade tensions, and regional situational awareness for 19",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "country-risk",
+        "path": "/api/geopolitical/country-risk",
+        "price": "$0.10",
+        "description": "Country Risk Assessment",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Country name or code (e.g., Russia, China, Iran, Venezuela, Nigeria)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language ISO 639-1 code (en, es, fr, de, ar, zh, pt, ja, ko, ru)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "conflict-scan",
+        "path": "/api/geopolitical/conflict-scan",
+        "price": "$0.10",
+        "description": "Conflict Scan",
+        "params": {
+          "region": {
+            "type": "string",
+            "description": "Country or region to scan (e.g., Ukraine, Gaza, Sudan, Myanmar, Sahel)",
+            "required": false
+          },
+          "days": {
+            "type": "string",
+            "description": "Lookback window in days",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language ISO 639-1 code",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "sanctions-intel",
+        "path": "/api/geopolitical/sanctions-intel",
+        "price": "$0.10",
+        "description": "Sanctions Intelligence",
+        "params": {
+          "target": {
+            "type": "string",
+            "description": "Country, entity, or individual to assess (e.g., Russia, Iran, North Korea, Huawei)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language ISO 639-1 code",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "election-watch",
+        "path": "/api/geopolitical/election-watch",
+        "price": "$0.10",
+        "description": "Election Watch",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Country holding an election (e.g., France, Germany, Brazil, India, Mexico)",
+            "required": false
+          },
+          "year": {
+            "type": "string",
+            "description": "Election year (e.g., 2025, 2026)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language ISO 639-1 code",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "trade-tension",
+        "path": "/api/geopolitical/trade-tension",
+        "price": "$0.10",
+        "description": "Trade Tension Analyzer",
+        "params": {
+          "country_a": {
+            "type": "string",
+            "description": "First country (e.g., US, EU, China, India)",
+            "required": false
+          },
+          "country_b": {
+            "type": "string",
+            "description": "Second country (e.g., China, Russia, Taiwan, Mexico)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language ISO 639-1 code",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "regime-brief",
+        "path": "/api/geopolitical/regime-brief",
+        "price": "$0.10",
+        "description": "Regime Brief",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Country to profile (e.g., China, Russia, Saudi Arabia, Iran, Turkey)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language ISO 639-1 code",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "event-impact",
+        "path": "/api/geopolitical/event-impact",
+        "price": "$0.10",
+        "description": "Geopolitical Event Impact",
+        "params": {
+          "event": {
+            "type": "string",
+            "description": "Event to analyze (e.g., Russia-Ukraine ceasefire, Taiwan strait incident, Iran nuclear deal)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language ISO 639-1 code",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "instability-signal",
+        "path": "/api/geopolitical/instability-signal",
+        "price": "$0.10",
+        "description": "Instability Early Warning Signal",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Country to assess (e.g., Haiti, Pakistan, Ethiopia, Venezuela, Lebanon)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language ISO 639-1 code",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "supply-chain-risk",
+        "path": "/api/geopolitical/supply-chain-risk",
+        "price": "$0.10",
+        "description": "Supply Chain Geopolitical Risk",
+        "params": {
+          "sector": {
+            "type": "string",
+            "description": "Sector or commodity (e.g., semiconductors, rare earths, lithium, pharmaceuticals, energy, food)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language ISO 639-1 code",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "regional-brief",
+        "path": "/api/geopolitical/regional-brief",
+        "price": "$0.10",
+        "description": "Regional Situational Brief",
+        "params": {
+          "region": {
+            "type": "string",
+            "description": "World region (Middle East, Eastern Europe, East Asia, Southeast Asia, Sub-Saharan Africa, Sahel, Latin America, etc.)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language ISO 639-1 code",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "govspendpulse": {
+    "name": "GovSpendPulse",
+    "baseUrl": "https://govspendpulse.vercel.app",
+    "description": "Global government procurement intelligence API. 9 endpoints covering US federal contracts (USASpending.gov), active solicitations (SAM.gov), EU tenders (TED), UK contracts, global development bank opp",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "us-contracts",
+        "path": "/api/govspend/us-contracts",
+        "price": "$0.10",
+        "description": "US federal contract awards",
+        "params": {
+          "keyword": {
+            "type": "string",
+            "description": "Search term — e.g. cybersecurity, cloud computing, management consulting",
+            "required": false
+          },
+          "naics": {
+            "type": "string",
+            "description": "NAICS code — e.g. 541512 (computer systems design)",
+            "required": false
+          },
+          "state": {
+            "type": "string",
+            "description": "Two-letter US state code — e.g. VA, CA, TX",
+            "required": false
+          },
+          "year_from": {
+            "type": "string",
+            "description": "Fiscal year start — e.g. 2024, 2025",
+            "required": false
+          },
+          "limit": {
+            "type": "string",
+            "description": "Number of results (5, 10, or 20)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "us-opportunities",
+        "path": "/api/govspend/us-opportunities",
+        "price": "$0.10",
+        "description": "US active solicitations (SAM.gov)",
+        "params": {
+          "keyword": {
+            "type": "string",
+            "description": "Search term — e.g. software development, janitorial, IT support",
+            "required": false
+          },
+          "naics": {
+            "type": "string",
+            "description": "NAICS code filter",
+            "required": false
+          },
+          "active": {
+            "type": "string",
+            "description": "Only return open solicitations",
+            "required": false
+          },
+          "limit": {
+            "type": "string",
+            "description": "Number of results",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "eu-tenders",
+        "path": "/api/govspend/eu-tenders",
+        "price": "$0.10",
+        "description": "EU procurement tenders (TED)",
+        "params": {
+          "keyword": {
+            "type": "string",
+            "description": "Search term — e.g. artificial intelligence, renewable energy, cybersecurity",
+            "required": false
+          },
+          "country": {
+            "type": "string",
+            "description": "ISO 2-letter country code — e.g. DE, FR, PL, NL (blank = all EU)",
+            "required": false
+          },
+          "cpv": {
+            "type": "string",
+            "description": "CPV procurement code — e.g. 72000000 (IT services)",
+            "required": false
+          },
+          "limit": {
+            "type": "string",
+            "description": "limit",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "uk-contracts",
+        "path": "/api/govspend/uk-contracts",
+        "price": "$0.10",
+        "description": "UK government contracts",
+        "params": {
+          "keyword": {
+            "type": "string",
+            "description": "Search term — e.g. digital transformation, facilities management, cyber",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "global-opportunities",
+        "path": "/api/govspend/global-opportunities",
+        "price": "$0.10",
+        "description": "Global procurement opportunities",
+        "params": {
+          "keyword": {
+            "type": "string",
+            "description": "Sector or service — e.g. water infrastructure, health IT, renewable energy",
+            "required": false
+          },
+          "regions": {
+            "type": "string",
+            "description": "Comma-separated regions: australia, canada, asia, africa, latam, mena, un",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "agency-intel",
+        "path": "/api/govspend/agency-intel",
+        "price": "$0.10",
+        "description": "US agency spending intelligence",
+        "params": {
+          "agency": {
+            "type": "string",
+            "description": "Agency name or abbreviation — e.g. DHS, VA, HHS, DoD, NASA, GSA",
+            "required": true
+          },
+          "keyword": {
+            "type": "string",
+            "description": "Optional focus area — e.g. cybersecurity, cloud, healthcare IT",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "competitor-awards",
+        "path": "/api/govspend/competitor-awards",
+        "price": "$0.10",
+        "description": "Competitor federal award analysis",
+        "params": {
+          "keyword": {
+            "type": "string",
+            "description": "Market keyword — e.g. cybersecurity, cloud computing, logistics",
+            "required": true
+          },
+          "naics": {
+            "type": "string",
+            "description": "NAICS code to narrow results",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "development-bank",
+        "path": "/api/govspend/development-bank",
+        "price": "$0.10",
+        "description": "Development bank procurement",
+        "params": {
+          "keyword": {
+            "type": "string",
+            "description": "Sector or service — e.g. health systems, road construction, education technology",
+            "required": false
+          },
+          "country": {
+            "type": "string",
+            "description": "Borrower country — e.g. Nigeria, Bangladesh, Indonesia",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "contract-brief",
+        "path": "/api/govspend/contract-brief",
+        "price": "$0.10",
+        "description": "Full contract intelligence brief",
+        "params": {
+          "keyword": {
+            "type": "string",
+            "description": "Contract title, topic, or solicitation number — e.g. 'DHS zero trust SOC' or 'N0017824R0012'",
+            "required": true
+          },
+          "agency": {
+            "type": "string",
+            "description": "Agency to narrow search — e.g. DHS, Air Force, VA",
+            "required": false
+          },
+          "naics": {
+            "type": "string",
+            "description": "NAICS code",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "grantpulse": {
+    "name": "GrantPulse",
+    "baseUrl": "https://grantpulse-three.vercel.app",
+    "description": "Grant discovery and application intelligence API. 8 endpoints powered by Grants.gov, USASpending.gov, and Claude. All endpoints require x402 payment (USDC on Base mainnet). Flagship match endpoint inc",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "match",
+        "path": "/api/grant/match",
+        "price": "$0.10",
+        "description": "Personalized grant matching",
+        "params": {
+          "org_type": {
+            "type": "string",
+            "description": "nonprofit | small_business | individual | public_university | private_university | state_government | local_government | tribal | for_profit",
+            "required": true
+          },
+          "mission": {
+            "type": "string",
+            "description": "mission",
+            "required": true
+          },
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": false
+          },
+          "sector": {
+            "type": "string",
+            "description": "arts | health | education | environment | technology | agriculture | community | housing | science",
+            "required": false
+          },
+          "size": {
+            "type": "string",
+            "description": "size",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "federal",
+        "path": "/api/grant/federal",
+        "price": "$0.10",
+        "description": "Federal grant search",
+        "params": {
+          "keyword": {
+            "type": "string",
+            "description": "keyword",
+            "required": true
+          },
+          "eligibility": {
+            "type": "string",
+            "description": "eligibility",
+            "required": false
+          },
+          "category": {
+            "type": "string",
+            "description": "category",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "state",
+        "path": "/api/grant/state",
+        "price": "$0.10",
+        "description": "State grant programs",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "state",
+            "required": true
+          },
+          "sector": {
+            "type": "string",
+            "description": "sector",
+            "required": false
+          },
+          "org_type": {
+            "type": "string",
+            "description": "org_type",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "foundation",
+        "path": "/api/grant/foundation",
+        "price": "$0.10",
+        "description": "Foundation grant intelligence",
+        "params": {
+          "mission": {
+            "type": "string",
+            "description": "mission",
+            "required": true
+          },
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": false
+          },
+          "size": {
+            "type": "string",
+            "description": "size",
+            "required": false
+          },
+          "org_type": {
+            "type": "string",
+            "description": "org_type",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "eligibility",
+        "path": "/api/grant/eligibility",
+        "price": "$0.10",
+        "description": "Grant eligibility analysis",
+        "params": {
+          "grant_name": {
+            "type": "string",
+            "description": "grant_name",
+            "required": true
+          },
+          "org_type": {
+            "type": "string",
+            "description": "org_type",
+            "required": true
+          },
+          "org_profile": {
+            "type": "string",
+            "description": "org_profile",
+            "required": false
+          },
+          "agency": {
+            "type": "string",
+            "description": "agency",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "apply",
+        "path": "/api/grant/apply",
+        "price": "$0.10",
+        "description": "Grant application strategy",
+        "params": {
+          "grant_name": {
+            "type": "string",
+            "description": "grant_name",
+            "required": true
+          },
+          "agency": {
+            "type": "string",
+            "description": "agency",
+            "required": false
+          },
+          "org_type": {
+            "type": "string",
+            "description": "org_type",
+            "required": false
+          },
+          "mission": {
+            "type": "string",
+            "description": "mission",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "deadline",
+        "path": "/api/grant/deadline",
+        "price": "$0.10",
+        "description": "Grant deadline tracker",
+        "params": {
+          "category": {
+            "type": "string",
+            "description": "category",
+            "required": false
+          },
+          "org_type": {
+            "type": "string",
+            "description": "org_type",
+            "required": false
+          },
+          "days": {
+            "type": "string",
+            "description": "days",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "writer",
+        "path": "/api/grant/writer",
+        "price": "$0.10",
+        "description": "Grant narrative drafting",
+        "params": {
+          "section": {
+            "type": "string",
+            "description": "section",
+            "required": true,
+            "example": "problem_statement"
+          },
+          "org_type": {
+            "type": "string",
+            "description": "org_type",
+            "required": true
+          },
+          "mission": {
+            "type": "string",
+            "description": "mission",
+            "required": true
+          },
+          "grant_name": {
+            "type": "string",
+            "description": "grant_name",
+            "required": false
+          },
+          "org_description": {
+            "type": "string",
+            "description": "org_description",
+            "required": false
+          },
+          "project_description": {
+            "type": "string",
+            "description": "project_description",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "eu",
+        "path": "/api/grant/eu",
+        "price": "$0.10",
+        "description": "EU funding intelligence",
+        "params": {
+          "org_type": {
+            "type": "string",
+            "description": "org_type",
+            "required": false
+          },
+          "sector": {
+            "type": "string",
+            "description": "sector",
+            "required": false
+          },
+          "mission": {
+            "type": "string",
+            "description": "mission",
+            "required": false
+          },
+          "country": {
+            "type": "string",
+            "description": "EU member state",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "global",
+        "path": "/api/grant/global",
+        "price": "$0.10",
+        "description": "Global development funding",
+        "params": {
+          "sector": {
+            "type": "string",
+            "description": "sector",
+            "required": false
+          },
+          "country": {
+            "type": "string",
+            "description": "country",
+            "required": false
+          },
+          "org_type": {
+            "type": "string",
+            "description": "org_type",
+            "required": false
+          },
+          "mission": {
+            "type": "string",
+            "description": "mission",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "gridpulse": {
+    "name": "GridPulse",
+    "baseUrl": "https://gridpulse-amber.vercel.app",
+    "description": "Global energy grid intelligence API. NREL + EIA + Open-Meteo data synthesis. Home solar feasibility, electricity rate analysis, time-of-use optimization, EV charging cost modeling, battery storage ROI",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "prices",
+        "path": "/api/energy/prices",
+        "price": "$0.10",
+        "description": "Electricity prices by state",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "2-letter US state code (TX, CA, NY, etc.)",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "grid",
+        "path": "/api/energy/grid",
+        "price": "$0.10",
+        "description": "Power grid status by region",
+        "params": {
+          "region": {
+            "type": "string",
+            "description": "ercot | caiso | pjm | miso | isone | nyiso | spp",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "renewable",
+        "path": "/api/energy/renewable",
+        "price": "$0.10",
+        "description": "Renewable energy profile by state",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "2-letter US state code",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "natural-gas",
+        "path": "/api/energy/natural-gas",
+        "price": "$0.10",
+        "description": "Henry Hub natural gas briefing",
+        "params": {}
+      },
+      {
+        "action": "forecast",
+        "path": "/api/energy/forecast",
+        "price": "$0.10",
+        "description": "90-day energy forecast by state",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "2-letter US state code",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "ev-cost",
+        "path": "/api/energy/ev-cost",
+        "price": "$0.10",
+        "description": "EV charging cost vs gasoline",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "2-letter US state code",
+            "required": true
+          },
+          "miles": {
+            "type": "string",
+            "description": "Annual miles (1,000-100,000)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "solar",
+        "path": "/api/energy/solar",
+        "price": "$0.10",
+        "description": "Home solar feasibility analysis",
+        "params": {
+          "zip": {
+            "type": "string",
+            "description": "US ZIP code (preferred)",
+            "required": false
+          },
+          "state": {
+            "type": "string",
+            "description": "2-letter state code (if no zip)",
+            "required": false
+          },
+          "system_kw": {
+            "type": "string",
+            "description": "System size in kW (2-20)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "appliance",
+        "path": "/api/energy/appliance",
+        "price": "$0.10",
+        "description": "Home appliance energy cost calculator",
+        "params": {
+          "appliance": {
+            "type": "string",
+            "description": "Appliance type (hvac, water-heater, refrigerator, washer, dryer, dishwasher, lighting)",
+            "required": true
+          },
+          "state": {
+            "type": "string",
+            "description": "2-letter US state code for local electricity rates",
+            "required": false
+          },
+          "usage_hours": {
+            "type": "string",
+            "description": "Daily usage hours (default varies by appliance)",
+            "required": false
+          },
+          "age_years": {
+            "type": "string",
+            "description": "Appliance age in years (affects upgrade ROI calculation)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "battery",
+        "path": "/api/energy/battery",
+        "price": "$0.10",
+        "description": "Home battery storage analysis",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "2-letter US state code",
+            "required": false
+          },
+          "monthly_bill": {
+            "type": "string",
+            "description": "Average monthly electricity bill in USD",
+            "required": false
+          },
+          "has_solar": {
+            "type": "string",
+            "description": "true if existing or planned solar system",
+            "required": false
+          },
+          "outage_priority": {
+            "type": "string",
+            "description": "Priority for outage backup (essential-only, whole-home, ev-charging)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "carbon",
+        "path": "/api/energy/carbon",
+        "price": "$0.10",
+        "description": "Household electricity carbon footprint",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "2-letter US state code",
+            "required": false
+          },
+          "monthly_kwh": {
+            "type": "string",
+            "description": "Average monthly electricity consumption in kWh",
+            "required": false
+          },
+          "household_size": {
+            "type": "string",
+            "description": "Number of people in household",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "community-solar",
+        "path": "/api/energy/community-solar",
+        "price": "$0.10",
+        "description": "Community solar enrollment by ZIP code",
+        "params": {
+          "zip": {
+            "type": "string",
+            "description": "US ZIP code",
+            "required": true
+          },
+          "monthly_bill": {
+            "type": "string",
+            "description": "Average monthly electricity bill in USD",
+            "required": false
+          },
+          "credit_preference": {
+            "type": "string",
+            "description": "Preference for bill credit vs. direct payment programs",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "tou",
+        "path": "/api/energy/tou",
+        "price": "$0.10",
+        "description": "Time-of-use rate optimization",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "2-letter US state code",
+            "required": true
+          },
+          "utility": {
+            "type": "string",
+            "description": "Utility name (e.g., PGE, SCE, ConEd) for utility-specific TOU plans",
+            "required": false
+          },
+          "has_ev": {
+            "type": "string",
+            "description": "true if household has an EV (major TOU savings driver)",
+            "required": false
+          },
+          "has_solar": {
+            "type": "string",
+            "description": "true if household has solar (affects TOU export credit optimization)",
+            "required": false
+          },
+          "monthly_bill": {
+            "type": "string",
+            "description": "Average monthly electricity bill in USD",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "harvestpulse": {
+    "name": "HarvestPulse",
+    "baseUrl": "https://harvestpulse.vercel.app",
+    "description": "Global farm-to-table and agricultural intelligence API. USDA + ERS data synthesis. Local food finder (farmers markets, CSAs, on-farm markets), seasonal produce calendars, organic certification lookup,",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "find",
+        "path": "/api/harvest/find",
+        "price": "$0.10",
+        "description": "Local Farm & Market Finder",
+        "params": {
+          "zip": {
+            "type": "string",
+            "description": "US ZIP code",
+            "required": true
+          },
+          "radius": {
+            "type": "string",
+            "description": "Search radius in miles",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "season",
+        "path": "/api/harvest/season",
+        "price": "$0.10",
+        "description": "Seasonal Produce Calendar",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "2-letter US state code (e.g. CA, TX, NY)",
+            "required": false
+          },
+          "country": {
+            "type": "string",
+            "description": "Country (for international calendar)",
+            "required": false,
+            "example": "UK"
+          },
+          "month": {
+            "type": "string",
+            "description": "Month (1-12). Defaults to current month.",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "labels",
+        "path": "/api/harvest/labels",
+        "price": "$0.10",
+        "description": "Food Label Decoder",
+        "params": {
+          "label": {
+            "type": "string",
+            "description": "Label to decode (e.g. free-range, natural, pasture-raised, grass-fed, non-GMO)",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "organic",
+        "path": "/api/harvest/organic",
+        "price": "$0.10",
+        "description": "Certified Organic Farm Finder",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "2-letter US state code",
+            "required": true
+          },
+          "city": {
+            "type": "string",
+            "description": "City name (optional filter)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "dirty-dozen",
+        "path": "/api/harvest/dirty-dozen",
+        "price": "$0.10",
+        "description": "Dirty Dozen & Clean Fifteen",
+        "params": {}
+      },
+      {
+        "action": "food-hub",
+        "path": "/api/harvest/food-hub",
+        "price": "$0.10",
+        "description": "Regional Food Hub Finder",
+        "params": {
+          "zip": {
+            "type": "string",
+            "description": "US ZIP code",
+            "required": false
+          },
+          "radius": {
+            "type": "string",
+            "description": "Search radius in miles",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "regenerative",
+        "path": "/api/harvest/regenerative",
+        "price": "$0.10",
+        "description": "Regenerative Agriculture Guide",
+        "params": {
+          "query": {
+            "type": "string",
+            "description": "Search terms (e.g. beef, dairy, grain)",
+            "required": false
+          },
+          "state": {
+            "type": "string",
+            "description": "US state for local context",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "designations",
+        "path": "/api/harvest/designations",
+        "price": "$0.10",
+        "description": "Global Food Designations",
+        "params": {
+          "product": {
+            "type": "string",
+            "description": "Product name (e.g. parmigiano-reggiano, champagne, prosciutto-di-parma, roquefort)",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "agritourism",
+        "path": "/api/harvest/agritourism",
+        "price": "$0.10",
+        "description": "Agritourism & U-Pick Finder",
+        "params": {
+          "zip": {
+            "type": "string",
+            "description": "US ZIP code",
+            "required": false
+          },
+          "state": {
+            "type": "string",
+            "description": "US state for broader search",
+            "required": false
+          },
+          "radius": {
+            "type": "string",
+            "description": "Search radius in miles",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "csa",
+        "path": "/api/harvest/csa",
+        "price": "$0.10",
+        "description": "CSA Evaluation Guide",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "City/state or region",
+            "required": false
+          },
+          "household_size": {
+            "type": "string",
+            "description": "Number of people in household",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "cost",
+        "path": "/api/harvest/cost",
+        "price": "$0.10",
+        "description": "Local vs. Conventional Cost Analysis",
+        "params": {
+          "items": {
+            "type": "string",
+            "description": "Produce items to compare (space or comma separated)",
+            "required": false
+          },
+          "location": {
+            "type": "string",
+            "description": "Region or city for local market context",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "roadmap",
+        "path": "/api/harvest/roadmap",
+        "price": "$0.10",
+        "description": "Farm-to-Table Lifestyle Roadmap",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "City, state, or region",
+            "required": false
+          },
+          "weekly_budget": {
+            "type": "string",
+            "description": "Weekly food budget in USD",
+            "required": false
+          },
+          "goals": {
+            "type": "string",
+            "description": "Specific goals (e.g. reduce pesticides, support local farms, eat seasonally)",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "herbapulse": {
+    "name": "HerbaPulse",
+    "baseUrl": "https://herbapulse.vercel.app",
+    "description": "Global herbal medicine and botanical intelligence API. PubMed-grounded herb profiles, drug-herb interaction checker, traditional medicine system guides (Ayurveda, TCM, Amazonian, African), herbal reme",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "herb",
+        "path": "/api/herba/herb",
+        "price": "$0.10",
+        "description": "Herb profile",
+        "params": {
+          "herb": {
+            "type": "string",
+            "description": "herb",
+            "required": true
+          },
+          "tradition": {
+            "type": "string",
+            "description": "tradition",
+            "required": false,
+            "example": "tcm"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "remedy",
+        "path": "/api/herba/remedy",
+        "price": "$0.10",
+        "description": "Cross-cultural remedy lookup",
+        "params": {
+          "condition": {
+            "type": "string",
+            "description": "condition",
+            "required": true
+          },
+          "tradition": {
+            "type": "string",
+            "description": "tradition",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "ingredient",
+        "path": "/api/herba/ingredient",
+        "price": "$0.10",
+        "description": "Supplement decoder",
+        "params": {
+          "product": {
+            "type": "string",
+            "description": "product",
+            "required": false
+          },
+          "ingredients": {
+            "type": "string",
+            "description": "ingredients",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "interaction",
+        "path": "/api/herba/interaction",
+        "price": "$0.10",
+        "description": "Herb-drug interaction checker",
+        "params": {
+          "herb": {
+            "type": "string",
+            "description": "herb",
+            "required": true
+          },
+          "drug": {
+            "type": "string",
+            "description": "drug",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "skin",
+        "path": "/api/herba/skin",
+        "price": "$0.10",
+        "description": "Natural skincare ingredient",
+        "params": {
+          "ingredient": {
+            "type": "string",
+            "description": "ingredient",
+            "required": true
+          },
+          "concern": {
+            "type": "string",
+            "description": "anti-aging | acne | hydration | sensitivity",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "tradition",
+        "path": "/api/herba/tradition",
+        "price": "$0.10",
+        "description": "Healing tradition deep dive",
+        "params": {
+          "tradition": {
+            "type": "string",
+            "description": "tradition",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "practitioner",
+        "path": "/api/herba/practitioner",
+        "price": "$0.10",
+        "description": "Practitioner guide",
+        "params": {
+          "type": {
+            "type": "string",
+            "description": "naturopath | herbalist | tcm | ayurveda | homeopath | integrative-md",
+            "required": true
+          },
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "cannabis",
+        "path": "/api/herba/cannabis",
+        "price": "$0.10",
+        "description": "Cannabis and cannabinoid intelligence",
+        "params": {
+          "topic": {
+            "type": "string",
+            "description": "anxiety | pain | sleep | epilepsy | nausea | inflammation | general",
+            "required": false
+          },
+          "compound": {
+            "type": "string",
+            "description": "Default: both",
+            "required": false,
+            "example": "cbd"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "homepulse": {
+    "name": "HomePulse",
+    "baseUrl": "https://homepulse-seven.vercel.app",
+    "description": "Global home intelligence API. AI-synthesized home maintenance checklists, improvement ROI analysis, neighborhood research, smart home integration, energy efficiency guidance, contractor task briefings",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "value",
+        "path": "/api/home/value",
+        "price": "$0.10",
+        "description": "Home value estimate",
+        "params": {
+          "address": {
+            "type": "string",
+            "description": "Street address",
+            "required": false
+          },
+          "zip": {
+            "type": "string",
+            "description": "ZIP code",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "neighborhood",
+        "path": "/api/home/neighborhood",
+        "price": "$0.10",
+        "description": "Neighborhood analysis",
+        "params": {
+          "zip": {
+            "type": "string",
+            "description": "zip",
+            "required": false
+          },
+          "city": {
+            "type": "string",
+            "description": "city",
+            "required": false
+          },
+          "state": {
+            "type": "string",
+            "description": "state",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "improve",
+        "path": "/api/home/improve",
+        "price": "$0.10",
+        "description": "Home improvement ROI analysis",
+        "params": {
+          "project": {
+            "type": "string",
+            "description": "Project type (e.g. kitchen-remodel, deck-addition, new-roof)",
+            "required": true
+          },
+          "home_value": {
+            "type": "string",
+            "description": "Current estimated home value in USD",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "maintain",
+        "path": "/api/home/maintain",
+        "price": "$0.10",
+        "description": "Seasonal maintenance checklist",
+        "params": {
+          "season": {
+            "type": "string",
+            "description": "Defaults to current season",
+            "required": false,
+            "example": "spring"
+          },
+          "region": {
+            "type": "string",
+            "description": "US region or state (e.g. Northeast, Pacific Northwest)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "rent",
+        "path": "/api/home/rent",
+        "price": "$0.10",
+        "description": "Rental market analysis",
+        "params": {
+          "zip": {
+            "type": "string",
+            "description": "zip",
+            "required": false
+          },
+          "city": {
+            "type": "string",
+            "description": "city",
+            "required": false
+          },
+          "state": {
+            "type": "string",
+            "description": "2-letter state code required for HUD FMR data",
+            "required": false
+          },
+          "bedrooms": {
+            "type": "string",
+            "description": "bedrooms",
+            "required": false
+          },
+          "county": {
+            "type": "string",
+            "description": "County name hint for HUD FMR matching",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "immigrationpulse": {
+    "name": "ImmigrationPulse",
+    "baseUrl": "https://immigrationpulse.vercel.app",
+    "description": "Global immigration intelligence API serving 281M+ migrants. 11 endpoints covering visa requirements, PR pathways, points calculators (Express Entry CRS, SkillSelect), digital nomad visas, citizenship ",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "visa",
+        "path": "/api/visa",
+        "price": "$0.10",
+        "description": "Visa requirements — any nationality + any destination",
+        "params": {
+          "nationality": {
+            "type": "string",
+            "description": "nationality",
+            "required": true,
+            "example": "Indian"
+          },
+          "destination": {
+            "type": "string",
+            "description": "destination",
+            "required": true,
+            "example": "Canada"
+          },
+          "category": {
+            "type": "string",
+            "description": "category",
+            "required": false,
+            "example": "all"
+          },
+          "lang": {
+            "type": "string",
+            "description": "BCP-47 language code (e.g. es, fr, pt, hi, zh, ar)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "pathway",
+        "path": "/api/pathway",
+        "price": "$0.10",
+        "description": "Permanent residency roadmap — every pathway ranked for nationality + destination",
+        "params": {
+          "nationality": {
+            "type": "string",
+            "description": "nationality",
+            "required": true,
+            "example": "Filipino"
+          },
+          "destination": {
+            "type": "string",
+            "description": "destination",
+            "required": true,
+            "example": "Canada"
+          },
+          "occupation": {
+            "type": "string",
+            "description": "Job title or NOC/SOC code — improves pathway matching",
+            "required": false
+          },
+          "education": {
+            "type": "string",
+            "description": "Highest education level (e.g. bachelor, master, PhD)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "nomad",
+        "path": "/api/nomad",
+        "price": "$0.10",
+        "description": "Digital nomad visa finder — 50+ countries ranked by income threshold + lifestyle",
+        "params": {
+          "income": {
+            "type": "string",
+            "description": "Monthly income in USD",
+            "required": true,
+            "example": "3500"
+          },
+          "nationality": {
+            "type": "string",
+            "description": "nationality",
+            "required": false,
+            "example": "American"
+          },
+          "preference": {
+            "type": "string",
+            "description": "preference",
+            "required": false,
+            "example": "balanced"
+          },
+          "region": {
+            "type": "string",
+            "description": "Filter by region (e.g. Europe, Southeast Asia, Latin America, Caribbean)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "citizenship",
+        "path": "/api/citizenship",
+        "price": "$0.10",
+        "description": "Citizenship by investment, ancestry, and naturalization intelligence",
+        "params": {
+          "type": {
+            "type": "string",
+            "description": "type",
+            "required": true,
+            "example": "investment"
+          },
+          "budget": {
+            "type": "string",
+            "description": "Budget in USD for investment citizenship (e.g. 150000, 500000, 1000000)",
+            "required": false
+          },
+          "ancestry": {
+            "type": "string",
+            "description": "Country for ancestry citizenship check (e.g. Italy, Ireland, Germany)",
+            "required": false
+          },
+          "nationality": {
+            "type": "string",
+            "description": "nationality",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "status",
+        "path": "/api/status",
+        "price": "$0.10",
+        "description": "USCIS case status decoder with processing time context",
+        "params": {
+          "receipt": {
+            "type": "string",
+            "description": "USCIS receipt number (e.g. MSC2190012345, SRC2112345678)",
+            "required": false
+          },
+          "form": {
+            "type": "string",
+            "description": "Form type (e.g. I-485, I-130, I-765, N-400, I-140, I-539)",
+            "required": false
+          },
+          "status": {
+            "type": "string",
+            "description": "Status message to decode (e.g. 'Case Was Received', 'Request for Evidence', 'Case Was Approved')",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "bulletin",
+        "path": "/api/bulletin",
+        "price": "$0.10",
+        "description": "US Visa Bulletin decoder — priority dates, filing chances, wait estimates",
+        "params": {
+          "category": {
+            "type": "string",
+            "description": "Preference category: EB-1|EB-2|EB-3|EB-4|EB-5|F-1|F-2A|F-2B|F-3|F-4",
+            "required": true,
+            "example": "EB-2"
+          },
+          "chargeability": {
+            "type": "string",
+            "description": "Country of chargeability (usually birth country)",
+            "required": true,
+            "example": "India"
+          },
+          "priority_date": {
+            "type": "string",
+            "description": "Your priority date (YYYY-MM-DD) — enables personalized filing eligibility check",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "retirement",
+        "path": "/api/retirement",
+        "price": "$0.10",
+        "description": "Global retirement visa intelligence — best countries for retirees",
+        "params": {
+          "nationality": {
+            "type": "string",
+            "description": "nationality",
+            "required": true,
+            "example": "American"
+          },
+          "budget": {
+            "type": "string",
+            "description": "Monthly income/pension budget in USD",
+            "required": true,
+            "example": "2500"
+          },
+          "priority": {
+            "type": "string",
+            "description": "priority",
+            "required": false,
+            "example": "balanced"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "compare",
+        "path": "/api/compare",
+        "price": "$0.10",
+        "description": "Side-by-side immigration comparison across multiple destination countries",
+        "params": {
+          "nationality": {
+            "type": "string",
+            "description": "nationality",
+            "required": true,
+            "example": "Nigerian"
+          },
+          "destinations": {
+            "type": "string",
+            "description": "Comma-separated destination countries (2–5)",
+            "required": true,
+            "example": "UK,Canada,Germany"
+          },
+          "occupation": {
+            "type": "string",
+            "description": "Job title — improves pathway accuracy",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "rights",
+        "path": "/api/rights",
+        "price": "$0.10",
+        "description": "Immigrant rights by country and visa type",
+        "params": {
+          "destination": {
+            "type": "string",
+            "description": "destination",
+            "required": true,
+            "example": "United States"
+          },
+          "visa_status": {
+            "type": "string",
+            "description": "Visa type or immigration status (e.g. H-1B, F-1, Green Card, TN, Skilled Worker, ILR)",
+            "required": true,
+            "example": "H-1B"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "cost",
+        "path": "/api/cost",
+        "price": "$0.10",
+        "description": "Complete immigration cost breakdown — government fees + attorney + hidden costs",
+        "params": {
+          "visa_type": {
+            "type": "string",
+            "description": "Visa or form type (e.g. I-485, EB-2, H-1B, F-1, Canada Express Entry, UK Skilled Worker)",
+            "required": true,
+            "example": "I-485"
+          },
+          "destination": {
+            "type": "string",
+            "description": "destination",
+            "required": true,
+            "example": "United States"
+          },
+          "with_attorney": {
+            "type": "string",
+            "description": "Include attorney fee estimate (default: true)",
+            "required": false
+          },
+          "family_size": {
+            "type": "string",
+            "description": "Number of dependents to include in cost model",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "points",
+        "path": "/api/points",
+        "price": "$0.10",
+        "description": "Skilled-worker points calculator — Canada Express Entry CRS, Australia SkillSelect, UK PBS, Germany Chancenkarte, Austria Red-White-Red Card",
+        "params": {
+          "system": {
+            "type": "string",
+            "description": "Which immigration points system to evaluate. Use 'any' to assess all relevant systems.",
+            "required": false,
+            "example": "express-entry"
+          },
+          "age": {
+            "type": "string",
+            "description": "Applicant age in years (e.g. '31')",
+            "required": false
+          },
+          "education": {
+            "type": "string",
+            "description": "Highest level of education completed",
+            "required": false,
+            "example": "phd"
+          },
+          "clb": {
+            "type": "string",
+            "description": "Canadian Language Benchmark score (for Express Entry, e.g. '9'). CLB 9 = IELTS 7.0; CLB 10 = IELTS 7.5+.",
+            "required": false
+          },
+          "ielts": {
+            "type": "string",
+            "description": "Overall IELTS band score (e.g. '7.5') — used if clb not provided",
+            "required": false
+          },
+          "work_years": {
+            "type": "string",
+            "description": "Years of skilled work experience outside the destination country",
+            "required": false
+          },
+          "local_work": {
+            "type": "string",
+            "description": "Years of work experience inside the destination country",
+            "required": false
+          },
+          "job_offer": {
+            "type": "string",
+            "description": "Whether applicant has a valid job offer from a qualifying employer",
+            "required": false,
+            "example": "true"
+          },
+          "nomination": {
+            "type": "string",
+            "description": "Whether applicant has a provincial/state nomination (adds +600 CRS for Canada)",
+            "required": false,
+            "example": "true"
+          },
+          "partner": {
+            "type": "string",
+            "description": "Whether applicant has a spouse/common-law partner with qualifying skills/language",
+            "required": false,
+            "example": "true"
+          },
+          "occupation": {
+            "type": "string",
+            "description": "Job title or NOC/ANZSCO occupation code (e.g. 'software engineer', '2173')",
+            "required": false
+          },
+          "nationality": {
+            "type": "string",
+            "description": "Applicant nationality (for context on restrictions)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (BCP-47 code, e.g. 'hi' for Hindi, 'zh' for Chinese)",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "insurepulse": {
+    "name": "InsurePulse",
+    "baseUrl": "https://insurepulse.vercel.app",
+    "description": "AI-synthesized insurance intelligence. Auto coverage analysis, life insurance needs calculator, homeowners gap finder, annual coverage audit, and renters insurance guidance. All endpoints require x402",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "auto",
+        "path": "/api/insure/auto",
+        "price": "$0.10",
+        "description": "Auto insurance analysis",
+        "params": {
+          "profile": {
+            "type": "string",
+            "description": "Driver profile description (e.g. 'clean record 10 years, married, homeowner')",
+            "required": false
+          },
+          "state": {
+            "type": "string",
+            "description": "State of registration (e.g. 'Texas', 'CA')",
+            "required": false
+          },
+          "vehicle": {
+            "type": "string",
+            "description": "Vehicle description (e.g. '2020 Toyota Camry')",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "life",
+        "path": "/api/insure/life",
+        "price": "$0.10",
+        "description": "Life insurance needs calculator",
+        "params": {
+          "age": {
+            "type": "string",
+            "description": "Applicant age",
+            "required": false
+          },
+          "income": {
+            "type": "string",
+            "description": "Annual gross income in USD",
+            "required": false
+          },
+          "dependents": {
+            "type": "string",
+            "description": "Number of financial dependents",
+            "required": false
+          },
+          "mortgage": {
+            "type": "string",
+            "description": "Remaining mortgage balance in USD",
+            "required": false
+          },
+          "debt": {
+            "type": "string",
+            "description": "Other debt (student loans, auto, credit card) in USD",
+            "required": false
+          },
+          "situation": {
+            "type": "string",
+            "description": "Life situation description (e.g. 'married, 2 kids, dual income')",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "home",
+        "path": "/api/insure/home",
+        "price": "$0.10",
+        "description": "Homeowners insurance gap analysis",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "City and state (e.g. 'Austin TX')",
+            "required": false
+          },
+          "value": {
+            "type": "string",
+            "description": "Home value or purchase price in USD",
+            "required": false
+          },
+          "sqft": {
+            "type": "string",
+            "description": "Square footage",
+            "required": false
+          },
+          "current_coverage": {
+            "type": "string",
+            "description": "Current dwelling coverage amount in USD",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "audit",
+        "path": "/api/insure/audit",
+        "price": "$0.10",
+        "description": "Annual insurance coverage audit",
+        "params": {
+          "policies": {
+            "type": "string",
+            "description": "Current policies held (e.g. 'auto,home,life,umbrella')",
+            "required": false
+          },
+          "life_stage": {
+            "type": "string",
+            "description": "Recent life events (e.g. 'new baby', 'home purchase', 'retirement')",
+            "required": false
+          },
+          "net_worth": {
+            "type": "string",
+            "description": "Estimated net worth in USD (for umbrella/liability sizing)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "renters",
+        "path": "/api/insure/renters",
+        "price": "$0.10",
+        "description": "Renters insurance guide",
+        "params": {
+          "zip": {
+            "type": "string",
+            "description": "ZIP code for rate context",
+            "required": false
+          },
+          "value": {
+            "type": "string",
+            "description": "Estimated personal property value in USD",
+            "required": false
+          },
+          "dog": {
+            "type": "string",
+            "description": "Whether tenant has a dog (affects liability)",
+            "required": false
+          },
+          "net_worth": {
+            "type": "string",
+            "description": "Estimated net worth in USD",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "legalpulse": {
+    "name": "LegalPulse",
+    "baseUrl": "https://legalpulse-rho.vercel.app",
+    "description": "Global legal intelligence API — 10 endpoints covering the full legal lifecycle for individuals, entrepreneurs, and small businesses. Demand letter generation ($0.25), contract analysis + red flag iden",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "letter",
+        "path": "/api/legal/letter",
+        "price": "$0.10",
+        "description": "Advocacy letter writer",
+        "params": {
+          "type": {
+            "type": "string",
+            "description": "type",
+            "required": false,
+            "example": "medical-bill"
+          },
+          "situation": {
+            "type": "string",
+            "description": "situation",
+            "required": true
+          },
+          "state": {
+            "type": "string",
+            "description": "state",
+            "required": false
+          },
+          "amount": {
+            "type": "string",
+            "description": "amount",
+            "required": false
+          },
+          "recipient": {
+            "type": "string",
+            "description": "recipient",
+            "required": false
+          },
+          "outcome": {
+            "type": "string",
+            "description": "outcome",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "contract",
+        "path": "/api/legal/contract",
+        "price": "$0.10",
+        "description": "Contract clause review",
+        "params": {
+          "clause": {
+            "type": "string",
+            "description": "clause",
+            "required": true
+          },
+          "contract_type": {
+            "type": "string",
+            "description": "contract_type",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "tenant",
+        "path": "/api/legal/tenant",
+        "price": "$0.10",
+        "description": "Tenant rights by state",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "state",
+            "required": true
+          },
+          "issue": {
+            "type": "string",
+            "description": "issue",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "employment",
+        "path": "/api/legal/employment",
+        "price": "$0.10",
+        "description": "Employment law rights",
+        "params": {
+          "issue": {
+            "type": "string",
+            "description": "issue",
+            "required": true
+          },
+          "state": {
+            "type": "string",
+            "description": "state",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "business",
+        "path": "/api/legal/business",
+        "price": "$0.10",
+        "description": "Business formation comparison",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "state",
+            "required": true
+          },
+          "entity_type": {
+            "type": "string",
+            "description": "entity_type",
+            "required": false
+          },
+          "situation": {
+            "type": "string",
+            "description": "situation",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "estate",
+        "path": "/api/legal/estate",
+        "price": "$0.10",
+        "description": "Estate planning checklist",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "state",
+            "required": true
+          },
+          "situation": {
+            "type": "string",
+            "description": "situation",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "consumer",
+        "path": "/api/legal/consumer",
+        "price": "$0.10",
+        "description": "Consumer rights — FDCPA, FCRA, FTC",
+        "params": {
+          "issue": {
+            "type": "string",
+            "description": "issue",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "small-claims",
+        "path": "/api/legal/small-claims",
+        "price": "$0.10",
+        "description": "Small claims court guide",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "state",
+            "required": true
+          },
+          "situation": {
+            "type": "string",
+            "description": "situation",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "ip",
+        "path": "/api/legal/ip",
+        "price": "$0.10",
+        "description": "Intellectual property guide",
+        "params": {
+          "type": {
+            "type": "string",
+            "description": "type",
+            "required": false,
+            "example": "trademark"
+          },
+          "situation": {
+            "type": "string",
+            "description": "situation",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "rights",
+        "path": "/api/legal/rights",
+        "price": "$0.10",
+        "description": "Know your rights",
+        "params": {
+          "situation": {
+            "type": "string",
+            "description": "situation",
+            "required": true
+          }
+        }
+      }
+    ]
+  },
+  "longevitypulse": {
+    "name": "LongevityPulse",
+    "baseUrl": "https://longevitypulse.vercel.app",
+    "description": "Global longevity intelligence API — biomarker interpretation, supplement evidence, personalized protocols, clinical trials, Blue Zone research, WHO country longevity profiles, epigenetic clocks, dieta",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "biomarker",
+        "path": "/api/longevity/biomarker",
+        "price": "$0.10",
+        "description": "Biomarker interpretation through longevity science lens",
+        "params": {
+          "biomarker": {
+            "type": "string",
+            "description": "Biomarker name — e.g. ApoB | hs-CRP | HbA1c | testosterone | IGF-1 | homocysteine | Lp(a) | ferritin | vitamin D | DHEA-S",
+            "required": true
+          },
+          "value": {
+            "type": "string",
+            "description": "Lab result with unit — e.g. 85 mg/dL | 2.1 mg/L | 5.4% | 420 ng/dL (optional — enables personalized assessment)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language: en|es|fr|de|ja|zh|ko|pt|ar|hi (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "supplement-intel",
+        "path": "/api/longevity/supplement-intel",
+        "price": "$0.10",
+        "description": "Evidence-graded longevity supplement intelligence",
+        "params": {
+          "compound": {
+            "type": "string",
+            "description": "Compound name — e.g. NMN | NR | berberine | spermidine | urolithin A | fisetin | quercetin | alpha-ketoglutarate | resveratrol | taurine",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "protocol-builder",
+        "path": "/api/longevity/protocol-builder",
+        "price": "$0.10",
+        "description": "Personalized longevity protocol — exercise, nutrition, sleep, supplements",
+        "params": {
+          "age": {
+            "type": "string",
+            "description": "Age in years — e.g. 35 | 52 | 65",
+            "required": true
+          },
+          "sex": {
+            "type": "string",
+            "description": "Biological sex — male | female",
+            "required": false
+          },
+          "goals": {
+            "type": "string",
+            "description": "Longevity goals — e.g. maximize healthspan | cardiovascular health | cognitive longevity | muscle preservation | reverse biological age",
+            "required": false
+          },
+          "conditions": {
+            "type": "string",
+            "description": "Health conditions — e.g. type 2 diabetes | hypertension | none",
+            "required": false
+          },
+          "budget": {
+            "type": "string",
+            "description": "Budget level — low | moderate | high | $200/month",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "clinical-trials",
+        "path": "/api/longevity/clinical-trials",
+        "price": "$0.10",
+        "description": "Search active longevity clinical trials globally from ClinicalTrials.gov",
+        "params": {
+          "condition": {
+            "type": "string",
+            "description": "Condition or intervention — e.g. aging | rapamycin | metformin | NMN | senolytics | caloric restriction | Alzheimer prevention",
+            "required": false
+          },
+          "recruiting_only": {
+            "type": "string",
+            "description": "Show only recruiting trials (default: true)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "blue-zone",
+        "path": "/api/longevity/blue-zone",
+        "price": "$0.10",
+        "description": "Blue Zone intelligence — world longevity hotspots deep-dive",
+        "params": {
+          "zone": {
+            "type": "string",
+            "description": "Blue Zone or region — e.g. Okinawa | Sardinia | Ikaria | Nicoya | Loma Linda | Blue Zones overview | Hunza | Vilcabamba",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "country-longevity",
+        "path": "/api/longevity/country-longevity",
+        "price": "$0.10",
+        "description": "WHO country longevity profile — life expectancy, HALE, healthcare, initiatives",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Country name — e.g. Japan | Singapore | Spain | South Korea | Switzerland | Costa Rica | Australia | United States | India | Nigeria",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "epigenetic-clock",
+        "path": "/api/longevity/epigenetic-clock",
+        "price": "$0.10",
+        "description": "Epigenetic aging clocks — biological age science, testing, and reversal",
+        "params": {
+          "topic": {
+            "type": "string",
+            "description": "Topic — e.g. GrimAge | DunedinPACE | biological age overview | how to reverse biological aging | epigenetic reprogramming | how to test biol",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "diet-intel",
+        "path": "/api/longevity/diet-intel",
+        "price": "$0.10",
+        "description": "Evidence-graded dietary analysis for longevity and healthspan",
+        "params": {
+          "diet": {
+            "type": "string",
+            "description": "Diet pattern — e.g. Mediterranean | time-restricted eating | fasting mimicking diet | Blue Zone plant-based | MIND diet | caloric restrictio",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "longevity-drug",
+        "path": "/api/longevity/longevity-drug",
+        "price": "$0.10",
+        "description": "Pharmaceutical longevity intelligence — rapamycin, metformin, senolytics",
+        "params": {
+          "drug": {
+            "type": "string",
+            "description": "Drug name — e.g. rapamycin | metformin | acarbose | dasatinib | fisetin | senolytics | empagliflozin | semaglutide",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "longevity-clinic",
+        "path": "/api/longevity/longevity-clinic",
+        "price": "$0.10",
+        "description": "Global longevity clinic guide — destinations, treatments, red flags",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Country to research — e.g. Switzerland | Panama | Mexico | Thailand | Singapore | Israel | Germany | Japan | Colombia",
+            "required": false
+          },
+          "treatment": {
+            "type": "string",
+            "description": "Treatment of interest — e.g. stem cell therapy | NAD+ IV | peptide therapy | hyperbaric oxygen | plasmapheresis | ozone therapy",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "macropulse": {
+    "name": "MacroPulse",
+    "baseUrl": "https://macropulse-alpha.vercel.app",
+    "description": "Real-time macro intelligence for forex and CFD traders. All endpoints require x402 payment (USDC on Base mainnet) via the PAYMENT-SIGNATURE header.",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "session-brief",
+        "path": "/api/session-brief",
+        "price": "$0.10",
+        "description": "Forex session brief",
+        "params": {
+          "session": {
+            "type": "string",
+            "description": "Trading session. Auto-detected from UTC time if omitted.",
+            "required": false,
+            "example": "asian"
+          }
+        }
+      },
+      {
+        "action": "event-pulse",
+        "path": "/api/event-pulse",
+        "price": "$0.10",
+        "description": "Economic event deep-dive",
+        "params": {
+          "event": {
+            "type": "string",
+            "description": "Economic event identifier",
+            "required": true,
+            "example": "NFP"
+          }
+        }
+      },
+      {
+        "action": "crypto-pulse",
+        "path": "/api/crypto-pulse",
+        "price": "$0.10",
+        "description": "Crypto market context",
+        "params": {}
+      },
+      {
+        "action": "commodities-pulse",
+        "path": "/api/commodities-pulse",
+        "price": "$0.10",
+        "description": "Commodities brief",
+        "params": {}
+      },
+      {
+        "action": "equities-pulse",
+        "path": "/api/equities-pulse",
+        "price": "$0.10",
+        "description": "Equities pulse",
+        "params": {
+          "session": {
+            "type": "string",
+            "description": "Trading session. Auto-detected from UTC time if omitted.",
+            "required": false,
+            "example": "asian"
+          }
+        }
+      },
+      {
+        "action": "calendar",
+        "path": "/api/calendar",
+        "price": "$0.10",
+        "description": "Weekly economic calendar",
+        "params": {}
+      }
+    ]
+  },
+  "marketpulse": {
+    "name": "MarketPulse",
+    "baseUrl": "https://marketpulse-brown.vercel.app",
+    "description": "Marketing intelligence API for the AI era. LLM visibility, channel mix, content briefs, ad copy, local SEO, email sequences, competitor gap analysis, social strategy, ROI forecasting, and technical SE",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "llm-visibility",
+        "path": "/api/market/llm-visibility",
+        "price": "$0.10",
+        "description": "LLM visibility analysis",
+        "params": {
+          "brand": {
+            "type": "string",
+            "description": "brand",
+            "required": false
+          },
+          "topic": {
+            "type": "string",
+            "description": "topic",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "content-brief",
+        "path": "/api/market/content-brief",
+        "price": "$0.10",
+        "description": "Dual-optimized content brief",
+        "params": {
+          "topic": {
+            "type": "string",
+            "description": "topic",
+            "required": true
+          },
+          "audience": {
+            "type": "string",
+            "description": "audience",
+            "required": false
+          },
+          "goal": {
+            "type": "string",
+            "description": "goal",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "channel-mix",
+        "path": "/api/market/channel-mix",
+        "price": "$0.10",
+        "description": "Marketing channel mix strategy",
+        "params": {
+          "business_type": {
+            "type": "string",
+            "description": "business_type",
+            "required": true
+          },
+          "budget": {
+            "type": "string",
+            "description": "budget",
+            "required": false
+          },
+          "goals": {
+            "type": "string",
+            "description": "goals",
+            "required": false
+          },
+          "stage": {
+            "type": "string",
+            "description": "stage",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "roi-forecast",
+        "path": "/api/market/roi-forecast",
+        "price": "$0.10",
+        "description": "Marketing ROI forecast",
+        "params": {
+          "industry": {
+            "type": "string",
+            "description": "industry",
+            "required": true
+          },
+          "budget": {
+            "type": "string",
+            "description": "budget",
+            "required": true
+          },
+          "channels": {
+            "type": "string",
+            "description": "channels",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "competitor-gap",
+        "path": "/api/market/competitor-gap",
+        "price": "$0.10",
+        "description": "Competitor gap analysis",
+        "params": {
+          "competitor": {
+            "type": "string",
+            "description": "competitor",
+            "required": true
+          },
+          "industry": {
+            "type": "string",
+            "description": "industry",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "ad-copy",
+        "path": "/api/market/ad-copy",
+        "price": "$0.10",
+        "description": "Ready-to-use ad copy variants",
+        "params": {
+          "platform": {
+            "type": "string",
+            "description": "platform",
+            "required": true
+          },
+          "product": {
+            "type": "string",
+            "description": "product",
+            "required": true
+          },
+          "audience": {
+            "type": "string",
+            "description": "audience",
+            "required": false
+          },
+          "goal": {
+            "type": "string",
+            "description": "goal",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "email-sequence",
+        "path": "/api/market/email-sequence",
+        "price": "$0.10",
+        "description": "Email nurture sequence",
+        "params": {
+          "product": {
+            "type": "string",
+            "description": "product",
+            "required": true
+          },
+          "goal": {
+            "type": "string",
+            "description": "goal",
+            "required": true
+          },
+          "sequence_type": {
+            "type": "string",
+            "description": "sequence_type",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "social-strategy",
+        "path": "/api/market/social-strategy",
+        "price": "$0.10",
+        "description": "Platform social media strategy",
+        "params": {
+          "platform": {
+            "type": "string",
+            "description": "platform",
+            "required": true
+          },
+          "industry": {
+            "type": "string",
+            "description": "industry",
+            "required": true
+          },
+          "goal": {
+            "type": "string",
+            "description": "goal",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "local-seo",
+        "path": "/api/market/local-seo",
+        "price": "$0.10",
+        "description": "Local SEO optimization guide",
+        "params": {
+          "business": {
+            "type": "string",
+            "description": "business",
+            "required": true
+          },
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "seo-audit",
+        "path": "/api/market/seo-audit",
+        "price": "$0.10",
+        "description": "Technical SEO audit",
+        "params": {
+          "website": {
+            "type": "string",
+            "description": "website",
+            "required": true
+          },
+          "industry": {
+            "type": "string",
+            "description": "industry",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "mealpulse": {
+    "name": "MealPulse",
+    "baseUrl": "https://mealpulse.vercel.app",
+    "description": "Global meal planning and culinary intelligence API. AI-synthesized meal plans, recipe generation, dietary restriction guidance, grocery optimization, pantry utilization, batch cooking, food budgeting,",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "plan",
+        "path": "/api/meal/plan",
+        "price": "$0.10",
+        "description": "Weekly meal plan",
+        "params": {
+          "dietary": {
+            "type": "string",
+            "description": "dietary",
+            "required": false
+          },
+          "budget": {
+            "type": "string",
+            "description": "budget",
+            "required": false
+          },
+          "servings": {
+            "type": "string",
+            "description": "servings",
+            "required": false
+          },
+          "cuisine": {
+            "type": "string",
+            "description": "cuisine",
+            "required": false
+          },
+          "preferences": {
+            "type": "string",
+            "description": "preferences",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "recipe",
+        "path": "/api/meal/recipe",
+        "price": "$0.10",
+        "description": "Recipe with technique tips",
+        "params": {
+          "dish": {
+            "type": "string",
+            "description": "dish",
+            "required": true
+          },
+          "dietary": {
+            "type": "string",
+            "description": "dietary",
+            "required": false
+          },
+          "servings": {
+            "type": "string",
+            "description": "servings",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "grocery",
+        "path": "/api/meal/grocery",
+        "price": "$0.10",
+        "description": "Grocery list by store section",
+        "params": {
+          "meals": {
+            "type": "string",
+            "description": "meals",
+            "required": true
+          },
+          "servings": {
+            "type": "string",
+            "description": "servings",
+            "required": false
+          },
+          "budget": {
+            "type": "string",
+            "description": "budget",
+            "required": false
+          },
+          "store": {
+            "type": "string",
+            "description": "store",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "pantry",
+        "path": "/api/meal/pantry",
+        "price": "$0.10",
+        "description": "Pantry-to-meal ideas",
+        "params": {
+          "ingredients": {
+            "type": "string",
+            "description": "ingredients",
+            "required": true
+          },
+          "dietary": {
+            "type": "string",
+            "description": "dietary",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "batch",
+        "path": "/api/meal/batch",
+        "price": "$0.10",
+        "description": "Batch cooking guide",
+        "params": {
+          "meals": {
+            "type": "string",
+            "description": "meals",
+            "required": true
+          },
+          "servings": {
+            "type": "string",
+            "description": "servings",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "dietary",
+        "path": "/api/meal/dietary",
+        "price": "$0.10",
+        "description": "Dietary restriction guide",
+        "params": {
+          "dietary": {
+            "type": "string",
+            "description": "dietary",
+            "required": true
+          },
+          "concern": {
+            "type": "string",
+            "description": "concern",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "budget",
+        "path": "/api/meal/budget",
+        "price": "$0.10",
+        "description": "Budget meal strategy",
+        "params": {
+          "budget": {
+            "type": "string",
+            "description": "budget",
+            "required": false
+          },
+          "people": {
+            "type": "string",
+            "description": "people",
+            "required": false
+          },
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": false
+          },
+          "dietary": {
+            "type": "string",
+            "description": "dietary",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "substitute",
+        "path": "/api/meal/substitute",
+        "price": "$0.10",
+        "description": "Ingredient substitutions",
+        "params": {
+          "ingredient": {
+            "type": "string",
+            "description": "ingredient",
+            "required": true
+          },
+          "reason": {
+            "type": "string",
+            "description": "reason",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "leftover",
+        "path": "/api/meal/leftover",
+        "price": "$0.10",
+        "description": "Leftover transformation",
+        "params": {
+          "leftovers": {
+            "type": "string",
+            "description": "leftovers",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "kitchen",
+        "path": "/api/meal/kitchen",
+        "price": "$0.10",
+        "description": "Kitchen equipment advisor",
+        "params": {
+          "cooking_style": {
+            "type": "string",
+            "description": "cooking_style",
+            "required": false
+          },
+          "budget": {
+            "type": "string",
+            "description": "budget",
+            "required": false
+          },
+          "experience": {
+            "type": "string",
+            "description": "experience",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "mindpulse": {
+    "name": "MindPulse",
+    "baseUrl": "https://mindpulse-lilac.vercel.app",
+    "description": "Global mental health intelligence API. Evidence-based guidance on therapy platform matching, mental health assessment, burnout, psychiatric medication context, coping techniques, sleep disorders (CBT-",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "match",
+        "path": "/api/mind/match",
+        "price": "$0.10",
+        "description": "Therapy platform matching",
+        "params": {
+          "concerns": {
+            "type": "string",
+            "description": "Mental health concerns (e.g., depression,anxiety,trauma)",
+            "required": false
+          },
+          "budget": {
+            "type": "string",
+            "description": "Monthly budget in USD (e.g., 60, 100, 200)",
+            "required": false
+          },
+          "modality": {
+            "type": "string",
+            "description": "Preferred therapy modality (CBT, DBT, ACT, coaching)",
+            "required": false
+          },
+          "insurance": {
+            "type": "string",
+            "description": "Insurance carrier or 'self-pay'",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (e.g., es, fr, de, ja)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "assessment",
+        "path": "/api/mind/assessment",
+        "price": "$0.10",
+        "description": "Mental health self-assessment",
+        "params": {
+          "concerns": {
+            "type": "string",
+            "description": "Presenting concerns (e.g., low+mood,loss+of+interest,sleep+problems)",
+            "required": false
+          },
+          "duration": {
+            "type": "string",
+            "description": "How long symptoms have been present (e.g., 3+months)",
+            "required": false
+          },
+          "impact": {
+            "type": "string",
+            "description": "How symptoms impact daily function (mild/moderate/severe)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "burnout",
+        "path": "/api/mind/burnout",
+        "price": "$0.10",
+        "description": "Burnout assessment and recovery protocol",
+        "params": {
+          "situation": {
+            "type": "string",
+            "description": "Describe the burnout situation (e.g., 5+years+ICU+nursing)",
+            "required": false
+          },
+          "duration": {
+            "type": "string",
+            "description": "How long burnout has been present",
+            "required": false
+          },
+          "role": {
+            "type": "string",
+            "description": "Job role or profession",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "medication",
+        "path": "/api/mind/medication",
+        "price": "$0.10",
+        "description": "Psychiatric medication context",
+        "params": {
+          "drug": {
+            "type": "string",
+            "description": "Medication name (generic or brand — e.g., sertraline, Zoloft, quetiapine)",
+            "required": true
+          },
+          "condition": {
+            "type": "string",
+            "description": "Condition it is prescribed for",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "technique",
+        "path": "/api/mind/technique",
+        "price": "$0.10",
+        "description": "Evidence-based coping technique guide",
+        "params": {
+          "concern": {
+            "type": "string",
+            "description": "Mental health concern to address (e.g., panic+attacks, rumination, anger)",
+            "required": false
+          },
+          "situation": {
+            "type": "string",
+            "description": "Specific situation triggering the concern",
+            "required": false
+          },
+          "approach_preference": {
+            "type": "string",
+            "description": "Preferred approach type (CBT, DBT, ACT, mindfulness, somatic)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "sleep",
+        "path": "/api/mind/sleep",
+        "price": "$0.10",
+        "description": "Sleep disorder guidance (CBT-I protocol)",
+        "params": {
+          "concern": {
+            "type": "string",
+            "description": "Sleep concern (insomnia, sleep+apnea, RLS, nightmares, circadian)",
+            "required": false
+          },
+          "duration": {
+            "type": "string",
+            "description": "How long sleep problems have been present",
+            "required": false
+          },
+          "severity": {
+            "type": "string",
+            "description": "Severity description (e.g., unable+to+fall+asleep, waking+frequently)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "grief",
+        "path": "/api/mind/grief",
+        "price": "$0.10",
+        "description": "Grief and loss support",
+        "params": {
+          "situation": {
+            "type": "string",
+            "description": "Describe the loss situation",
+            "required": false
+          },
+          "time_since_loss": {
+            "type": "string",
+            "description": "Time since the loss (e.g., 2+weeks, 3+months)",
+            "required": false
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of loss (spousal, parent, child, pet, relationship, identity, health)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "relationship",
+        "path": "/api/mind/relationship",
+        "price": "$0.10",
+        "description": "Relationship and communication guidance",
+        "params": {
+          "situation": {
+            "type": "string",
+            "description": "Describe the relationship situation",
+            "required": false
+          },
+          "relationship_type": {
+            "type": "string",
+            "description": "Type of relationship (romantic, family, friendship, work)",
+            "required": false
+          },
+          "concern": {
+            "type": "string",
+            "description": "Primary concern (communication, trust, conflict, boundaries, intimacy)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "workplace",
+        "path": "/api/mind/workplace",
+        "price": "$0.10",
+        "description": "Workplace mental health guidance",
+        "params": {
+          "situation": {
+            "type": "string",
+            "description": "Describe the workplace situation",
+            "required": false
+          },
+          "role": {
+            "type": "string",
+            "description": "Job role or employment type",
+            "required": false
+          },
+          "jurisdiction": {
+            "type": "string",
+            "description": "Country/jurisdiction for legal framework (US, UK, CA, AU)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "crisis",
+        "path": "/api/mind/crisis",
+        "price": "$0.10",
+        "description": "Crisis resource routing — ALWAYS FREE",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "User's country for localized crisis resources",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "nutripulse": {
+    "name": "NutriPulse",
+    "baseUrl": "https://nutripulse.vercel.app",
+    "description": "Global nutrition intelligence API. PubMed-grounded supplement analysis, macro/micronutrient planning, food database lookups, glucose/metabolic health guidance, lab result interpretation, longevity nut",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "research",
+        "path": "/api/nutrition/research",
+        "price": "$0.10",
+        "description": "Nutrition research synthesis",
+        "params": {
+          "topic": {
+            "type": "string",
+            "description": "topic",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "food",
+        "path": "/api/nutrition/food",
+        "price": "$0.10",
+        "description": "Food nutrition profile",
+        "params": {
+          "query": {
+            "type": "string",
+            "description": "query",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "supplement",
+        "path": "/api/nutrition/supplement",
+        "price": "$0.10",
+        "description": "Supplement analysis",
+        "params": {
+          "name": {
+            "type": "string",
+            "description": "name",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "plan",
+        "path": "/api/nutrition/plan",
+        "price": "$0.10",
+        "description": "Personalized nutrition plan",
+        "params": {
+          "goal": {
+            "type": "string",
+            "description": "goal",
+            "required": false,
+            "example": "muscle-gain"
+          },
+          "calories": {
+            "type": "string",
+            "description": "calories",
+            "required": false
+          },
+          "diet": {
+            "type": "string",
+            "description": "diet",
+            "required": false,
+            "example": "omnivore"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "compare",
+        "path": "/api/nutrition/compare",
+        "price": "$0.10",
+        "description": "Food comparison",
+        "params": {
+          "foods": {
+            "type": "string",
+            "description": "Comma-separated food names e.g. chicken,beef,tofu",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "analyze",
+        "path": "/api/nutrition/analyze",
+        "price": "$0.10",
+        "description": "Meal analysis",
+        "params": {
+          "meal": {
+            "type": "string",
+            "description": "meal",
+            "required": true
+          },
+          "goal": {
+            "type": "string",
+            "description": "goal",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "stack",
+        "path": "/api/nutrition/stack",
+        "price": "$0.10",
+        "description": "Supplement stack",
+        "params": {
+          "goal": {
+            "type": "string",
+            "description": "goal",
+            "required": true
+          },
+          "budget": {
+            "type": "string",
+            "description": "budget",
+            "required": false,
+            "example": "budget"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "onchainpulse": {
+    "name": "OnchainPulse",
+    "baseUrl": "https://onchainpulse-nine.vercel.app",
+    "description": "Intelligence API for the onchain financial transition. Decodes legislation, tracks RWA tokenization, models sector scenarios, guides onchain integration. All endpoints require x402 payment (USDC on Ba",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "legislation",
+        "path": "/api/legislation",
+        "price": "$0.10",
+        "description": "Legislative intelligence — plain English bill translation with sector impact",
+        "params": {
+          "q": {
+            "type": "string",
+            "description": "Bill name or topic (e.g. 'GENIUS Act', 'stablecoin regulation', 'MiCA')",
+            "required": false
+          },
+          "jurisdiction": {
+            "type": "string",
+            "description": "Jurisdiction to focus on",
+            "required": false,
+            "example": "us"
+          },
+          "action": {
+            "type": "string",
+            "description": "Type of analysis",
+            "required": false,
+            "example": "summary"
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (ISO 639-1 code)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "rwa",
+        "path": "/api/rwa",
+        "price": "$0.10",
+        "description": "Real world asset intelligence — market data and institutional tracking",
+        "params": {
+          "action": {
+            "type": "string",
+            "description": "Analysis type",
+            "required": false,
+            "example": "market"
+          },
+          "asset_class": {
+            "type": "string",
+            "description": "Specific asset class focus (e.g. 'US Treasuries', 'real estate', 'private credit')",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "scenario",
+        "path": "/api/scenario",
+        "price": "$0.10",
+        "description": "Sector impact scenario modeling — if/then structural analysis",
+        "params": {
+          "trigger": {
+            "type": "string",
+            "description": "The development to model (e.g. 'GENIUS Act passes', 'DTCC full tokenization launch', 'MiCA enforcement begins')",
+            "required": false
+          },
+          "sector": {
+            "type": "string",
+            "description": "Sector to focus on, or 'all' for comprehensive coverage",
+            "required": false
+          },
+          "action": {
+            "type": "string",
+            "description": "action",
+            "required": false,
+            "example": "ifthen"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "transition",
+        "path": "/api/transition",
+        "price": "$0.10",
+        "description": "Onchain transition guide — practical onboarding by type",
+        "params": {
+          "type": {
+            "type": "string",
+            "description": "Type of transition",
+            "required": false,
+            "example": "individual"
+          },
+          "context": {
+            "type": "string",
+            "description": "Additional context about the user's situation",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "monitor",
+        "path": "/api/monitor",
+        "price": "$0.10",
+        "description": "Institutional onchain activity monitor — weekly/monthly brief",
+        "params": {
+          "period": {
+            "type": "string",
+            "description": "period",
+            "required": false,
+            "example": "week"
+          },
+          "topic": {
+            "type": "string",
+            "description": "topic",
+            "required": false,
+            "example": "rwa"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "compliance",
+        "path": "/api/compliance",
+        "price": "$0.10",
+        "description": "Regulatory compliance intelligence — jurisdiction-specific framework guidance",
+        "params": {
+          "jurisdiction": {
+            "type": "string",
+            "description": "jurisdiction",
+            "required": false,
+            "example": "us"
+          },
+          "use_case": {
+            "type": "string",
+            "description": "What the entity wants to do (e.g. 'issue a stablecoin', 'operate a crypto exchange', 'accept USDC payments')",
+            "required": false
+          },
+          "framework": {
+            "type": "string",
+            "description": "Specific framework to focus on (e.g. 'MiCA', 'GENIUS Act')",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "tokenize",
+        "path": "/api/tokenize",
+        "price": "$0.10",
+        "description": "Tokenization intelligence — how to tokenize any asset type",
+        "params": {
+          "asset_type": {
+            "type": "string",
+            "description": "Asset type to analyze (e.g. 'real estate', 'equity', 'bond', 'private credit', 'art')",
+            "required": false
+          },
+          "action": {
+            "type": "string",
+            "description": "action",
+            "required": false,
+            "example": "guide"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "yield",
+        "path": "/api/yield",
+        "price": "$0.10",
+        "description": "Tokenized yield intelligence — live rates and risk-adjusted comparison",
+        "params": {
+          "action": {
+            "type": "string",
+            "description": "action",
+            "required": false,
+            "example": "stablecoin"
+          },
+          "risk": {
+            "type": "string",
+            "description": "Risk tolerance for recommendations framing",
+            "required": false,
+            "example": "low"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "glossary",
+        "path": "/api/glossary",
+        "price": "$0.10",
+        "description": "Plain English decoder — any onchain finance or regulatory term",
+        "params": {
+          "term": {
+            "type": "string",
+            "description": "Term to explain (e.g. 'atomic settlement', 'MiCA', 'CASP', 'yield bearing stablecoin', 'RWA')",
+            "required": false
+          },
+          "context": {
+            "type": "string",
+            "description": "context",
+            "required": false,
+            "example": "regulatory"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "snapshot",
+        "path": "/api/snapshot",
+        "price": "$0.10",
+        "description": "State of the transition — weekly/monthly macro brief",
+        "params": {
+          "scope": {
+            "type": "string",
+            "description": "scope",
+            "required": false,
+            "example": "us"
+          },
+          "timeframe": {
+            "type": "string",
+            "description": "timeframe",
+            "required": false,
+            "example": "weekly"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "parentpulse": {
+    "name": "ParentPulse",
+    "baseUrl": "https://parentpulse.vercel.app",
+    "description": "ParentPulse — child development and parenting intelligence: developmental milestones, nutrition guidance, pediatric health, sleep science, school selection, discipline strategies, childcare cost, and ",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "milestone",
+        "path": "/api/parent/milestone",
+        "price": "$0.10",
+        "description": "Developmental milestone guidance",
+        "params": {
+          "age_months": {
+            "type": "string",
+            "description": "age_months",
+            "required": false,
+            "example": "18"
+          },
+          "concern": {
+            "type": "string",
+            "description": "concern",
+            "required": false,
+            "example": "speech-delay"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false,
+            "example": "en"
+          }
+        }
+      },
+      {
+        "action": "safety",
+        "path": "/api/parent/safety",
+        "price": "$0.10",
+        "description": "Product safety recall check",
+        "params": {
+          "product_type": {
+            "type": "string",
+            "description": "product_type",
+            "required": false,
+            "example": "car-seat"
+          },
+          "brand": {
+            "type": "string",
+            "description": "brand",
+            "required": false,
+            "example": "Graco"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "school",
+        "path": "/api/parent/school",
+        "price": "$0.10",
+        "description": "School selection guidance",
+        "params": {
+          "zip": {
+            "type": "string",
+            "description": "zip",
+            "required": false,
+            "example": "78701"
+          },
+          "grade": {
+            "type": "string",
+            "description": "grade",
+            "required": false,
+            "example": "K"
+          },
+          "priorities": {
+            "type": "string",
+            "description": "priorities",
+            "required": false,
+            "example": "academics,arts"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "activity",
+        "path": "/api/parent/activity",
+        "price": "$0.10",
+        "description": "Activity and extracurricular finder",
+        "params": {
+          "age": {
+            "type": "string",
+            "description": "age",
+            "required": false,
+            "example": "7"
+          },
+          "interests": {
+            "type": "string",
+            "description": "interests",
+            "required": false,
+            "example": "soccer,art"
+          },
+          "budget": {
+            "type": "string",
+            "description": "budget",
+            "required": false,
+            "example": "200"
+          },
+          "zip": {
+            "type": "string",
+            "description": "zip",
+            "required": false,
+            "example": "78701"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "finance",
+        "path": "/api/parent/finance",
+        "price": "$0.10",
+        "description": "Family financial planning",
+        "params": {
+          "children": {
+            "type": "string",
+            "description": "children",
+            "required": false,
+            "example": "2"
+          },
+          "ages": {
+            "type": "string",
+            "description": "ages",
+            "required": false,
+            "example": "3,6"
+          },
+          "income": {
+            "type": "string",
+            "description": "income",
+            "required": false,
+            "example": "120000"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "sleep",
+        "path": "/api/parent/sleep",
+        "price": "$0.10",
+        "description": "Pediatric sleep guidance",
+        "params": {
+          "age_months": {
+            "type": "string",
+            "description": "age_months",
+            "required": false,
+            "example": "6"
+          },
+          "situation": {
+            "type": "string",
+            "description": "situation",
+            "required": false,
+            "example": "night-waking"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "nutrition",
+        "path": "/api/parent/nutrition",
+        "price": "$0.10",
+        "description": "Pediatric nutrition guidance",
+        "params": {
+          "age_months": {
+            "type": "string",
+            "description": "age_months",
+            "required": false,
+            "example": "18"
+          },
+          "concern": {
+            "type": "string",
+            "description": "concern",
+            "required": false,
+            "example": "picky-eater"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "discipline",
+        "path": "/api/parent/discipline",
+        "price": "$0.10",
+        "description": "Positive discipline guidance",
+        "params": {
+          "age": {
+            "type": "string",
+            "description": "age",
+            "required": false,
+            "example": "4"
+          },
+          "behavior": {
+            "type": "string",
+            "description": "behavior",
+            "required": false,
+            "example": "tantrums"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "childcare",
+        "path": "/api/parent/childcare",
+        "price": "$0.10",
+        "description": "Childcare options comparison",
+        "params": {
+          "zip": {
+            "type": "string",
+            "description": "zip",
+            "required": false,
+            "example": "78701"
+          },
+          "age_months": {
+            "type": "string",
+            "description": "age_months",
+            "required": false,
+            "example": "12"
+          },
+          "budget": {
+            "type": "string",
+            "description": "budget",
+            "required": false,
+            "example": "2000"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "patentpulse": {
+    "name": "PatentPulse",
+    "baseUrl": "https://patentpulse-self.vercel.app",
+    "description": "PatentPulse — global IP intelligence: USPTO/EPO/WIPO/JPO/CNIPA patent search, FTO analysis, SEP licensing, trademark clearance, prior art, and competitor patent landscape. Multilingual.",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "global",
+        "path": "/api/patent/global",
+        "price": "$0.10",
+        "description": "Jurisdiction-specific patent search — EPO, CNIPA, KIPO, JPO, WIPO PCT, DPMA, UKIPO, CIPO, IP Australia, INPI",
+        "params": {
+          "q": {
+            "type": "string",
+            "description": "Search query — technology keyword or assignee/company name",
+            "required": true
+          },
+          "jurisdiction": {
+            "type": "string",
+            "description": "Patent office code. EP = EPO (Europe), WO = WIPO PCT (international), CN = CNIPA (China), KR = KIPO (Korea), JP = JPO (Japan), DE = DPMA (Ge",
+            "required": false,
+            "example": "US"
+          },
+          "type": {
+            "type": "string",
+            "description": "type",
+            "required": false,
+            "example": "keyword"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "search",
+        "path": "/api/patent/search",
+        "price": "$0.10",
+        "description": "Global patent search (USPTO + global synthesis)",
+        "params": {
+          "q": {
+            "type": "string",
+            "description": "Search query — keyword, company name, inventor name, or patent title",
+            "required": true
+          },
+          "type": {
+            "type": "string",
+            "description": "Search type",
+            "required": false,
+            "example": "keyword"
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (e.g. es, fr, ja, zh, de). Defaults to en.",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "cliff",
+        "path": "/api/patent/cliff",
+        "price": "$0.10",
+        "description": "Pharma patent cliff analysis",
+        "params": {
+          "drug": {
+            "type": "string",
+            "description": "Drug name — generic or brand (e.g. humira, ozempic, keytruda)",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "fto",
+        "path": "/api/patent/fto",
+        "price": "$0.10",
+        "description": "Freedom-to-operate analysis",
+        "params": {
+          "technology": {
+            "type": "string",
+            "description": "Technology or product description for FTO analysis",
+            "required": true
+          },
+          "country": {
+            "type": "string",
+            "description": "Target jurisdiction (e.g. US, EU, China, Japan, global)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "assignee",
+        "path": "/api/patent/assignee",
+        "price": "$0.10",
+        "description": "Company patent portfolio intelligence",
+        "params": {
+          "company": {
+            "type": "string",
+            "description": "Company or institution name (e.g. Qualcomm, MIT, Samsung)",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "prior-art",
+        "path": "/api/patent/prior-art",
+        "price": "$0.10",
+        "description": "Prior art search",
+        "params": {
+          "invention": {
+            "type": "string",
+            "description": "Invention description — be specific about the novel aspects",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "status",
+        "path": "/api/patent/status",
+        "price": "$0.10",
+        "description": "Patent status lookup",
+        "params": {
+          "id": {
+            "type": "string",
+            "description": "Patent number (e.g. 10000000 or US10,000,000)",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "trends",
+        "path": "/api/patent/trends",
+        "price": "$0.10",
+        "description": "Patent filing trends",
+        "params": {
+          "area": {
+            "type": "string",
+            "description": "Technology area (e.g. CRISPR, solid-state battery, large language models)",
+            "required": false
+          },
+          "cpc": {
+            "type": "string",
+            "description": "CPC classification code (e.g. G06N, H01M)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "sep",
+        "path": "/api/patent/sep",
+        "price": "$0.10",
+        "description": "Standard Essential Patent landscape",
+        "params": {
+          "standard": {
+            "type": "string",
+            "description": "Technology standard",
+            "required": true,
+            "example": "5g"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "competitor",
+        "path": "/api/patent/competitor",
+        "price": "$0.10",
+        "description": "Competitor R&D intelligence",
+        "params": {
+          "company": {
+            "type": "string",
+            "description": "Company to analyze (e.g. Apple, Huawei, Samsung, Tesla)",
+            "required": true
+          },
+          "area": {
+            "type": "string",
+            "description": "Optional focus area to narrow analysis",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "trademark",
+        "path": "/api/patent/trademark",
+        "price": "$0.10",
+        "description": "Trademark clearance search",
+        "params": {
+          "mark": {
+            "type": "string",
+            "description": "Trademark to search (e.g. PulsePay, NeuralFlow)",
+            "required": true
+          },
+          "goods": {
+            "type": "string",
+            "description": "Goods or services description (e.g. payment software, clothing, restaurant services)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "petpulse": {
+    "name": "PetPulse",
+    "baseUrl": "https://petpulse-alpha.vercel.app",
+    "description": "Global pet health and care intelligence API. AI-synthesized veterinary symptom triage, breed selection guides, pet nutrition analysis, medication safety (drug interactions, toxin exposure), senior pet",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "symptoms",
+        "path": "/api/pet/symptoms",
+        "price": "$0.10",
+        "description": "Symptom triage",
+        "params": {
+          "symptoms": {
+            "type": "string",
+            "description": "Comma-separated symptoms (e.g. lethargy,vomiting)",
+            "required": true
+          },
+          "species": {
+            "type": "string",
+            "description": "Animal species",
+            "required": false
+          },
+          "age": {
+            "type": "string",
+            "description": "Pet age (e.g. 8 years)",
+            "required": false
+          },
+          "weight": {
+            "type": "string",
+            "description": "Pet weight (e.g. 65lbs)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (e.g. es, de, fr)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "research",
+        "path": "/api/pet/research",
+        "price": "$0.10",
+        "description": "Veterinary research synthesis",
+        "params": {
+          "topic": {
+            "type": "string",
+            "description": "Research topic (e.g. joint-supplements, omega-3-benefits)",
+            "required": true
+          },
+          "species": {
+            "type": "string",
+            "description": "species",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "nutrition",
+        "path": "/api/pet/nutrition",
+        "price": "$0.10",
+        "description": "Condition-based nutrition guidance",
+        "params": {
+          "condition": {
+            "type": "string",
+            "description": "Health condition (e.g. pancreatitis, kidney-disease, obesity)",
+            "required": true
+          },
+          "species": {
+            "type": "string",
+            "description": "species",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "medication",
+        "path": "/api/pet/medication",
+        "price": "$0.10",
+        "description": "Veterinary drug reference",
+        "params": {
+          "drug": {
+            "type": "string",
+            "description": "Drug name (e.g. carprofen, metronidazole, apoquel)",
+            "required": true
+          },
+          "species": {
+            "type": "string",
+            "description": "species",
+            "required": false
+          },
+          "weight": {
+            "type": "string",
+            "description": "Pet weight for dosing context (e.g. 65lbs, 30kg)",
+            "required": false
+          },
+          "condition": {
+            "type": "string",
+            "description": "condition",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "breed",
+        "path": "/api/pet/breed",
+        "price": "$0.10",
+        "description": "Breed health and care guide",
+        "params": {
+          "breed": {
+            "type": "string",
+            "description": "Breed name (e.g. golden-retriever, french-bulldog, maine-coon)",
+            "required": true
+          },
+          "topic": {
+            "type": "string",
+            "description": "topic",
+            "required": false,
+            "example": "health"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "policypulse": {
+    "name": "PolicyPulse",
+    "baseUrl": "https://policypulse-ten.vercel.app",
+    "description": "PolicyPulse — global legislative intelligence: US Congress, EU (EUR-Lex), UK Parliament, India, Brazil, Australia, and 50+ jurisdictions. Bill summaries, sector impact, passage probability, treaty ana",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "legislation",
+        "path": "/api/legislation",
+        "price": "$0.10",
+        "description": "Legislation — plain English translation of any bill globally",
+        "params": {
+          "q": {
+            "type": "string",
+            "description": "Bill name or topic (e.g. 'NLRB joint employer rule', 'ACA employer mandate', 'EU AI Act')",
+            "required": false
+          },
+          "jurisdiction": {
+            "type": "string",
+            "description": "jurisdiction",
+            "required": false,
+            "example": "us"
+          },
+          "action": {
+            "type": "string",
+            "description": "action",
+            "required": false,
+            "example": "summary"
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (ISO 639-1 code)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "impact",
+        "path": "/api/impact",
+        "price": "$0.10",
+        "description": "Impact — who is affected and what they must do",
+        "params": {
+          "q": {
+            "type": "string",
+            "description": "Legislation or policy topic",
+            "required": false
+          },
+          "sector": {
+            "type": "string",
+            "description": "Sector focus (or 'all')",
+            "required": false
+          },
+          "entity_type": {
+            "type": "string",
+            "description": "Filter to specific entity type (e.g. 'employer under 50 employees')",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "scenario",
+        "path": "/api/scenario",
+        "price": "$0.10",
+        "description": "Scenarios — if/then sector impact modeling",
+        "params": {
+          "trigger": {
+            "type": "string",
+            "description": "The development to model (e.g. 'federal $15 minimum wage passes', 'FTC non-compete ban upheld', 'California single-payer healthcare enacted'",
+            "required": false
+          },
+          "sector": {
+            "type": "string",
+            "description": "sector",
+            "required": false
+          },
+          "action": {
+            "type": "string",
+            "description": "action",
+            "required": false,
+            "example": "ifthen"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "monitor",
+        "path": "/api/monitor",
+        "price": "$0.10",
+        "description": "Monitor — weekly/monthly legislative activity brief",
+        "params": {
+          "period": {
+            "type": "string",
+            "description": "period",
+            "required": false,
+            "example": "week"
+          },
+          "topic": {
+            "type": "string",
+            "description": "topic",
+            "required": false,
+            "example": "healthcare"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "state",
+        "path": "/api/state",
+        "price": "$0.10",
+        "description": "State — legislation across all 50 US states via Open States",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "2-letter state code (TX) or comma-separated list (CA,TX,NY)",
+            "required": false
+          },
+          "topic": {
+            "type": "string",
+            "description": "Topic to search (e.g. 'gig worker classification', 'minimum wage', 'rent control', 'cannabis')",
+            "required": false
+          },
+          "action": {
+            "type": "string",
+            "description": "action",
+            "required": false,
+            "example": "pending"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "compliance",
+        "path": "/api/compliance",
+        "price": "$0.10",
+        "description": "Compliance — what to do after a law passes",
+        "params": {
+          "law": {
+            "type": "string",
+            "description": "Law or regulation (e.g. 'OSHA heat stress standard', 'ADA', 'California CCPA', 'FTC non-compete ban')",
+            "required": false
+          },
+          "jurisdiction": {
+            "type": "string",
+            "description": "jurisdiction",
+            "required": false
+          },
+          "entity_type": {
+            "type": "string",
+            "description": "Entity type (employer|landlord|healthcare_provider|tech_company|retailer|restaurant|contractor|etc)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "regulation",
+        "path": "/api/regulation",
+        "price": "$0.10",
+        "description": "Federal regulation — agency rules via Federal Register",
+        "params": {
+          "agency": {
+            "type": "string",
+            "description": "Federal agency (EPA|FDA|OSHA|FTC|CFPB|SEC|DOL|USDA|HHS|FCC|etc)",
+            "required": false
+          },
+          "topic": {
+            "type": "string",
+            "description": "Topic within agency (optional — leave blank for agency overview)",
+            "required": false
+          },
+          "action": {
+            "type": "string",
+            "description": "action",
+            "required": false,
+            "example": "proposed"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "compare",
+        "path": "/api/compare",
+        "price": "$0.10",
+        "description": "Compare — cross-jurisdiction policy comparison",
+        "params": {
+          "topic": {
+            "type": "string",
+            "description": "Policy topic (e.g. 'data privacy', 'non-compete agreements', 'gig worker classification', 'cannabis', 'minimum wage')",
+            "required": false
+          },
+          "jurisdictions": {
+            "type": "string",
+            "description": "Comma-separated jurisdictions (e.g. 'US,EU,UK,Canada,Australia')",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "calendar",
+        "path": "/api/calendar",
+        "price": "$0.10",
+        "description": "Calendar — upcoming regulatory deadlines and effective dates",
+        "params": {
+          "sector": {
+            "type": "string",
+            "description": "Policy sector (healthcare|employment|environment|tech|finance|realestate|food|all)",
+            "required": false
+          },
+          "jurisdiction": {
+            "type": "string",
+            "description": "jurisdiction",
+            "required": false
+          },
+          "lookahead": {
+            "type": "string",
+            "description": "Days ahead to surface deadlines",
+            "required": false,
+            "example": "30"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "translate",
+        "path": "/api/translate",
+        "price": "$0.10",
+        "description": "Translate — decode any legal or regulatory text into plain English",
+        "params": {
+          "text": {
+            "type": "string",
+            "description": "Legal or regulatory text to decode (up to 4,000 chars; use POST for longer text)",
+            "required": false
+          },
+          "context": {
+            "type": "string",
+            "description": "context",
+            "required": false,
+            "example": "regulatory"
+          },
+          "entity_type": {
+            "type": "string",
+            "description": "The entity reading this text — changes what obligations and rights are highlighted",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "proppulse": {
+    "name": "PropPulse",
+    "baseUrl": "https://proppulse-gules.vercel.app",
+    "description": "Global real estate intelligence API — 10 endpoints covering the full property lifecycle. Mortgage analysis (with Rocket Mortgage/LendingTree/Better lender links), affordability, rent-vs-buy modeling, ",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "mortgage",
+        "path": "/api/prop/mortgage",
+        "price": "$0.10",
+        "description": "Mortgage analysis — current rates, payment breakdown, max price, lender links",
+        "params": {
+          "income": {
+            "type": "string",
+            "description": "Annual gross income",
+            "required": true
+          },
+          "down": {
+            "type": "string",
+            "description": "Down payment in USD. Defaults to 20%.",
+            "required": false
+          },
+          "location": {
+            "type": "string",
+            "description": "City, state, zip, or country for local context",
+            "required": false
+          },
+          "debt": {
+            "type": "string",
+            "description": "Existing monthly debt payments (car, student loans)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "afford",
+        "path": "/api/prop/afford",
+        "price": "$0.10",
+        "description": "True affordability analysis — stress-free vs. bank-qualifying ceiling",
+        "params": {
+          "income": {
+            "type": "string",
+            "description": "Annual gross income",
+            "required": true
+          },
+          "down": {
+            "type": "string",
+            "description": "Available down payment",
+            "required": false
+          },
+          "zip": {
+            "type": "string",
+            "description": "US zip or country for property tax lookup",
+            "required": false
+          },
+          "debt": {
+            "type": "string",
+            "description": "Existing monthly debt payments",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "rentbuy",
+        "path": "/api/prop/rentbuy",
+        "price": "$0.10",
+        "description": "Rent vs. buy decision model — break-even, 5-year wealth comparison, recommendation",
+        "params": {
+          "rent": {
+            "type": "string",
+            "description": "Current monthly rent in local currency",
+            "required": true
+          },
+          "location": {
+            "type": "string",
+            "description": "City or country — drives local market data",
+            "required": false
+          },
+          "savings": {
+            "type": "string",
+            "description": "Available savings / potential down payment",
+            "required": false
+          },
+          "years": {
+            "type": "string",
+            "description": "Planned years in home. Defaults to 5.",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "refi",
+        "path": "/api/prop/refi",
+        "price": "$0.10",
+        "description": "Refinance opportunity analysis — break-even, monthly savings, cash-out potential",
+        "params": {
+          "rate": {
+            "type": "string",
+            "description": "Current interest rate as percentage (e.g. 7.25)",
+            "required": true
+          },
+          "balance": {
+            "type": "string",
+            "description": "Remaining loan balance",
+            "required": true
+          },
+          "years_left": {
+            "type": "string",
+            "description": "Years remaining on current loan. Defaults to 25.",
+            "required": false
+          },
+          "home_value": {
+            "type": "string",
+            "description": "Current home value (enables cash-out analysis)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "market",
+        "path": "/api/prop/market",
+        "price": "$0.10",
+        "description": "Local market intelligence — buyer/seller conditions, price trends, inventory",
+        "params": {
+          "zip": {
+            "type": "string",
+            "description": "US zip code or city/country for international markets",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "invest",
+        "path": "/api/prop/invest",
+        "price": "$0.10",
+        "description": "Investment property ROI — cap rate, cash-on-cash, 5-year projection, investment grade",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": true,
+            "example": "Austin, TX"
+          },
+          "price": {
+            "type": "string",
+            "description": "Purchase price in local currency",
+            "required": true
+          },
+          "type": {
+            "type": "string",
+            "description": "single-family / multifamily / condo / short-term",
+            "required": false,
+            "example": "single-family"
+          },
+          "rent": {
+            "type": "string",
+            "description": "Expected monthly rent — estimated from market data if omitted",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "valuate",
+        "path": "/api/prop/valuate",
+        "price": "$0.10",
+        "description": "Property valuation — AVM estimate with comparable sales and negotiation intelligence",
+        "params": {
+          "address": {
+            "type": "string",
+            "description": "Full property address (e.g. 123+Main+St+Austin+TX)",
+            "required": true
+          },
+          "sqft": {
+            "type": "string",
+            "description": "Square footage (improves estimate)",
+            "required": false
+          },
+          "beds": {
+            "type": "string",
+            "description": "Bed/bath description (e.g. 3/2)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "neighborhood",
+        "path": "/api/prop/neighborhood",
+        "price": "$0.10",
+        "description": "Neighborhood intelligence — schools, safety, walkability, investment outlook",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "Neighborhood, city district, or full address",
+            "required": true,
+            "example": "Boerum Hill, Brooklyn, NY"
+          },
+          "priority": {
+            "type": "string",
+            "description": "schools / investment / walkability / safety / balanced",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "first-buyer",
+        "path": "/api/prop/first-buyer",
+        "price": "$0.10",
+        "description": "First-time homebuyer guide — all assistance programs, loan types, step-by-step process",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "US state/city or country for program research",
+            "required": true,
+            "example": "Colorado"
+          },
+          "income": {
+            "type": "string",
+            "description": "Annual household income — affects program eligibility",
+            "required": false
+          },
+          "savings": {
+            "type": "string",
+            "description": "Available savings for down payment",
+            "required": false
+          },
+          "credit": {
+            "type": "string",
+            "description": "Credit score range (e.g. 680)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "landlord",
+        "path": "/api/prop/landlord",
+        "price": "$0.10",
+        "description": "Landlord toolkit — rent pricing, tenant screening, lease law, local regulations",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "City and state/country — drives jurisdiction-specific legal guidance",
+            "required": true,
+            "example": "Chicago, IL"
+          },
+          "units": {
+            "type": "string",
+            "description": "Number of rental units",
+            "required": false
+          },
+          "type": {
+            "type": "string",
+            "description": "long-term / short-term / furnished",
+            "required": false
+          },
+          "situation": {
+            "type": "string",
+            "description": "general / finding-tenants / eviction / raising-rent / maintenance",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "prospectpulse": {
+    "name": "ProspectPulse",
+    "baseUrl": "https://prospectpulse-pi.vercel.app",
+    "description": "Global mineral and resource exploration intelligence. USGS MRDS deposit inventory, geochemical anomaly analysis, satellite scene availability, jurisdiction entry-risk, social license risk, critical mi",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "mineral-potential",
+        "path": "/api/prospect/mineral-potential",
+        "price": "$0.10",
+        "description": "Mineral prospectivity assessment",
+        "params": {
+          "region": {
+            "type": "string",
+            "description": "Named geological region | Carlin Trend Nevada | Atacama Desert | Abitibi Greenstone Belt | Zambia Copper Belt | Pilbara WA",
+            "required": false
+          },
+          "lat": {
+            "type": "string",
+            "description": "Latitude (decimal degrees)",
+            "required": false
+          },
+          "lon": {
+            "type": "string",
+            "description": "Longitude (decimal degrees)",
+            "required": false
+          },
+          "commodity": {
+            "type": "string",
+            "description": "Target commodity | gold | copper | lithium | nickel | cobalt | REE | uranium | silver | zinc",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (ISO 639-1) | en | es | fr | pt | ru | zh | id | ar",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "deposit-intel",
+        "path": "/api/prospect/deposit-intel",
+        "price": "$0.10",
+        "description": "Mineral deposit intelligence",
+        "params": {
+          "deposit": {
+            "type": "string",
+            "description": "Deposit or mine name | Escondida | Oyu Tolgoi | Kibali | Grasberg | Olympic Dam | Thacker Pass | Jadar | Cobre Panama",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (ISO 639-1)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "critical-minerals-scan",
+        "path": "/api/prospect/critical-minerals-scan",
+        "price": "$0.10",
+        "description": "Critical minerals country endowment scan",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Country or region | DRC | Chile | Indonesia | Australia | Greenland | Kazakhstan | Philippines | Argentina | Canada | Zambia | Zimbabwe | Gu",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (ISO 639-1) | en | es | fr | pt | ru | zh | id | ar | ja | ko",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "jurisdiction-entry",
+        "path": "/api/prospect/jurisdiction-entry",
+        "price": "$0.10",
+        "description": "Exploration jurisdiction entry-risk assessment",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Country | Canada | Australia | Chile | Peru | DRC | Ghana | Tanzania | Kazakhstan | Philippines | Greenland | Ecuador | Bolivia | Zambia | N",
+            "required": true
+          },
+          "commodity": {
+            "type": "string",
+            "description": "Target commodity for fiscal specifics | gold | copper | lithium | nickel | cobalt | uranium",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (ISO 639-1) | en | es | fr | pt | ru | zh | ar",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "satellite-availability",
+        "path": "/api/prospect/satellite-availability",
+        "price": "$0.10",
+        "description": "Free satellite scene availability + remote sensing guide",
+        "params": {
+          "lat": {
+            "type": "string",
+            "description": "Latitude (decimal degrees) | -23.8 | 39.5 | -0.5 | 60.2",
+            "required": true
+          },
+          "lon": {
+            "type": "string",
+            "description": "Longitude (decimal degrees) | 119.4 | -117.3 | 28.6 | 25.4",
+            "required": true
+          },
+          "commodity": {
+            "type": "string",
+            "description": "Target commodity for alteration guidance | gold | copper | lithium | nickel | REE",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (ISO 639-1)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "geochemical-anomaly",
+        "path": "/api/prospect/geochemical-anomaly",
+        "price": "$0.10",
+        "description": "USGS geochemical anomaly characterization",
+        "params": {
+          "region": {
+            "type": "string",
+            "description": "Named region | Carlin Trend Nevada | Basin and Range | Great Basin",
+            "required": false
+          },
+          "lat": {
+            "type": "string",
+            "description": "Latitude (decimal degrees)",
+            "required": false
+          },
+          "lon": {
+            "type": "string",
+            "description": "Longitude (decimal degrees)",
+            "required": false
+          },
+          "elements": {
+            "type": "string",
+            "description": "Comma-separated elements | Au,As,Sb | Cu,Mo,Au | Ni,Co,Cr | Li,Cs,Rb",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (ISO 639-1)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "social-license-risk",
+        "path": "/api/prospect/social-license-risk",
+        "price": "$0.10",
+        "description": "Social license risk assessment",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "Location | Peru Cajamarca | Pebble Alaska | West Papua Indonesia | Ring of Fire Ontario | Northern BC Canada | Limpopo South Africa | Oaxaca",
+            "required": true
+          },
+          "project": {
+            "type": "string",
+            "description": "Optional project name | Conga Mine | Pebble Mine | Ajax Mine | New Prosperity",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (ISO 639-1) | en | es | fr | pt | id | tl",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "commodity-supply-intel",
+        "path": "/api/prospect/commodity-supply-intel",
+        "price": "$0.10",
+        "description": "Commodity supply/demand intelligence",
+        "params": {
+          "commodity": {
+            "type": "string",
+            "description": "Mining commodity | lithium | cobalt | nickel | copper | gold | silver | uranium | graphite | REE | platinum | palladium | manganese | zinc |",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (ISO 639-1) | en | es | fr | pt | zh | ja | ko | de | ar | ru",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "oil-gas-basin",
+        "path": "/api/prospect/oil-gas-basin",
+        "price": "$0.10",
+        "description": "Oil & gas basin analysis",
+        "params": {
+          "basin": {
+            "type": "string",
+            "description": "Basin or region | Permian Basin | Santos Basin Brazil | Rovuma Basin | East African Rift | Cooper Basin Australia | Tarim Basin | Barents Se",
+            "required": true
+          },
+          "country": {
+            "type": "string",
+            "description": "Country for governance context | USA | Brazil | Mozambique | Australia | China | Norway | Guyana | Argentina",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (ISO 639-1) | en | es | fr | pt | ru | zh | ar | id",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "exploration-brief",
+        "path": "/api/prospect/exploration-brief",
+        "price": "$0.10",
+        "description": "Comprehensive exploration target brief (premium)",
+        "params": {
+          "region": {
+            "type": "string",
+            "description": "Target region | Atacama lithium triangle | Northern Ontario gold | West African gold belt | Copper Belt Zambia-DRC | Nevada gold province",
+            "required": false
+          },
+          "lat": {
+            "type": "string",
+            "description": "Latitude (decimal degrees)",
+            "required": false
+          },
+          "lon": {
+            "type": "string",
+            "description": "Longitude (decimal degrees)",
+            "required": false
+          },
+          "commodity": {
+            "type": "string",
+            "description": "Primary commodity | gold | copper | lithium | nickel | cobalt | REE | uranium | silver",
+            "required": false
+          },
+          "country": {
+            "type": "string",
+            "description": "Country for jurisdiction and governance | Chile | Canada | Ghana | Australia | DRC | Peru | Kazakhstan | Mongolia",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (ISO 639-1) | en | es | fr | pt | ru | zh | ar",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "racingpulse": {
+    "name": "RacingPulse",
+    "baseUrl": "https://racingpulse.vercel.app",
+    "description": "Global horse racing intelligence — live odds, going conditions, form analysis, arbitrage detection, speed ratings, and betting systems for 35 racecourses. All endpoints require x402 payment (USDC on B",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "scanner",
+        "path": "/api/scanner",
+        "price": "$0.07",
+        "description": "Arbitrage scanner — scan all active racing sports for guaranteed-profit opportunities",
+        "params": {
+          "regions": {
+            "type": "string",
+            "description": "regions",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "arbitrage",
+        "path": "/api/arbitrage",
+        "price": "$0.07",
+        "description": "Live arbitrage — filtered guaranteed-profit opportunities for a specific racing jurisdiction",
+        "params": {
+          "sport": {
+            "type": "string",
+            "description": "sport",
+            "required": false,
+            "example": "horse_racing_uk"
+          },
+          "min_profit": {
+            "type": "string",
+            "description": "Minimum profit % filter",
+            "required": false
+          },
+          "regions": {
+            "type": "string",
+            "description": "regions",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "card",
+        "path": "/api/card",
+        "price": "$0.07",
+        "description": "Race card — complete meeting briefing with runners, odds, going, and news",
+        "params": {
+          "track": {
+            "type": "string",
+            "description": "Track name e.g. ascot, cheltenham, flemington",
+            "required": true
+          },
+          "date": {
+            "type": "string",
+            "description": "date",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "going",
+        "path": "/api/going",
+        "price": "$0.07",
+        "description": "Going conditions — live ground conditions derived from 7-day precipitation data",
+        "params": {
+          "track": {
+            "type": "string",
+            "description": "Track name, or 'all' for summary of top 12 tracks",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "form",
+        "path": "/api/form",
+        "price": "$0.07",
+        "description": "Form guide — deep horse form analysis with trainer stats and going preferences",
+        "params": {
+          "horse": {
+            "type": "string",
+            "description": "Horse name",
+            "required": true
+          },
+          "trainer": {
+            "type": "string",
+            "description": "Trainer name (optional)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "ratings",
+        "path": "/api/ratings",
+        "price": "$0.07",
+        "description": "Speed ratings — official rating, RPR, Timeform, and going-adjusted performance ratings",
+        "params": {
+          "horse": {
+            "type": "string",
+            "description": "Horse name",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "systems",
+        "path": "/api/systems",
+        "price": "$0.07",
+        "description": "Betting systems — statistically-backed angles, trainer/jockey combos, draw bias",
+        "params": {
+          "filter": {
+            "type": "string",
+            "description": "e.g. 'Ascot sprints', 'novice hurdlers', 'flat handicaps'",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "trends",
+        "path": "/api/trends",
+        "price": "$0.07",
+        "description": "Race trends — historical patterns, draw bias, trainer records, value and fade angles",
+        "params": {
+          "race": {
+            "type": "string",
+            "description": "Race or meeting name e.g. 'Cheltenham Gold Cup', 'Royal Ascot'",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "track",
+        "path": "/api/track",
+        "price": "$0.07",
+        "description": "Track profile — complete racecourse intelligence with live going conditions",
+        "params": {
+          "track": {
+            "type": "string",
+            "description": "Track name e.g. ascot, cheltenham, flemington",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "greyhound-form",
+        "path": "/api/greyhound-form",
+        "price": "$0.07",
+        "description": "Greyhound form — recent runs, sectional times, trap record, kennel form, and verdict",
+        "params": {
+          "dog": {
+            "type": "string",
+            "description": "Greyhound name",
+            "required": true
+          },
+          "track": {
+            "type": "string",
+            "description": "Track name for trap-specific context e.g. romford, shelbourne-park, the-meadows",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "greyhound-trap",
+        "path": "/api/greyhound-trap",
+        "price": "$0.07",
+        "description": "Greyhound trap bias — win rates per trap, rail vs wide advantage, pace profile, and betting angles",
+        "params": {
+          "track": {
+            "type": "string",
+            "description": "Track name e.g. romford, shelbourne-park, the-meadows, wentworth-park",
+            "required": true
+          },
+          "distance": {
+            "type": "string",
+            "description": "Race distance e.g. 400m, 460m, 520m",
+            "required": false
+          },
+          "grade": {
+            "type": "string",
+            "description": "Race grade e.g. A1, A2, S2, OR",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "greyhound-card",
+        "path": "/api/greyhound-card",
+        "price": "$0.07",
+        "description": "Greyhound race card — full field breakdown with trap suitability, value selection, and system plays",
+        "params": {
+          "track": {
+            "type": "string",
+            "description": "Track name e.g. romford, shelbourne-park, wentworth-park",
+            "required": true
+          },
+          "date": {
+            "type": "string",
+            "description": "Race date YYYY-MM-DD (defaults to today)",
+            "required": false
+          },
+          "race": {
+            "type": "string",
+            "description": "Specific race number or name (optional)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "calculator",
+        "path": "/api/calculator",
+        "price": "$0.07",
+        "description": "Betting calculator — arbitrage stakes (Kelly), expected value, and profit calculations",
+        "params": {
+          "mode": {
+            "type": "string",
+            "description": "mode",
+            "required": true,
+            "example": "arb"
+          },
+          "bankroll": {
+            "type": "string",
+            "description": "Total bankroll (arb mode)",
+            "required": false
+          },
+          "odds": {
+            "type": "string",
+            "description": "Comma-separated runner odds e.g. 3.5,2.1 (arb mode)",
+            "required": false
+          },
+          "single_odds": {
+            "type": "string",
+            "description": "Decimal odds for single selection (ev mode)",
+            "required": false
+          },
+          "true_prob": {
+            "type": "string",
+            "description": "Your estimated true win probability 0-1 (ev mode)",
+            "required": false
+          },
+          "stake": {
+            "type": "string",
+            "description": "Stake amount (ev mode)",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "remittancepulse": {
+    "name": "RemittancePulse",
+    "baseUrl": "https://remittancepulse.vercel.app",
+    "description": "Global remittance intelligence API covering the $700B+ annual global remittance market. 8 endpoints: corridor analysis (200+ corridors), provider comparison with true total cost (fee + FX markup), liv",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "corridor",
+        "path": "/api/remit/corridor",
+        "price": "$0.10",
+        "description": "Corridor intelligence",
+        "params": {
+          "from": {
+            "type": "string",
+            "description": "Sending country — e.g. USA, UAE, UK, Canada, Germany",
+            "required": true
+          },
+          "to": {
+            "type": "string",
+            "description": "Receiving country — e.g. Philippines, India, Mexico, Nigeria, Bangladesh",
+            "required": true
+          },
+          "amount": {
+            "type": "string",
+            "description": "Amount to send in source currency",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "compare",
+        "path": "/api/remit/compare",
+        "price": "$0.10",
+        "description": "Provider comparison",
+        "params": {
+          "from": {
+            "type": "string",
+            "description": "from",
+            "required": true
+          },
+          "to": {
+            "type": "string",
+            "description": "to",
+            "required": true
+          },
+          "amount": {
+            "type": "string",
+            "description": "Amount to send (default: 500)",
+            "required": false
+          },
+          "from_currency": {
+            "type": "string",
+            "description": "e.g. USD, GBP, EUR, AED, CAD",
+            "required": false
+          },
+          "to_currency": {
+            "type": "string",
+            "description": "e.g. PHP, INR, MXN, NGN, PKR",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "rate",
+        "path": "/api/remit/rate",
+        "price": "$0.10",
+        "description": "FX rate and markup analysis",
+        "params": {
+          "from_currency": {
+            "type": "string",
+            "description": "e.g. USD, GBP, EUR, AED — also accepts 'from'",
+            "required": true
+          },
+          "to_currency": {
+            "type": "string",
+            "description": "e.g. PHP, INR, MXN, NGN — also accepts 'to'",
+            "required": true
+          },
+          "amount": {
+            "type": "string",
+            "description": "amount",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "receive",
+        "path": "/api/remit/receive",
+        "price": "$0.10",
+        "description": "Receive-country guide",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "country",
+            "required": true
+          },
+          "method": {
+            "type": "string",
+            "description": "bank | cash | mobile | wallet — or omit for all methods",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "mobile",
+        "path": "/api/remit/mobile",
+        "price": "$0.10",
+        "description": "Mobile money ecosystem",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "country",
+            "required": false
+          },
+          "region": {
+            "type": "string",
+            "description": "East Africa | West Africa | South Asia | Southeast Asia | Latin America | Middle East",
+            "required": false
+          },
+          "platform": {
+            "type": "string",
+            "description": "Specific platform — e.g. M-Pesa, GCash, bKash",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "compliance",
+        "path": "/api/remit/compliance",
+        "price": "$0.10",
+        "description": "Compliance and KYC intelligence",
+        "params": {
+          "from": {
+            "type": "string",
+            "description": "from",
+            "required": true
+          },
+          "to": {
+            "type": "string",
+            "description": "to",
+            "required": false
+          },
+          "amount": {
+            "type": "string",
+            "description": "amount",
+            "required": false
+          },
+          "purpose": {
+            "type": "string",
+            "description": "purpose",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "news",
+        "path": "/api/remit/news",
+        "price": "$0.10",
+        "description": "Remittance industry news",
+        "params": {
+          "from": {
+            "type": "string",
+            "description": "from",
+            "required": false
+          },
+          "to": {
+            "type": "string",
+            "description": "to",
+            "required": false
+          },
+          "topic": {
+            "type": "string",
+            "description": "regulatory | providers | fees | technology | all",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "diaspora",
+        "path": "/api/remit/diaspora",
+        "price": "$0.10",
+        "description": "Diaspora community intelligence",
+        "params": {
+          "community": {
+            "type": "string",
+            "description": "e.g. Filipino, Indian, Mexican, Nigerian, Pakistani, Bangladeshi, Vietnamese",
+            "required": true
+          },
+          "sending_from": {
+            "type": "string",
+            "description": "Country sending from — tailors corridor-specific advice",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "riskpulse": {
+    "name": "RiskPulse",
+    "baseUrl": "https://riskpulse-five.vercel.app",
+    "description": "Global risk intelligence API. AI-synthesized travel safety alerts, country risk profiles, sanctions screening, business risk analysis, supply chain disruption intelligence, nomad visa/tax guidance, ex",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "country",
+        "path": "/api/risk/country",
+        "price": "$0.10",
+        "description": "Country risk profile",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Country name (e.g. Mexico, Thailand, Nigeria)",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "travel",
+        "path": "/api/risk/travel",
+        "price": "$0.10",
+        "description": "Travel safety assessment",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "country",
+            "required": true
+          },
+          "nationality": {
+            "type": "string",
+            "description": "Traveler nationality (default: US)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "business",
+        "path": "/api/risk/business",
+        "price": "$0.10",
+        "description": "Business risk analysis",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "country",
+            "required": true
+          },
+          "industry": {
+            "type": "string",
+            "description": "industry",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "compare",
+        "path": "/api/risk/compare",
+        "price": "$0.10",
+        "description": "Country risk comparison",
+        "params": {
+          "countries": {
+            "type": "string",
+            "description": "Comma-separated country names (e.g. Mexico,Colombia,Costa Rica)",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "expat",
+        "path": "/api/risk/expat",
+        "price": "$0.10",
+        "description": "Expat living guide",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "country",
+            "required": true
+          },
+          "from": {
+            "type": "string",
+            "description": "Country of origin (default: US)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "safepulse": {
+    "name": "SafePulse",
+    "baseUrl": "https://safepulse-xi.vercel.app",
+    "description": "SafePulse — product safety intelligence: CPSC, FDA, USDA FSIS, NHTSA recalls; EU RAPEX; home safety scores; child/vehicle safety ratings; food safety alerts worldwide.",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "recall",
+        "path": "/api/safe/recall",
+        "price": "$0.10",
+        "description": "Active recall dashboard",
+        "params": {
+          "category": {
+            "type": "string",
+            "description": "Filter by recall category",
+            "required": false,
+            "example": "all"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "product",
+        "path": "/api/safe/product",
+        "price": "$0.10",
+        "description": "Consumer product safety",
+        "params": {
+          "product": {
+            "type": "string",
+            "description": "product",
+            "required": false
+          },
+          "category": {
+            "type": "string",
+            "description": "toys | furniture | appliances | electronics | clothing",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "vehicle",
+        "path": "/api/safe/vehicle",
+        "price": "$0.10",
+        "description": "Vehicle safety",
+        "params": {
+          "make": {
+            "type": "string",
+            "description": "make",
+            "required": true
+          },
+          "model": {
+            "type": "string",
+            "description": "model",
+            "required": true
+          },
+          "year": {
+            "type": "string",
+            "description": "year",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "food",
+        "path": "/api/safe/food",
+        "price": "$0.10",
+        "description": "Food and drug recall",
+        "params": {
+          "product": {
+            "type": "string",
+            "description": "product",
+            "required": true
+          },
+          "type": {
+            "type": "string",
+            "description": "type",
+            "required": false,
+            "example": "food"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "home",
+        "path": "/api/safe/home",
+        "price": "$0.10",
+        "description": "Home safety hazards",
+        "params": {
+          "product": {
+            "type": "string",
+            "description": "product",
+            "required": false
+          },
+          "room": {
+            "type": "string",
+            "description": "kitchen | bedroom | bathroom | garage | nursery",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "child",
+        "path": "/api/safe/child",
+        "price": "$0.10",
+        "description": "Child product safety",
+        "params": {
+          "product": {
+            "type": "string",
+            "description": "product",
+            "required": true
+          },
+          "age_group": {
+            "type": "string",
+            "description": "infant | toddler | preschool | school-age",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "score",
+        "path": "/api/safe/score",
+        "price": "$0.10",
+        "description": "Brand safety score",
+        "params": {
+          "brand": {
+            "type": "string",
+            "description": "brand",
+            "required": true
+          },
+          "product_type": {
+            "type": "string",
+            "description": "product_type",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "eu",
+        "path": "/api/safe/eu",
+        "price": "$0.10",
+        "description": "EU Safety Gate alerts",
+        "params": {
+          "category": {
+            "type": "string",
+            "description": "toys | electronics | clothing | food | cosmetics | vehicles | all",
+            "required": false
+          },
+          "country": {
+            "type": "string",
+            "description": "Filter by EU country (e.g. Germany, France, Spain)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "global",
+        "path": "/api/safe/global",
+        "price": "$0.10",
+        "description": "Global safety alerts",
+        "params": {
+          "category": {
+            "type": "string",
+            "description": "food | drug | device | consumer | all",
+            "required": false
+          },
+          "region": {
+            "type": "string",
+            "description": "canada | australia | uk | who | global",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "scholarpulse": {
+    "name": "ScholarPulse",
+    "baseUrl": "https://scholarpulse-bice.vercel.app",
+    "description": "Global scholarship and student finance intelligence. 12 endpoints covering scholarship search (190+ countries), international scholarship matching, government programs, Erasmus+, US financial aid (Col",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "search",
+        "path": "/api/search",
+        "price": "$0.10",
+        "description": "Scholarship search",
+        "params": {
+          "major": {
+            "type": "string",
+            "description": "Field of study (e.g. nursing, engineering, computer-science)",
+            "required": true
+          },
+          "country": {
+            "type": "string",
+            "description": "Country to search in (default: US)",
+            "required": false
+          },
+          "level": {
+            "type": "string",
+            "description": "Education level",
+            "required": false,
+            "example": "undergraduate"
+          },
+          "gpa": {
+            "type": "string",
+            "description": "GPA (e.g. 3.8)",
+            "required": false
+          },
+          "income": {
+            "type": "string",
+            "description": "Household income for need-based filtering",
+            "required": false
+          },
+          "demographic": {
+            "type": "string",
+            "description": "first-gen | veteran | international | stem-women",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: English)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "global",
+        "path": "/api/global",
+        "price": "$0.10",
+        "description": "International scholarship matching",
+        "params": {
+          "nationality": {
+            "type": "string",
+            "description": "Student's nationality (e.g. Indian, Nigerian, Brazilian)",
+            "required": true
+          },
+          "destination": {
+            "type": "string",
+            "description": "Target country (e.g. UK, Germany, USA, Japan)",
+            "required": true
+          },
+          "level": {
+            "type": "string",
+            "description": "undergraduate | masters | phd",
+            "required": false
+          },
+          "field": {
+            "type": "string",
+            "description": "Field of study",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "government",
+        "path": "/api/government",
+        "price": "$0.10",
+        "description": "Government scholarship programs",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Country name",
+            "required": true
+          },
+          "level": {
+            "type": "string",
+            "description": "undergraduate | graduate | phd | vocational",
+            "required": false
+          },
+          "field": {
+            "type": "string",
+            "description": "Field filter",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "erasmus",
+        "path": "/api/erasmus",
+        "price": "$0.10",
+        "description": "Erasmus+ program guide",
+        "params": {
+          "from": {
+            "type": "string",
+            "description": "Home EU/EEA country",
+            "required": true
+          },
+          "to": {
+            "type": "string",
+            "description": "Host country",
+            "required": true
+          },
+          "field": {
+            "type": "string",
+            "description": "Field of study",
+            "required": false
+          },
+          "level": {
+            "type": "string",
+            "description": "undergraduate | masters | phd",
+            "required": false
+          },
+          "duration": {
+            "type": "string",
+            "description": "Duration in months (2-12)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "aid",
+        "path": "/api/aid",
+        "price": "$0.10",
+        "description": "US financial aid estimate",
+        "params": {
+          "college": {
+            "type": "string",
+            "description": "US college or university name",
+            "required": true
+          },
+          "income": {
+            "type": "string",
+            "description": "Household AGI",
+            "required": true
+          },
+          "family_size": {
+            "type": "string",
+            "description": "Household size (default: 4)",
+            "required": false
+          },
+          "assets": {
+            "type": "string",
+            "description": "Reportable assets (exclude retirement accounts)",
+            "required": false
+          },
+          "dependency_status": {
+            "type": "string",
+            "description": "Dependency status",
+            "required": false,
+            "example": "dependent"
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "fafsa",
+        "path": "/api/fafsa",
+        "price": "$0.10",
+        "description": "FAFSA strategy",
+        "params": {
+          "income": {
+            "type": "string",
+            "description": "Household AGI",
+            "required": true
+          },
+          "family_size": {
+            "type": "string",
+            "description": "Household size",
+            "required": false
+          },
+          "assets": {
+            "type": "string",
+            "description": "Reportable assets (NOT retirement accounts — those are exempt)",
+            "required": false
+          },
+          "year": {
+            "type": "string",
+            "description": "freshman | sophomore | junior | senior | graduate",
+            "required": false
+          },
+          "dependency_status": {
+            "type": "string",
+            "description": "dependent | independent",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "loans",
+        "path": "/api/loans",
+        "price": "$0.10",
+        "description": "Student loan repayment strategy",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "US | UK | Australia | Canada | New Zealand (default: US)",
+            "required": false
+          },
+          "balance": {
+            "type": "string",
+            "description": "Total loan balance",
+            "required": true
+          },
+          "income": {
+            "type": "string",
+            "description": "Annual income",
+            "required": true
+          },
+          "loan_type": {
+            "type": "string",
+            "description": "federal | private | HELP | Plan2 | OSAP",
+            "required": false
+          },
+          "family_size": {
+            "type": "string",
+            "description": "For US IDR plan calculations",
+            "required": false
+          },
+          "years_in_repayment": {
+            "type": "string",
+            "description": "Years already in repayment",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "forgiveness",
+        "path": "/api/forgiveness",
+        "price": "$0.10",
+        "description": "Loan forgiveness eligibility",
+        "params": {
+          "profession": {
+            "type": "string",
+            "description": "teacher | nurse | doctor | social-worker | lawyer | military | government-employee | researcher | veterinarian",
+            "required": true
+          },
+          "employer_type": {
+            "type": "string",
+            "description": "public-school | nonprofit | government | private",
+            "required": false
+          },
+          "country": {
+            "type": "string",
+            "description": "Country (default: US)",
+            "required": false
+          },
+          "state": {
+            "type": "string",
+            "description": "US state for state-specific programs",
+            "required": false
+          },
+          "years_in_service": {
+            "type": "string",
+            "description": "Years in qualifying employment",
+            "required": false
+          },
+          "loan_type": {
+            "type": "string",
+            "description": "federal | private",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "roi",
+        "path": "/api/roi",
+        "price": "$0.10",
+        "description": "Degree ROI analysis",
+        "params": {
+          "major": {
+            "type": "string",
+            "description": "Field of study",
+            "required": true
+          },
+          "degree_level": {
+            "type": "string",
+            "description": "bachelor | master | phd | associate | professional",
+            "required": false
+          },
+          "debt": {
+            "type": "string",
+            "description": "Total expected debt at graduation",
+            "required": true
+          },
+          "college": {
+            "type": "string",
+            "description": "College for institution-specific earnings data",
+            "required": false
+          },
+          "country": {
+            "type": "string",
+            "description": "Country (default: US)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "merit",
+        "path": "/api/merit",
+        "price": "$0.10",
+        "description": "Merit aid strategy",
+        "params": {
+          "gpa": {
+            "type": "string",
+            "description": "Unweighted GPA (e.g. 3.8)",
+            "required": true
+          },
+          "test_score": {
+            "type": "string",
+            "description": "SAT 1400 | ACT 32 | IB 38",
+            "required": false
+          },
+          "major": {
+            "type": "string",
+            "description": "Intended major",
+            "required": false
+          },
+          "state": {
+            "type": "string",
+            "description": "Home state",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "deadline",
+        "path": "/api/deadline",
+        "price": "$0.10",
+        "description": "Scholarship deadline tracker",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Country (default: US)",
+            "required": false
+          },
+          "major": {
+            "type": "string",
+            "description": "Field of study",
+            "required": false
+          },
+          "level": {
+            "type": "string",
+            "description": "undergraduate | graduate | phd",
+            "required": false
+          },
+          "month": {
+            "type": "string",
+            "description": "next | this-month | next-3-months",
+            "required": false
+          },
+          "state": {
+            "type": "string",
+            "description": "US state for local scholarships",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "essay",
+        "path": "/api/essay",
+        "price": "$0.10",
+        "description": "Scholarship essay strategy",
+        "params": {
+          "scholarship": {
+            "type": "string",
+            "description": "Scholarship name (e.g. Gates Scholarship, Chevening, DAAD, Rhodes)",
+            "required": true
+          },
+          "prompt": {
+            "type": "string",
+            "description": "The essay prompt text",
+            "required": true
+          },
+          "word_limit": {
+            "type": "string",
+            "description": "Word limit",
+            "required": false
+          },
+          "background": {
+            "type": "string",
+            "description": "Brief student background",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "seniorpulse": {
+    "name": "SeniorPulse",
+    "baseUrl": "https://seniorpulse.vercel.app",
+    "description": "Global elder care intelligence API. AI-synthesized Medicare guidance, care facility evaluation, medication safety, benefits discovery, and caregiver support for seniors and their families worldwide. U",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "medicare",
+        "path": "/api/senior/medicare",
+        "price": "$0.10",
+        "description": "Medicare plan guidance",
+        "params": {
+          "zip": {
+            "type": "string",
+            "description": "ZIP code for plan availability context (US)",
+            "required": false
+          },
+          "situation": {
+            "type": "string",
+            "description": "Enrollment scenario — e.g. 'turning 65', 'comparing plans', 'losing employer coverage at 67', 'enrolling due to disability', 'reviewing Part",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (e.g. 'es', 'zh', 'ko', 'vi', 'tl') — Claude responds natively in any language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "facility",
+        "path": "/api/senior/facility",
+        "price": "$0.10",
+        "description": "Care facility evaluation guide",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "City and state/country (e.g. 'Austin TX', 'London UK', 'Toronto Canada', 'Sydney Australia')",
+            "required": true
+          },
+          "type": {
+            "type": "string",
+            "description": "Facility type. Defaults to assisted-living.",
+            "required": false,
+            "example": "assisted-living"
+          },
+          "budget": {
+            "type": "string",
+            "description": "Monthly budget in local currency (USD for US, GBP for UK, AUD for Australia, CAD for Canada)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language — any language supported",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "meds",
+        "path": "/api/senior/meds",
+        "price": "$0.10",
+        "description": "Medication safety check for elderly patients (polypharmacy)",
+        "params": {
+          "medications": {
+            "type": "string",
+            "description": "Comma-separated medication list using generic names (e.g. 'metformin,lisinopril,aspirin,diphenhydramine,amlodipine')",
+            "required": true
+          },
+          "age": {
+            "type": "string",
+            "description": "Patient age — used to calibrate Beers Criteria thresholds (most critical for ages 65–75 vs. 85+)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language — any language supported",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "benefits",
+        "path": "/api/senior/benefits",
+        "price": "$0.10",
+        "description": "Benefits eligibility assessment (US)",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "US state name or 2-letter abbreviation (e.g. 'Texas', 'TX')",
+            "required": true
+          },
+          "income": {
+            "type": "string",
+            "description": "Monthly gross income in USD (Social Security, pension, wages)",
+            "required": false
+          },
+          "assets": {
+            "type": "string",
+            "description": "Total countable assets in USD — excludes primary home and one vehicle",
+            "required": false
+          },
+          "veteran": {
+            "type": "string",
+            "description": "Set true to include VA Aid & Attendance and other veteran-specific benefits in the assessment",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language — any language supported",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "caregiver",
+        "path": "/api/senior/caregiver",
+        "price": "$0.10",
+        "description": "Family caregiver resource guide",
+        "params": {
+          "situation": {
+            "type": "string",
+            "description": "Description of the caregiving situation (e.g. 'caring for 85yo mother with dementia, living 200 miles away', 'husband with Parkinson's, need",
+            "required": true
+          },
+          "location": {
+            "type": "string",
+            "description": "Location for local resource search — city and country (e.g. 'Denver CO', 'Bristol UK', 'Vancouver Canada')",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language — any language supported",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "grief",
+        "path": "/api/senior/grief",
+        "price": "$0.10",
+        "description": "Post-loss estate and grief guide",
+        "params": {
+          "situation": {
+            "type": "string",
+            "description": "Describe the situation (e.g. 'spouse passed 3 days ago, need to know what to do immediately', 'mother died 2 months ago, estate still open')",
+            "required": false
+          },
+          "state": {
+            "type": "string",
+            "description": "US state or country for jurisdiction-specific probate and estate guidance",
+            "required": false
+          },
+          "days_since": {
+            "type": "string",
+            "description": "Days since the loss — calibrates guidance to immediate (0–7 days), short-term (1–4 weeks), or ongoing estate (1–12 months) phases",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language — any language supported",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "legal",
+        "path": "/api/senior/legal",
+        "price": "$0.10",
+        "description": "Elder law document guide (POA, advance directive, guardianship)",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "US state or country for jurisdiction-specific document requirements",
+            "required": false
+          },
+          "situation": {
+            "type": "string",
+            "description": "Describe the situation (e.g. 'parents have no POA, father showing memory decline', 'need healthcare proxy before surgery', 'sibling disputes",
+            "required": false
+          },
+          "has_poa": {
+            "type": "string",
+            "description": "Whether an existing POA is in place — affects urgency and next steps",
+            "required": false,
+            "example": "true"
+          },
+          "capacity_concern": {
+            "type": "string",
+            "description": "Set true if there are concerns about the senior's cognitive capacity to sign legal documents — triggers guardianship guidance",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language — any language supported",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "memory",
+        "path": "/api/senior/memory",
+        "price": "$0.10",
+        "description": "Cognitive decline staging and dementia care trajectory",
+        "params": {
+          "mmse_score": {
+            "type": "string",
+            "description": "Mini-Mental State Examination score (0–30). 24–30 normal, 18–23 mild, 0–17 severe.",
+            "required": false
+          },
+          "moca_score": {
+            "type": "string",
+            "description": "Montreal Cognitive Assessment score (0–30). Below 26 indicates possible impairment.",
+            "required": false
+          },
+          "cdr_score": {
+            "type": "string",
+            "description": "Clinical Dementia Rating (0, 0.5, 1, 2, 3). 0=normal, 0.5=very mild, 1=mild, 2=moderate, 3=severe.",
+            "required": false
+          },
+          "diagnosis": {
+            "type": "string",
+            "description": "Formal diagnosis if known (e.g. 'Alzheimer's', 'vascular dementia', 'Lewy body', 'MCI', 'frontotemporal')",
+            "required": false
+          },
+          "current_living": {
+            "type": "string",
+            "description": "Current living situation (e.g. 'alone', 'with spouse', 'with adult children', 'assisted living')",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language — any language supported",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "nh-compare",
+        "path": "/api/senior/nh-compare",
+        "price": "$0.10",
+        "description": "Nursing home quality comparison (CMS Care Compare data)",
+        "params": {
+          "facilities": {
+            "type": "string",
+            "description": "Comma-separated facility names or addresses to compare head-to-head (e.g. 'Sunrise Senior Living Austin,Brookdale South Austin')",
+            "required": false
+          },
+          "zip": {
+            "type": "string",
+            "description": "ZIP code to find top-rated nursing homes in the area (used if no specific facilities named)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language — any language supported",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "property-tax",
+        "path": "/api/senior/property-tax",
+        "price": "$0.10",
+        "description": "Senior property tax relief programs by state",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "US state name or abbreviation (e.g. 'Texas', 'TX')",
+            "required": true
+          },
+          "age": {
+            "type": "string",
+            "description": "Homeowner age — many programs begin at 62, 65, or 70",
+            "required": false
+          },
+          "income": {
+            "type": "string",
+            "description": "Annual household income in USD — required for income-tested programs",
+            "required": false
+          },
+          "home_value": {
+            "type": "string",
+            "description": "Estimated home value in USD — used to estimate annual savings",
+            "required": false
+          },
+          "veteran": {
+            "type": "string",
+            "description": "Set true to include veteran-specific property tax exemptions (available in every state)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language — any language supported",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "rx-assist",
+        "path": "/api/senior/rx-assist",
+        "price": "$0.10",
+        "description": "Prescription assistance programs (Extra Help, state programs, pharma PAPs)",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "US state name or abbreviation",
+            "required": true
+          },
+          "medications": {
+            "type": "string",
+            "description": "Comma-separated medication list — used to identify specific manufacturer PAPs for each drug",
+            "required": false
+          },
+          "income": {
+            "type": "string",
+            "description": "Monthly income in USD — determines Extra Help eligibility (2024 limit: $1,903/month individual)",
+            "required": false
+          },
+          "on_medicare": {
+            "type": "string",
+            "description": "Whether the senior is enrolled in Medicare Part D — affects Extra Help vs. manufacturer PAP eligibility",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language — any language supported",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "snap-utility",
+        "path": "/api/senior/snap-utility",
+        "price": "$0.10",
+        "description": "Senior SNAP food assistance and LIHEAP utility assistance",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "US state name or abbreviation",
+            "required": true
+          },
+          "income": {
+            "type": "string",
+            "description": "Monthly household income in USD",
+            "required": false
+          },
+          "household_size": {
+            "type": "string",
+            "description": "Number of people in the household — SNAP limits vary by household size",
+            "required": false
+          },
+          "own_home": {
+            "type": "string",
+            "description": "Whether the senior owns their home — affects LIHEAP eligibility and some SNAP asset tests",
+            "required": false
+          },
+          "medical_expenses": {
+            "type": "string",
+            "description": "Monthly out-of-pocket medical expenses — seniors can deduct excess medical costs to qualify for SNAP",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language — any language supported",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "veterans",
+        "path": "/api/senior/veterans",
+        "price": "$0.10",
+        "description": "VA Aid & Attendance and senior veteran benefits",
+        "params": {
+          "veteran_age": {
+            "type": "string",
+            "description": "Veteran age",
+            "required": false
+          },
+          "care_cost": {
+            "type": "string",
+            "description": "Monthly unreimbursed care costs in USD (home health aide, assisted living, adult day care)",
+            "required": false
+          },
+          "income": {
+            "type": "string",
+            "description": "Monthly gross income in USD (Social Security, pension, other)",
+            "required": false
+          },
+          "assets": {
+            "type": "string",
+            "description": "Total net worth in USD excluding primary home and vehicle — VA uses a $155,356 asset limit (2024)",
+            "required": false
+          },
+          "state": {
+            "type": "string",
+            "description": "State of residence — some states offer additional veteran benefits beyond federal VA",
+            "required": false
+          },
+          "surviving_spouse": {
+            "type": "string",
+            "description": "Set true if the applicant is a surviving spouse of a veteran — unlocks Survivors Pension and Aid & Attendance for surviving spouses",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language — any language supported",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "stateedge": {
+    "name": "StatEdge",
+    "baseUrl": "https://stateedge.vercel.app",
+    "description": "Global sports analytics and intelligence API. AI-synthesized injury reports, ATS/spread analysis, matchup predictions, odds analysis, parlay optimization, referee tendency analysis, rest/travel advant",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "odds",
+        "path": "/api/odds",
+        "price": "$0.10",
+        "description": "Live betting odds consensus",
+        "params": {
+          "sport": {
+            "type": "string",
+            "description": "Sport or league code. Global coverage: EPL/LALIGA/BUNDESLIGA/SERIEA/LIGUE1/UCL for European soccer; AFL/NRL/NBL for Australia; SIXNATIONS/NR",
+            "required": false,
+            "example": "NFL"
+          }
+        }
+      },
+      {
+        "action": "injuries",
+        "path": "/api/injuries",
+        "price": "$0.10",
+        "description": "Injury report with fantasy and betting impact",
+        "params": {
+          "sport": {
+            "type": "string",
+            "description": "sport",
+            "required": false,
+            "example": "NFL"
+          },
+          "week": {
+            "type": "string",
+            "description": "Week number (NFL/NCAAF only)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "matchups",
+        "path": "/api/matchups",
+        "price": "$0.10",
+        "description": "Matchup analysis for fantasy and betting",
+        "params": {
+          "sport": {
+            "type": "string",
+            "description": "Any sport/league code — global soccer leagues (EPL, LALIGA, etc.) fully supported",
+            "required": false
+          },
+          "week": {
+            "type": "string",
+            "description": "week",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "waiver",
+        "path": "/api/waiver",
+        "price": "$0.10",
+        "description": "Fantasy waiver wire recommendations",
+        "params": {
+          "sport": {
+            "type": "string",
+            "description": "sport",
+            "required": false
+          },
+          "week": {
+            "type": "string",
+            "description": "week",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "recap",
+        "path": "/api/recap",
+        "price": "$0.10",
+        "description": "Post-game recap with fantasy and betting implications",
+        "params": {
+          "sport": {
+            "type": "string",
+            "description": "sport",
+            "required": false
+          },
+          "team": {
+            "type": "string",
+            "description": "Team name (e.g. Lakers, Chiefs, Arsenal, Mumbai Indians)",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "global",
+        "path": "/api/global",
+        "price": "$0.10",
+        "description": "Global sports intelligence — F1, cricket, rugby, tennis, AFL, golf, boxing, MMA, cycling",
+        "params": {
+          "sport": {
+            "type": "string",
+            "description": "Sport code. F1 pulls live data from Jolpica API. All others use real-time Tavily synthesis from authoritative sources (formula1.com, ESPNcri",
+            "required": true,
+            "example": "F1"
+          },
+          "action": {
+            "type": "string",
+            "description": "F1: race|standings|qualifying|calendar. Cricket: match|series|ipl|standings. Rugby: match|tournament|standings. Tennis: tournament|rankings|",
+            "required": false
+          },
+          "detail": {
+            "type": "string",
+            "description": "Optional context: tournament name, team name, matchup, series. E.g. 'Six+Nations', 'Wimbledon', 'England+vs+Australia', 'Masters'",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "ats",
+        "path": "/api/ats",
+        "price": "$0.10",
+        "description": "Against-the-spread trends",
+        "params": {
+          "sport": {
+            "type": "string",
+            "description": "sport",
+            "required": false
+          },
+          "situation": {
+            "type": "string",
+            "description": "The situation to analyze (e.g. home-underdog, divisional, off-a-loss, primetime)",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "parlay",
+        "path": "/api/parlay",
+        "price": "$0.10",
+        "description": "Parlay analysis and probability",
+        "params": {
+          "legs": {
+            "type": "string",
+            "description": "Comma-separated parlay legs (e.g. Chiefs -3,Over 47.5,Lakers ML)",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "ref-analysis",
+        "path": "/api/ref-analysis",
+        "price": "$0.10",
+        "description": "Referee and official tendencies",
+        "params": {
+          "sport": {
+            "type": "string",
+            "description": "sport",
+            "required": false
+          },
+          "ref": {
+            "type": "string",
+            "description": "Referee name (optional — analyzes general tendencies if omitted)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "rest",
+        "path": "/api/rest",
+        "price": "$0.10",
+        "description": "Rest and schedule advantage analysis",
+        "params": {
+          "sport": {
+            "type": "string",
+            "description": "sport",
+            "required": false
+          },
+          "team": {
+            "type": "string",
+            "description": "Team to analyze",
+            "required": false
+          },
+          "opponent": {
+            "type": "string",
+            "description": "opponent",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "injury-impact",
+        "path": "/api/injury-impact",
+        "price": "$0.10",
+        "description": "Single player injury impact analysis",
+        "params": {
+          "sport": {
+            "type": "string",
+            "description": "sport",
+            "required": false
+          },
+          "player": {
+            "type": "string",
+            "description": "player",
+            "required": true
+          },
+          "team": {
+            "type": "string",
+            "description": "team",
+            "required": true
+          }
+        }
+      }
+    ]
+  },
+  "talentpulse": {
+    "name": "TalentPulse",
+    "baseUrl": "https://talentpulse-six.vercel.app",
+    "description": "Global workforce intelligence API — salary benchmarks, remote compliance, EOR cost models, skills demand, work visas, talent market analysis, executive compensation, layoff tracking, skills gap analys",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "salary",
+        "path": "/api/talent/salary",
+        "price": "$0.10",
+        "description": "Salary benchmarking — any role, any location globally",
+        "params": {
+          "role": {
+            "type": "string",
+            "description": "Job title e.g. Software Engineer | Data Scientist | Product Manager | Registered Nurse",
+            "required": true
+          },
+          "location": {
+            "type": "string",
+            "description": "City or region e.g. London | Singapore | São Paulo | Dubai | Bangalore | Toronto",
+            "required": true
+          },
+          "country": {
+            "type": "string",
+            "description": "Country name — optional, inferred from location if omitted",
+            "required": false
+          },
+          "experience": {
+            "type": "string",
+            "description": "Experience filter (default: all)",
+            "required": false,
+            "example": "entry"
+          },
+          "currency": {
+            "type": "string",
+            "description": "Preferred currency code e.g. USD | GBP | EUR | SGD | INR | AUD | CAD",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language: en | es | fr | de | ja | zh | ko | pt | ar | hi (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "remote-compliance",
+        "path": "/api/talent/remote-compliance",
+        "price": "$0.10",
+        "description": "Remote work compliance — jurisdiction-specific legal intelligence",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Country where remote employee is located e.g. Germany | Brazil | India | Philippines",
+            "required": true
+          },
+          "nationality": {
+            "type": "string",
+            "description": "Nationality of the remote employee (optional)",
+            "required": false
+          },
+          "company_country": {
+            "type": "string",
+            "description": "Where the employer entity is based (optional, affects PE analysis)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "employer-of-record",
+        "path": "/api/talent/employer-of-record",
+        "price": "$0.10",
+        "description": "Employer of record cost model — full employer cost breakdown by country",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Country to model e.g. Brazil | Germany | Philippines | India | Mexico | Poland",
+            "required": true
+          },
+          "salary": {
+            "type": "string",
+            "description": "Annual gross salary in local currency (optional, for cost model)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "skills-demand",
+        "path": "/api/talent/skills-demand",
+        "price": "$0.10",
+        "description": "Skills demand intelligence — real-time market signal for any skill or role globally",
+        "params": {
+          "skills": {
+            "type": "string",
+            "description": "Skills or role e.g. machine learning | React | Kubernetes | product management",
+            "required": true
+          },
+          "region": {
+            "type": "string",
+            "description": "Geographic focus e.g. Southeast Asia | Europe | North America | MENA | Latin America | Global (default: Global)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "visa",
+        "path": "/api/talent/visa",
+        "price": "$0.10",
+        "description": "Work visa intelligence — all pathways for any nationality/destination pair",
+        "params": {
+          "nationality": {
+            "type": "string",
+            "description": "Nationality of the worker e.g. Indian | American | Brazilian | Nigerian | Filipino",
+            "required": true
+          },
+          "destination": {
+            "type": "string",
+            "description": "Country where they want to work e.g. Canada | Germany | UAE | Australia | UK | Singapore",
+            "required": true
+          },
+          "role": {
+            "type": "string",
+            "description": "Job role — optional, helps identify role-specific visa pathways",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "talent-market",
+        "path": "/api/talent/talent-market",
+        "price": "$0.10",
+        "description": "Talent market intelligence — supply/demand dynamics, hubs, and competitive landscape",
+        "params": {
+          "role": {
+            "type": "string",
+            "description": "Role or discipline e.g. DevOps Engineer | nurse | financial analyst | mechanical engineer",
+            "required": true
+          },
+          "region": {
+            "type": "string",
+            "description": "Region or country e.g. Southeast Asia | Germany | Sub-Saharan Africa | Latin America | Middle East",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "compensation",
+        "path": "/api/talent/compensation",
+        "price": "$0.10",
+        "description": "Executive compensation benchmarking — total comp for senior and C-suite roles globally",
+        "params": {
+          "role": {
+            "type": "string",
+            "description": "Role e.g. CEO | CFO | CTO | VP Engineering | General Counsel | Chief Revenue Officer",
+            "required": true
+          },
+          "level": {
+            "type": "string",
+            "description": "Level: C-suite | VP | Director | Senior Director | SVP (default: VP)",
+            "required": false
+          },
+          "sector": {
+            "type": "string",
+            "description": "Industry sector e.g. SaaS | fintech | healthcare | manufacturing | consulting (default: technology)",
+            "required": false
+          },
+          "country": {
+            "type": "string",
+            "description": "Country e.g. USA | UK | Germany | Singapore | Australia | Canada (default: USA)",
+            "required": false
+          },
+          "company_size": {
+            "type": "string",
+            "description": "startup | series-b | mid-market | large-cap | public (optional)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "layoffs",
+        "path": "/api/talent/layoffs",
+        "price": "$0.10",
+        "description": "Layoff tracker — real-time workforce reduction intelligence",
+        "params": {
+          "industry": {
+            "type": "string",
+            "description": "Industry sector e.g. tech | finance | retail | healthcare | media | logistics (default: tech)",
+            "required": false
+          },
+          "region": {
+            "type": "string",
+            "description": "Geographic focus e.g. USA | Europe | Asia | Global (default: Global)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "skills-gap",
+        "path": "/api/talent/skills-gap",
+        "price": "$0.10",
+        "description": "Skills gap intelligence — where employer demand outpaces supply, with reskilling pathways",
+        "params": {
+          "industry": {
+            "type": "string",
+            "description": "Industry e.g. healthcare | manufacturing | technology | financial services | construction",
+            "required": true
+          },
+          "country": {
+            "type": "string",
+            "description": "Country e.g. USA | UK | India | Germany | Australia | Nigeria | Brazil",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "cost-comparison",
+        "path": "/api/talent/cost-comparison",
+        "price": "$0.10",
+        "description": "Multi-country hiring cost comparison — CFO-grade employer cost model across countries",
+        "params": {
+          "role": {
+            "type": "string",
+            "description": "Role to compare e.g. software engineer | data analyst | customer support manager | accountant",
+            "required": true
+          },
+          "countries": {
+            "type": "string",
+            "description": "Comma-separated list of countries (min 2) e.g. USA,India,Poland,Colombia",
+            "required": true
+          },
+          "experience": {
+            "type": "string",
+            "description": "Experience level (default: mid)",
+            "required": false,
+            "example": "entry"
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language (default: en)",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "taxpulse": {
+    "name": "TaxPulse",
+    "baseUrl": "https://taxpulse-phi.vercel.app",
+    "description": "Global tax intelligence API. AI-synthesized tax guidance for 195 countries: income tax rates, VAT/GST, corporate tax, capital gains, crypto tax treatment, expat tax obligations, digital nomad tax stru",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "country",
+        "path": "/api/tax/country",
+        "price": "$0.10",
+        "description": "Country tax system overview",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Country name — e.g. Germany, UAE, Portugal, Singapore",
+            "required": true
+          },
+          "scenario": {
+            "type": "string",
+            "description": "Profile of interest — e.g. expat individual, digital nomad, holding company, crypto investor",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "compare",
+        "path": "/api/tax/compare",
+        "price": "$0.10",
+        "description": "Multi-country tax comparison",
+        "params": {
+          "countries": {
+            "type": "string",
+            "description": "Comma-separated list — e.g. Germany,UAE,Portugal",
+            "required": false
+          },
+          "country1": {
+            "type": "string",
+            "description": "country1",
+            "required": false
+          },
+          "country2": {
+            "type": "string",
+            "description": "country2",
+            "required": false
+          },
+          "country3": {
+            "type": "string",
+            "description": "country3",
+            "required": false
+          },
+          "scenario": {
+            "type": "string",
+            "description": "digital nomad | individual relocation | entrepreneur | holding company | crypto investor | retiree",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "nomad",
+        "path": "/api/tax/nomad",
+        "price": "$0.10",
+        "description": "Digital nomad tax optimization",
+        "params": {
+          "nationality": {
+            "type": "string",
+            "description": "e.g. American, British, Canadian, German — affects home country obligations",
+            "required": false
+          },
+          "income_type": {
+            "type": "string",
+            "description": "remote employee | freelancer | entrepreneur | investor | content creator",
+            "required": false
+          },
+          "income_level": {
+            "type": "string",
+            "description": "income_level",
+            "required": false
+          },
+          "focus": {
+            "type": "string",
+            "description": "focus",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "treaty",
+        "path": "/api/tax/treaty",
+        "price": "$0.10",
+        "description": "Tax treaty analysis",
+        "params": {
+          "country1": {
+            "type": "string",
+            "description": "Resident country",
+            "required": true
+          },
+          "country2": {
+            "type": "string",
+            "description": "Source country (where income arises)",
+            "required": true
+          },
+          "transaction_type": {
+            "type": "string",
+            "description": "dividends | interest | royalties | capital_gains | employment | pension | all",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "structure",
+        "path": "/api/tax/structure",
+        "price": "$0.10",
+        "description": "Corporate tax structuring",
+        "params": {
+          "objective": {
+            "type": "string",
+            "description": "e.g. IP holding for SaaS, holding company for investments, minimize corporate tax",
+            "required": false
+          },
+          "business_type": {
+            "type": "string",
+            "description": "technology | ecommerce | financial | media | manufacturing | consulting",
+            "required": false
+          },
+          "annual_revenue": {
+            "type": "string",
+            "description": "annual_revenue",
+            "required": false
+          },
+          "shareholders": {
+            "type": "string",
+            "description": "Shareholder nationalities — affects CFC rules",
+            "required": false
+          },
+          "jurisdictions": {
+            "type": "string",
+            "description": "Preferred jurisdictions — e.g. Netherlands,Luxembourg,UAE",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "crypto",
+        "path": "/api/tax/crypto",
+        "price": "$0.10",
+        "description": "Cryptocurrency tax by jurisdiction",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Specific country focus — or omit for global comparison",
+            "required": false
+          },
+          "activity": {
+            "type": "string",
+            "description": "trading | hodling | staking | mining | DeFi | NFT | all",
+            "required": false
+          },
+          "assets": {
+            "type": "string",
+            "description": "assets",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "expat",
+        "path": "/api/tax/expat",
+        "price": "$0.10",
+        "description": "Expat tax obligations",
+        "params": {
+          "nationality": {
+            "type": "string",
+            "description": "e.g. American, British, Canadian, Australian, German",
+            "required": true
+          },
+          "destination": {
+            "type": "string",
+            "description": "destination",
+            "required": false
+          },
+          "situation": {
+            "type": "string",
+            "description": "remote work | retirement | entrepreneur | investor | employment",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "vat",
+        "path": "/api/tax/vat",
+        "price": "$0.10",
+        "description": "Global VAT/GST intelligence",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "country",
+            "required": false
+          },
+          "sector": {
+            "type": "string",
+            "description": "digital_services | SaaS | ecommerce | physical_goods | professional_services",
+            "required": false
+          },
+          "business_type": {
+            "type": "string",
+            "description": "marketplace | direct_seller | subscription | agency",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "tradepulse": {
+    "name": "TradePulse",
+    "baseUrl": "https://tradepulse-five.vercel.app",
+    "description": "Global trade intelligence API. AI-synthesized tariff rates, HS code classification, FTA duty analysis, landed cost calculation, trade compliance guidance, sanctions screening, market entry analysis, a",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "classify",
+        "path": "/api/trade/classify",
+        "price": "$0.10",
+        "description": "HS code classification",
+        "params": {
+          "product": {
+            "type": "string",
+            "description": "Natural language product description — e.g. 'laptop computer', 'cotton t-shirts', 'industrial water pump'",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language code (en, zh, ja, de, fr, es, ar, hi, etc.)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "tariff",
+        "path": "/api/trade/tariff",
+        "price": "$0.10",
+        "description": "Tariff rates by HS code and country pair",
+        "params": {
+          "hs_code": {
+            "type": "string",
+            "description": "6-digit HS code — e.g. 847130, 610910, 090111",
+            "required": true
+          },
+          "from_country": {
+            "type": "string",
+            "description": "Exporting country — e.g. China, Vietnam, Germany, Mexico. Also accepts 'from'",
+            "required": true
+          },
+          "to_country": {
+            "type": "string",
+            "description": "Importing country — e.g. USA, Japan, Germany, Australia. Also accepts 'to'",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "landed",
+        "path": "/api/trade/landed",
+        "price": "$0.10",
+        "description": "Full landed cost calculator",
+        "params": {
+          "product": {
+            "type": "string",
+            "description": "Product description or type. Use hs_code instead if known.",
+            "required": false
+          },
+          "hs_code": {
+            "type": "string",
+            "description": "6-digit HS code as alternative to product",
+            "required": false
+          },
+          "from_country": {
+            "type": "string",
+            "description": "Origin country. Also accepts 'from'",
+            "required": true
+          },
+          "to_country": {
+            "type": "string",
+            "description": "Destination country. Also accepts 'to'",
+            "required": true
+          },
+          "value": {
+            "type": "string",
+            "description": "Declared customs value in USD",
+            "required": false
+          },
+          "quantity": {
+            "type": "string",
+            "description": "Number of units (for per-unit cost calculation)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "fta",
+        "path": "/api/trade/fta",
+        "price": "$0.10",
+        "description": "Free Trade Agreement analyzer",
+        "params": {
+          "from_country": {
+            "type": "string",
+            "description": "Exporting country. Also accepts 'from'",
+            "required": true
+          },
+          "to_country": {
+            "type": "string",
+            "description": "Importing country. Also accepts 'to'",
+            "required": true
+          },
+          "hs_code": {
+            "type": "string",
+            "description": "6-digit HS code for product-specific rate lookup",
+            "required": false
+          },
+          "product": {
+            "type": "string",
+            "description": "Product description for additional context",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "sanctions",
+        "path": "/api/trade/sanctions",
+        "price": "$0.10",
+        "description": "Sanctions and trade restrictions screening",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Country to screen — e.g. Russia, Iran, Cuba, Myanmar, Belarus",
+            "required": false
+          },
+          "entity": {
+            "type": "string",
+            "description": "Company or individual name to screen",
+            "required": false
+          },
+          "hs_code": {
+            "type": "string",
+            "description": "HS code for product-specific restrictions",
+            "required": false
+          },
+          "transaction_type": {
+            "type": "string",
+            "description": "export | import | investment | service",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "market",
+        "path": "/api/trade/market",
+        "price": "$0.10",
+        "description": "Market entry intelligence",
+        "params": {
+          "product": {
+            "type": "string",
+            "description": "Product to research — e.g. 'organic coffee', 'solar panels', 'medical devices'",
+            "required": false
+          },
+          "hs_code": {
+            "type": "string",
+            "description": "HS code as alternative to product",
+            "required": false
+          },
+          "target_country": {
+            "type": "string",
+            "description": "Target market country. Also accepts 'country' or 'to'",
+            "required": true
+          },
+          "from_country": {
+            "type": "string",
+            "description": "Your origin country for FTA context. Also accepts 'from'",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "compliance",
+        "path": "/api/trade/compliance",
+        "price": "$0.10",
+        "description": "Export compliance — EAR/ITAR/dual-use",
+        "params": {
+          "product": {
+            "type": "string",
+            "description": "Product to assess — e.g. 'encryption software', 'thermal imaging camera', 'carbon fiber'",
+            "required": false
+          },
+          "hs_code": {
+            "type": "string",
+            "description": "HS code as alternative to product",
+            "required": false
+          },
+          "from_country": {
+            "type": "string",
+            "description": "Exporting country (defaults to USA). Also accepts 'from'",
+            "required": false
+          },
+          "to_country": {
+            "type": "string",
+            "description": "Destination country. Also accepts 'to'",
+            "required": false
+          },
+          "end_use": {
+            "type": "string",
+            "description": "Stated end-use — affects license requirement",
+            "required": false
+          },
+          "end_user": {
+            "type": "string",
+            "description": "End-user type or entity name",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "freight-rates",
+        "path": "/api/trade/freight-rates",
+        "price": "$0.10",
+        "description": "Live freight rate intelligence by lane",
+        "params": {
+          "origin": {
+            "type": "string",
+            "description": "Origin port city or country — e.g. Shanghai, Rotterdam, Los Angeles",
+            "required": true
+          },
+          "destination": {
+            "type": "string",
+            "description": "Destination port city or country — e.g. Los Angeles, Hamburg, Sydney",
+            "required": true
+          },
+          "mode": {
+            "type": "string",
+            "description": "ocean | air | both (default: ocean)",
+            "required": false
+          },
+          "container_type": {
+            "type": "string",
+            "description": "20ft | 40ft | 40hc | lcl (default: 40ft)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "nearshore",
+        "path": "/api/trade/nearshore",
+        "price": "$0.10",
+        "description": "Nearshoring and reshoring advisor",
+        "params": {
+          "current_country": {
+            "type": "string",
+            "description": "Current manufacturing/sourcing country — e.g. China, India, Bangladesh",
+            "required": true
+          },
+          "industry": {
+            "type": "string",
+            "description": "Industry or product sector — e.g. electronics, textiles, automotive parts",
+            "required": true
+          },
+          "target_market": {
+            "type": "string",
+            "description": "Primary market you sell into (default: USA)",
+            "required": false
+          },
+          "priority": {
+            "type": "string",
+            "description": "cost | risk | speed | balanced (default: balanced)",
+            "required": false
+          },
+          "hs_code": {
+            "type": "string",
+            "description": "HS code for product-specific tariff comparison",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "supplier-risk",
+        "path": "/api/trade/supplier-risk",
+        "price": "$0.10",
+        "description": "Supplier country risk — UFLPA, ESG, and geopolitical",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "Supplier or manufacturing country — e.g. China, Bangladesh, Vietnam, India",
+            "required": true
+          },
+          "sector": {
+            "type": "string",
+            "description": "textiles | electronics | food | chemicals | automotive | mining | any (default: any)",
+            "required": false
+          },
+          "checks": {
+            "type": "string",
+            "description": "forced_labor | esg | sanctions | geo_risk | all (default: all)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "incoterms",
+        "path": "/api/trade/incoterms",
+        "price": "$0.10",
+        "description": "Incoterms 2020 decoder",
+        "params": {
+          "term": {
+            "type": "string",
+            "description": "Incoterms 2020 rule — EXW | FCA | FAS | FOB | CFR | CIF | CPT | CIP | DAP | DPU | DDP",
+            "required": true
+          },
+          "from_country": {
+            "type": "string",
+            "description": "Seller/exporting country for corridor-specific guidance",
+            "required": false
+          },
+          "to_country": {
+            "type": "string",
+            "description": "Buyer/importing country",
+            "required": false
+          },
+          "product": {
+            "type": "string",
+            "description": "Product type for transport-mode guidance",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "news",
+        "path": "/api/trade/news",
+        "price": "$0.10",
+        "description": "Trade policy intelligence",
+        "params": {
+          "from_country": {
+            "type": "string",
+            "description": "Filter by sending country. Also accepts 'from'",
+            "required": false
+          },
+          "to_country": {
+            "type": "string",
+            "description": "Filter by receiving country. Also accepts 'to'",
+            "required": false
+          },
+          "topic": {
+            "type": "string",
+            "description": "tariffs | fta | sanctions | wto | supply-chain | all",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "transitpulse": {
+    "name": "TransitPulse",
+    "baseUrl": "https://transitpulse.vercel.app",
+    "description": "TransitPulse — global public transit intelligence: route reliability, delay prediction, multi-modal trip planning, city transit scores, and commute optimization for 500+ cities worldwide.",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "status",
+        "path": "/api/transit/status",
+        "price": "$0.10",
+        "description": "Live Service Status",
+        "params": {
+          "city": {
+            "type": "string",
+            "description": "City name (e.g. London, NYC, Tokyo)",
+            "required": true
+          },
+          "line": {
+            "type": "string",
+            "description": "Specific line or route to focus on",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "city",
+        "path": "/api/transit/city",
+        "price": "$0.10",
+        "description": "City Transit Intelligence Brief",
+        "params": {
+          "city": {
+            "type": "string",
+            "description": "City name",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "route",
+        "path": "/api/transit/route",
+        "price": "$0.10",
+        "description": "Route Reliability Analysis",
+        "params": {
+          "city": {
+            "type": "string",
+            "description": "city",
+            "required": true
+          },
+          "route": {
+            "type": "string",
+            "description": "Line or route name (e.g. L train, Northern line)",
+            "required": true
+          },
+          "time": {
+            "type": "string",
+            "description": "Time of travel (e.g. 9am, rush hour)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "commute",
+        "path": "/api/transit/commute",
+        "price": "$0.10",
+        "description": "Commute Quality Analysis",
+        "params": {
+          "city": {
+            "type": "string",
+            "description": "city",
+            "required": true
+          },
+          "from": {
+            "type": "string",
+            "description": "Origin neighborhood or address",
+            "required": false
+          },
+          "to": {
+            "type": "string",
+            "description": "Destination neighborhood or address",
+            "required": false
+          },
+          "time": {
+            "type": "string",
+            "description": "time",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "airport",
+        "path": "/api/transit/airport",
+        "price": "$0.10",
+        "description": "Airport Transit Guide",
+        "params": {
+          "city": {
+            "type": "string",
+            "description": "city",
+            "required": true
+          },
+          "airport": {
+            "type": "string",
+            "description": "IATA code (JFK, LHR) or name",
+            "required": false
+          },
+          "flight_time": {
+            "type": "string",
+            "description": "Flight departure time (e.g. 6am)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "agencies",
+        "path": "/api/transit/agencies",
+        "price": "$0.10",
+        "description": "Transit Agencies Lookup",
+        "params": {
+          "city": {
+            "type": "string",
+            "description": "city",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "delays",
+        "path": "/api/transit/delays",
+        "price": "$0.10",
+        "description": "Current Transit Delays",
+        "params": {
+          "city": {
+            "type": "string",
+            "description": "city",
+            "required": true
+          },
+          "line": {
+            "type": "string",
+            "description": "line",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "delays-history",
+        "path": "/api/transit/delays-history",
+        "price": "$0.10",
+        "description": "Historical Delay Patterns",
+        "params": {
+          "city": {
+            "type": "string",
+            "description": "city",
+            "required": true
+          },
+          "line": {
+            "type": "string",
+            "description": "line",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "trip",
+        "path": "/api/transit/trip",
+        "price": "$0.10",
+        "description": "Transit Trip Planning",
+        "params": {
+          "from": {
+            "type": "string",
+            "description": "from",
+            "required": true
+          },
+          "to": {
+            "type": "string",
+            "description": "to",
+            "required": true
+          },
+          "time": {
+            "type": "string",
+            "description": "time",
+            "required": false
+          },
+          "city": {
+            "type": "string",
+            "description": "city",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "multimodal",
+        "path": "/api/transit/multimodal",
+        "price": "$0.10",
+        "description": "Multi-Modal Journey Planning",
+        "params": {
+          "from": {
+            "type": "string",
+            "description": "from",
+            "required": true
+          },
+          "to": {
+            "type": "string",
+            "description": "to",
+            "required": true
+          },
+          "time": {
+            "type": "string",
+            "description": "time",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "compare",
+        "path": "/api/transit/compare",
+        "price": "$0.10",
+        "description": "City-to-City Transit Comparison",
+        "params": {
+          "city_a": {
+            "type": "string",
+            "description": "First city",
+            "required": false
+          },
+          "city_b": {
+            "type": "string",
+            "description": "Second city",
+            "required": false
+          },
+          "cities": {
+            "type": "string",
+            "description": "Alternative: comma-separated pair (e.g. NYC,London)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "carfree",
+        "path": "/api/transit/carfree",
+        "price": "$0.10",
+        "description": "Car-Free Livability Score",
+        "params": {
+          "city": {
+            "type": "string",
+            "description": "city",
+            "required": true
+          },
+          "neighborhood": {
+            "type": "string",
+            "description": "neighborhood",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "visitor",
+        "path": "/api/transit/visitor",
+        "price": "$0.10",
+        "description": "First-Timer Visitor Guide",
+        "params": {
+          "city": {
+            "type": "string",
+            "description": "city",
+            "required": true
+          }
+        }
+      },
+      {
+        "action": "coverage",
+        "path": "/api/transit/coverage",
+        "price": "$0.10",
+        "description": "Transit Coverage Analysis",
+        "params": {
+          "city": {
+            "type": "string",
+            "description": "city",
+            "required": true
+          }
+        }
+      }
+    ]
+  },
+  "travelpulse": {
+    "name": "TravelPulse",
+    "baseUrl": "https://travelpulse-nu.vercel.app",
+    "description": "Global travel intelligence API. AI-synthesized destination guides, visa requirements, currency exchange, health advisories, packing lists, phrasebooks, weather, and travel insurance. Integrates real-t",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "waits",
+        "path": "/api/parks/waits",
+        "price": "$0.10",
+        "description": "Live park wait times",
+        "params": {
+          "park": {
+            "type": "string",
+            "description": "Park name or slug e.g. magic-kingdom, universal-studios-florida, europa-park",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "hours",
+        "path": "/api/parks/hours",
+        "price": "$0.10",
+        "description": "Park hours and schedule",
+        "params": {
+          "park": {
+            "type": "string",
+            "description": "park",
+            "required": true
+          },
+          "date": {
+            "type": "string",
+            "description": "YYYY-MM-DD, default today",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "crowds",
+        "path": "/api/parks/crowds",
+        "price": "$0.10",
+        "description": "Crowd prediction",
+        "params": {
+          "park": {
+            "type": "string",
+            "description": "park",
+            "required": true
+          },
+          "date": {
+            "type": "string",
+            "description": "date",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "weather",
+        "path": "/api/travel/weather",
+        "price": "$0.10",
+        "description": "Travel weather forecast",
+        "params": {
+          "destination": {
+            "type": "string",
+            "description": "destination",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "deals",
+        "path": "/api/travel/deals",
+        "price": "$0.10",
+        "description": "Travel deals",
+        "params": {
+          "destination": {
+            "type": "string",
+            "description": "destination",
+            "required": true
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "plan",
+        "path": "/api/travel/plan",
+        "price": "$0.10",
+        "description": "Trip itinerary",
+        "params": {
+          "destination": {
+            "type": "string",
+            "description": "destination",
+            "required": true
+          },
+          "days": {
+            "type": "string",
+            "description": "days",
+            "required": false
+          },
+          "style": {
+            "type": "string",
+            "description": "style",
+            "required": false,
+            "example": "cultural"
+          },
+          "budget": {
+            "type": "string",
+            "description": "budget",
+            "required": false,
+            "example": "budget"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "visa",
+        "path": "/api/travel/visa",
+        "price": "$0.10",
+        "description": "Visa requirements by nationality and destination",
+        "params": {
+          "nationality": {
+            "type": "string",
+            "description": "Passport nationality (e.g. US, UK, India, Brazil, Nigeria)",
+            "required": true
+          },
+          "destination": {
+            "type": "string",
+            "description": "Destination country (e.g. Japan, France, Thailand, Kenya)",
+            "required": true
+          },
+          "purpose": {
+            "type": "string",
+            "description": "Visit purpose (tourism, business, nomad, transit)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "insurance",
+        "path": "/api/travel/insurance",
+        "price": "$0.10",
+        "description": "Travel insurance comparison and recommendation",
+        "params": {
+          "destination": {
+            "type": "string",
+            "description": "Trip destination",
+            "required": true
+          },
+          "trip_type": {
+            "type": "string",
+            "description": "Trip type — determines coverage priorities",
+            "required": false,
+            "example": "vacation"
+          },
+          "duration_days": {
+            "type": "string",
+            "description": "Trip duration in days",
+            "required": false
+          },
+          "trip_cost_usd": {
+            "type": "string",
+            "description": "Total prepaid trip cost in USD — for cancellation coverage sizing",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "pack",
+        "path": "/api/travel/pack",
+        "price": "$0.10",
+        "description": "AI packing list by destination, climate, and activities",
+        "params": {
+          "destination": {
+            "type": "string",
+            "description": "Travel destination",
+            "required": true
+          },
+          "duration": {
+            "type": "string",
+            "description": "Trip duration in days",
+            "required": false
+          },
+          "activities": {
+            "type": "string",
+            "description": "Planned activities (e.g. hiking, beach, business, diving, winter sports)",
+            "required": false
+          },
+          "bag_type": {
+            "type": "string",
+            "description": "Luggage constraint",
+            "required": false,
+            "example": "carry-on"
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "budget",
+        "path": "/api/travel/budget",
+        "price": "$0.10",
+        "description": "Daily travel budget by destination and style",
+        "params": {
+          "destination": {
+            "type": "string",
+            "description": "Destination country or city",
+            "required": true
+          },
+          "style": {
+            "type": "string",
+            "description": "Travel style (default: mid-range)",
+            "required": false,
+            "example": "budget"
+          },
+          "duration": {
+            "type": "string",
+            "description": "Number of days for total estimate",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "currency",
+        "path": "/api/travel/currency",
+        "price": "$0.10",
+        "description": "Currency exchange rates and money tips for destination",
+        "params": {
+          "from": {
+            "type": "string",
+            "description": "Home currency (e.g. USD, EUR, GBP) — default: USD",
+            "required": false
+          },
+          "to": {
+            "type": "string",
+            "description": "Destination currency or country name",
+            "required": true
+          },
+          "amount": {
+            "type": "string",
+            "description": "Amount to convert for reference calculation",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "phrasebook",
+        "path": "/api/travel/phrasebook",
+        "price": "$0.10",
+        "description": "Essential travel phrasebook by destination language",
+        "params": {
+          "destination": {
+            "type": "string",
+            "description": "Destination country or language (e.g. Japan, Thai, Morocco)",
+            "required": true
+          },
+          "focus": {
+            "type": "string",
+            "description": "Phrase focus area (transport, food, emergency, shopping, all)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language for explanations (phrases always in destination language)",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "translate",
+        "path": "/api/travel/translate",
+        "price": "$0.10",
+        "description": "Real-time travel translation (menus, signs, conversations)",
+        "params": {
+          "text": {
+            "type": "string",
+            "description": "Text to translate",
+            "required": true
+          },
+          "from_lang": {
+            "type": "string",
+            "description": "Source language (auto-detected if omitted)",
+            "required": false
+          },
+          "to_lang": {
+            "type": "string",
+            "description": "Target language (default: English)",
+            "required": false
+          },
+          "context": {
+            "type": "string",
+            "description": "Context hint (menu, sign, conversation, product)",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "truthpulse": {
+    "name": "TruthPulse",
+    "baseUrl": "https://truthpulse-five.vercel.app",
+    "description": "Primary-source intelligence for FOIA releases, declassified archives, court records, forensic evidence, UAP disclosures, and conspiracy theory evidence briefs. Evidence-first. No spin. Global. All end",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "foia-search",
+        "path": "/api/truth/foia-search",
+        "price": "$0.10",
+        "description": "FOIA release search",
+        "params": {
+          "topic": {
+            "type": "string",
+            "description": "Topic to search — e.g. MKUltra, JFK assassination, Epstein, UFO, Operation Paperclip",
+            "required": true
+          },
+          "agency": {
+            "type": "string",
+            "description": "FBI | CIA | NSA | DEA | DOJ | DHS | all",
+            "required": false
+          },
+          "country": {
+            "type": "string",
+            "description": "US | UK | CA | AU | all",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "en | es | fr | de | ja | pt | it | nl | ko | zh | ar",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "foia-draft",
+        "path": "/api/truth/foia-draft",
+        "price": "$0.10",
+        "description": "FOIA request letter generator",
+        "params": {
+          "records_sought": {
+            "type": "string",
+            "description": "Plain English description of the records you want",
+            "required": true
+          },
+          "agency": {
+            "type": "string",
+            "description": "Specific agency name — or leave blank to let TruthPulse recommend",
+            "required": false
+          },
+          "country": {
+            "type": "string",
+            "description": "US | UK | CA | AU | NZ | IE | IN | BR | DE | FR | EU",
+            "required": false
+          },
+          "requester_type": {
+            "type": "string",
+            "description": "individual | journalist | researcher | nonprofit",
+            "required": false
+          },
+          "fee_waiver": {
+            "type": "string",
+            "description": "yes | no",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "court-case",
+        "path": "/api/truth/court-case",
+        "price": "$0.10",
+        "description": "Court case intelligence",
+        "params": {
+          "case_name": {
+            "type": "string",
+            "description": "Defendant name, case name, or case number — e.g. Alex Murdaugh | State v. Myers | OJ Simpson",
+            "required": true
+          },
+          "jurisdiction": {
+            "type": "string",
+            "description": "US | UK | CA | AU | international | ICC | ECHR | auto",
+            "required": false
+          },
+          "focus": {
+            "type": "string",
+            "description": "all | charges | verdict | sentence | rulings | timeline",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "evidence-extract",
+        "path": "/api/truth/evidence-extract",
+        "price": "$0.10",
+        "description": "Forensic evidence extraction",
+        "params": {
+          "case_name": {
+            "type": "string",
+            "description": "Defendant or case name — e.g. George Myers | Karen Read | Alex Murdaugh",
+            "required": true
+          },
+          "evidence_type": {
+            "type": "string",
+            "description": "all | toxicology | autopsy | dna | financial | ballistics | digital",
+            "required": false
+          },
+          "jurisdiction": {
+            "type": "string",
+            "description": "US | UK | CA | AU | auto",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "declassified",
+        "path": "/api/truth/declassified",
+        "price": "$0.10",
+        "description": "Declassified archive search",
+        "params": {
+          "topic": {
+            "type": "string",
+            "description": "e.g. MKUltra | COINTELPRO | Operation Mockingbird | Iran-Contra | Watergate",
+            "required": true
+          },
+          "source": {
+            "type": "string",
+            "description": "cia | fbi | nsa | nara | uk | all",
+            "required": false
+          },
+          "era": {
+            "type": "string",
+            "description": "1940s | 1950s | cold-war | 1970s | 1980s | post-911 | recent | all",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "uap-records",
+        "path": "/api/truth/uap-records",
+        "price": "$0.10",
+        "description": "Global UAP/UFO government records",
+        "params": {
+          "incident": {
+            "type": "string",
+            "description": "Nimitz | Tic Tac | Roswell | AATIP | Gimbal | Rendlesham | Phoenix Lights | any — or leave blank for overview",
+            "required": false
+          },
+          "country": {
+            "type": "string",
+            "description": "US | FR | UK | BR | CL | AU | CA | all",
+            "required": false
+          },
+          "focus": {
+            "type": "string",
+            "description": "incident | investigation | testimony | evidence | all",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "conspiracy-brief",
+        "path": "/api/truth/conspiracy-brief",
+        "price": "$0.10",
+        "description": "Conspiracy theory evidence brief",
+        "params": {
+          "topic": {
+            "type": "string",
+            "description": "JFK assassination | 9/11 Commission | Moon landing | Epstein network | Operation Paperclip | any topic",
+            "required": true
+          },
+          "depth": {
+            "type": "string",
+            "description": "overview | deep-dive",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "entity-network",
+        "path": "/api/truth/entity-network",
+        "price": "$0.10",
+        "description": "Entity connection mapping",
+        "params": {
+          "subject": {
+            "type": "string",
+            "description": "Person or organization — e.g. Jeffrey Epstein | Harvey Weinstein | HSBC | any subject",
+            "required": true
+          },
+          "depth": {
+            "type": "string",
+            "description": "direct | extended",
+            "required": false
+          },
+          "include": {
+            "type": "string",
+            "description": "individuals | organizations | cases | all",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "new-releases",
+        "path": "/api/truth/new-releases",
+        "price": "$0.10",
+        "description": "Latest FOIA and court releases feed",
+        "params": {
+          "category": {
+            "type": "string",
+            "description": "foia | court | declassified | uap | all",
+            "required": false
+          },
+          "country": {
+            "type": "string",
+            "description": "US | UK | CA | AU | EU | all",
+            "required": false
+          },
+          "limit": {
+            "type": "string",
+            "description": "5 | 10 | 20",
+            "required": false
+          },
+          "filter": {
+            "type": "string",
+            "description": "Optional keyword filter — e.g. fentanyl | JFK | UAP",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "media-vs-record",
+        "path": "/api/truth/media-vs-record",
+        "price": "$0.10",
+        "description": "Media narrative vs. court record",
+        "params": {
+          "case_or_topic": {
+            "type": "string",
+            "description": "Case name, defendant, or topic — e.g. George Floyd | Karen Read | Uvalde response | Alex Murdaugh",
+            "required": true
+          },
+          "jurisdiction": {
+            "type": "string",
+            "description": "US | UK | CA | AU | auto",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "international-foia",
+        "path": "/api/truth/international-foia",
+        "price": "$0.10",
+        "description": "International FOI search and request drafting",
+        "params": {
+          "topic": {
+            "type": "string",
+            "description": "Subject of the records you want — e.g. Thalidomide cover-up | colonial records | nuclear tests",
+            "required": true
+          },
+          "country": {
+            "type": "string",
+            "description": "UK | CA | AU | DE | NZ | IE | IN | BR | FR | JP | EU | NL | ZA | NG",
+            "required": true
+          },
+          "include_draft": {
+            "type": "string",
+            "description": "yes | no",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "venturepulse": {
+    "name": "VenturePulse",
+    "baseUrl": "https://venturepulse-nine.vercel.app",
+    "description": "Startup funding intelligence API. VC round data, investor matching, pitch deck scoring, term sheet decoding, cap table modeling, global accelerator directory, market sizing, legal formation, comparabl",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "funding-search",
+        "path": "/api/startup/funding-search",
+        "price": "$0.10",
+        "description": "VC funding round intelligence",
+        "params": {
+          "sector": {
+            "type": "string",
+            "description": "fintech | saas | biotech | ai | climate | consumer | b2b | deeptech | any",
+            "required": false
+          },
+          "stage": {
+            "type": "string",
+            "description": "pre-seed | seed | series-a | series-b | growth | any",
+            "required": false
+          },
+          "region": {
+            "type": "string",
+            "description": "us | eu | uk | apac | latam | mena | africa | global",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "en | es | fr | de | ja | pt | it | nl | ko | zh | ar",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "investor-match",
+        "path": "/api/startup/investor-match",
+        "price": "$0.10",
+        "description": "Investor matching engine",
+        "params": {
+          "description": {
+            "type": "string",
+            "description": "Plain English description of your startup — what it does, for whom, how it makes money",
+            "required": true
+          },
+          "stage": {
+            "type": "string",
+            "description": "pre-seed | seed | series-a | series-b",
+            "required": false
+          },
+          "sector": {
+            "type": "string",
+            "description": "fintech | saas | biotech | ai | climate | consumer | b2b | deeptech | any",
+            "required": false
+          },
+          "region": {
+            "type": "string",
+            "description": "us | eu | uk | apac | latam | mena | africa | global",
+            "required": false
+          },
+          "check_size": {
+            "type": "string",
+            "description": "Target check size in USD — e.g. 500000",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "pitch-score",
+        "path": "/api/startup/pitch-score",
+        "price": "$0.10",
+        "description": "Pitch deck scoring",
+        "params": {
+          "description": {
+            "type": "string",
+            "description": "Paste your pitch deck text, executive summary, or detailed company description",
+            "required": true
+          },
+          "stage": {
+            "type": "string",
+            "description": "pre-seed | seed | series-a | series-b",
+            "required": false
+          },
+          "sector": {
+            "type": "string",
+            "description": "fintech | saas | biotech | ai | climate | consumer | b2b | deeptech | any",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "term-sheet",
+        "path": "/api/startup/term-sheet",
+        "price": "$0.10",
+        "description": "Term sheet decoder",
+        "params": {
+          "terms": {
+            "type": "string",
+            "description": "Paste the full term sheet text or describe specific clauses to decode",
+            "required": true
+          },
+          "stage": {
+            "type": "string",
+            "description": "pre-seed | seed | series-a | series-b",
+            "required": false
+          },
+          "is_safe": {
+            "type": "string",
+            "description": "true | false — whether this is a SAFE note",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "cap-table",
+        "path": "/api/startup/cap-table",
+        "price": "$0.10",
+        "description": "Cap table dilution modeler",
+        "params": {
+          "founders_pct": {
+            "type": "string",
+            "description": "Current founder ownership percentage — e.g. 80",
+            "required": true
+          },
+          "raise_usd": {
+            "type": "string",
+            "description": "Amount being raised in USD — e.g. 2000000",
+            "required": true
+          },
+          "pre_money_usd": {
+            "type": "string",
+            "description": "Pre-money valuation in USD — e.g. 8000000",
+            "required": true
+          },
+          "existing_investors_pct": {
+            "type": "string",
+            "description": "Existing investor ownership percentage",
+            "required": false
+          },
+          "option_pool_pct": {
+            "type": "string",
+            "description": "Current option pool percentage",
+            "required": false
+          },
+          "option_pool_increase_pct": {
+            "type": "string",
+            "description": "New option pool percentage required by investors",
+            "required": false
+          },
+          "structure": {
+            "type": "string",
+            "description": "priced | safe | note",
+            "required": false
+          },
+          "stage": {
+            "type": "string",
+            "description": "stage",
+            "required": false
+          },
+          "sector": {
+            "type": "string",
+            "description": "sector",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "accelerator",
+        "path": "/api/startup/accelerator",
+        "price": "$0.10",
+        "description": "Global accelerator directory",
+        "params": {
+          "sector": {
+            "type": "string",
+            "description": "fintech | saas | biotech | ai | climate | consumer | b2b | deeptech | any",
+            "required": false
+          },
+          "stage": {
+            "type": "string",
+            "description": "idea | pre-seed | seed | series-a",
+            "required": false
+          },
+          "region": {
+            "type": "string",
+            "description": "us | eu | uk | apac | latam | mena | africa | global",
+            "required": false
+          },
+          "equity_max": {
+            "type": "string",
+            "description": "Maximum equity percentage willing to give up — e.g. 7",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "market-size",
+        "path": "/api/startup/market-size",
+        "price": "$0.10",
+        "description": "TAM/SAM/SOM market size analysis",
+        "params": {
+          "description": {
+            "type": "string",
+            "description": "Describe your market or product — what you sell, to whom, in what geography",
+            "required": true
+          },
+          "geography": {
+            "type": "string",
+            "description": "global | us | eu | uk | apac | latam | mena | africa | specific country",
+            "required": false
+          },
+          "approach": {
+            "type": "string",
+            "description": "top-down | bottom-up | both",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "legal-formation",
+        "path": "/api/startup/legal-formation",
+        "price": "$0.10",
+        "description": "Startup legal formation guide",
+        "params": {
+          "country": {
+            "type": "string",
+            "description": "US | UK | CA | AU | SG | IE | DE | FR | IN | BR | NL | SE | IL | NZ | JP | KR",
+            "required": true
+          },
+          "founder_locations": {
+            "type": "string",
+            "description": "Where founders are located — e.g. US, Germany (default: same as country)",
+            "required": false
+          },
+          "target_markets": {
+            "type": "string",
+            "description": "Where you plan to sell — e.g. US, EU",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "comparable",
+        "path": "/api/startup/comparable",
+        "price": "$0.10",
+        "description": "Comparable deal benchmarks",
+        "params": {
+          "description": {
+            "type": "string",
+            "description": "Brief description of your startup — sector, model, geography",
+            "required": true
+          },
+          "stage": {
+            "type": "string",
+            "description": "pre-seed | seed | series-a | series-b",
+            "required": false
+          },
+          "sector": {
+            "type": "string",
+            "description": "fintech | saas | biotech | ai | climate | consumer | b2b | deeptech | any",
+            "required": false
+          },
+          "region": {
+            "type": "string",
+            "description": "us | eu | uk | apac | latam | mena | africa | global",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "due-diligence",
+        "path": "/api/startup/due-diligence",
+        "price": "$0.10",
+        "description": "Investor due diligence prep",
+        "params": {
+          "stage": {
+            "type": "string",
+            "description": "seed | series-a | series-b | growth",
+            "required": false
+          },
+          "sector": {
+            "type": "string",
+            "description": "fintech | saas | biotech | ai | climate | consumer | b2b | deeptech | any",
+            "required": false
+          },
+          "region": {
+            "type": "string",
+            "description": "us | eu | uk | apac | global",
+            "required": false
+          },
+          "focus": {
+            "type": "string",
+            "description": "legal | financial | technical | all",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "vetpulse": {
+    "name": "VetPulse",
+    "baseUrl": "https://vetpulse-five.vercel.app",
+    "description": "US veterans benefits intelligence API. AI-synthesized guidance on VA disability compensation, Aid & Attendance pension, TDIU, claim strategy, caregiver stipends, GI Bill, state benefits, VA healthcare",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "disability",
+        "path": "/api/vet/disability",
+        "price": "$0.10",
+        "description": "VA disability rating analysis",
+        "params": {
+          "conditions": {
+            "type": "string",
+            "description": "Comma-separated medical conditions (e.g. 'tinnitus,PTSD,lumbar strain,sleep apnea')",
+            "required": true
+          },
+          "service_era": {
+            "type": "string",
+            "description": "Service era for presumptive condition assessment (e.g. 'Vietnam', 'Gulf War', 'OEF', 'OIF', 'Korea')",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language — any language supported",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "aid-attendance",
+        "path": "/api/vet/aid-attendance",
+        "price": "$0.10",
+        "description": "VA Aid & Attendance pension eligibility",
+        "params": {
+          "age": {
+            "type": "string",
+            "description": "Veteran age",
+            "required": false
+          },
+          "needs": {
+            "type": "string",
+            "description": "Care needs description (e.g. 'requires daily assistance with bathing, dressing, and medication management')",
+            "required": false
+          },
+          "income": {
+            "type": "string",
+            "description": "Monthly gross income in USD (Social Security, pension, other)",
+            "required": false
+          },
+          "assets": {
+            "type": "string",
+            "description": "Total net worth in USD excluding primary home and one vehicle",
+            "required": false
+          },
+          "care_cost": {
+            "type": "string",
+            "description": "Monthly unreimbursed care costs in USD — deducted from income for pension calculation",
+            "required": false
+          },
+          "surviving_spouse": {
+            "type": "string",
+            "description": "Set true if applicant is a surviving spouse of a veteran — unlocks Survivors Pension and different Aid & Attendance rates",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language — any language supported",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "tdiu",
+        "path": "/api/vet/tdiu",
+        "price": "$0.10",
+        "description": "TDIU (Total Disability Individual Unemployability) eligibility",
+        "params": {
+          "rating": {
+            "type": "string",
+            "description": "Current combined disability rating (e.g. '70' or '60')",
+            "required": false
+          },
+          "work_history": {
+            "type": "string",
+            "description": "Work history and current work status (e.g. 'cannot maintain substantially gainful employment due to PTSD and chronic pain')",
+            "required": false
+          },
+          "income": {
+            "type": "string",
+            "description": "Current annual income — TDIU requires below federal poverty threshold for marginal employment (~$15,000)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language — any language supported",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "claim-builder",
+        "path": "/api/vet/claim-builder",
+        "price": "$0.10",
+        "description": "VA disability claim evidence strategy",
+        "params": {
+          "conditions": {
+            "type": "string",
+            "description": "Comma-separated conditions to build evidence strategy for (e.g. 'PTSD,sleep apnea,hypertension,tinnitus')",
+            "required": true
+          },
+          "service_era": {
+            "type": "string",
+            "description": "Service era (e.g. 'Vietnam', 'Gulf War', 'OEF', 'OIF')",
+            "required": false
+          },
+          "current_rating": {
+            "type": "string",
+            "description": "Current combined rating if filing a supplemental or new claim",
+            "required": false
+          },
+          "previous_denials": {
+            "type": "string",
+            "description": "Description of any previous claim denials — affects strategy (HLR vs. Board appeal vs. supplemental)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language — any language supported",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "caregiver",
+        "path": "/api/vet/caregiver",
+        "price": "$0.10",
+        "description": "PCAFC caregiver stipend and benefits",
+        "params": {
+          "relationship": {
+            "type": "string",
+            "description": "Caregiver relationship to veteran (e.g. 'spouse', 'adult child', 'parent', 'sibling')",
+            "required": false
+          },
+          "veteran_needs": {
+            "type": "string",
+            "description": "Description of veteran's care needs (e.g. 'severe TBI requires 24hr supervision, cannot be left alone')",
+            "required": false
+          },
+          "discharge_date": {
+            "type": "string",
+            "description": "Approximate discharge date — PCAFC eligibility expanded in 2020 to all service eras",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language — any language supported",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "education",
+        "path": "/api/vet/education",
+        "price": "$0.10",
+        "description": "GI Bill and education benefit comparison",
+        "params": {
+          "chapter": {
+            "type": "string",
+            "description": "GI Bill chapter of interest (e.g. '33', '30', '35', '1606') — or omit for full comparison",
+            "required": false
+          },
+          "branch": {
+            "type": "string",
+            "description": "Military branch — affects reserve component benefit calculations",
+            "required": false
+          },
+          "school_location": {
+            "type": "string",
+            "description": "School city and state — used to estimate monthly housing allowance (E-5 with dependent BAH rate)",
+            "required": false
+          },
+          "dependents": {
+            "type": "string",
+            "description": "Whether veteran has dependents — affects DEA transferability and some benefit calculations",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language — any language supported",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "state-benefits",
+        "path": "/api/vet/state-benefits",
+        "price": "$0.10",
+        "description": "State-specific veteran benefits (all 50 states)",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "US state name or abbreviation (e.g. 'Texas', 'TX')",
+            "required": true
+          },
+          "disability_rating": {
+            "type": "string",
+            "description": "VA disability rating percentage — many state benefits require minimum rating (e.g. '70', '100', 'P&T')",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language — any language supported",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "home-loan",
+        "path": "/api/vet/home-loan",
+        "price": "$0.10",
+        "description": "VA home loan benefit analysis",
+        "params": {
+          "disability_rating": {
+            "type": "string",
+            "description": "VA disability rating — any service-connected rating eliminates funding fee (saves $5k–$15k)",
+            "required": false
+          },
+          "purchase_price": {
+            "type": "string",
+            "description": "Target home purchase price in USD — used to calculate funding fee savings and PMI comparison",
+            "required": false
+          },
+          "prior_va_loan": {
+            "type": "string",
+            "description": "Whether veteran has used a VA loan before — triggers entitlement restoration guidance",
+            "required": false
+          },
+          "state": {
+            "type": "string",
+            "description": "State of purchase — for state housing assistance programs that stack with VA loan",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language — any language supported",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "discounts",
+        "path": "/api/vet/discounts",
+        "price": "$0.10",
+        "description": "Verified veteran discounts by category",
+        "params": {
+          "category": {
+            "type": "string",
+            "description": "Discount category. Defaults to all.",
+            "required": false,
+            "example": "travel"
+          },
+          "disability_rating": {
+            "type": "string",
+            "description": "VA disability rating — some discounts (national parks pass, additional state benefits) require service-connected disability",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "Response language — any language supported",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "waterpulse": {
+    "name": "WaterPulse",
+    "baseUrl": "https://waterpulse-henna.vercel.app",
+    "description": "Global water intelligence API. 9 endpoints covering US groundwater (USGS), streamflow, drought (US Drought Monitor), water quality (EPA WQP), aquifer sustainability, flood risk, global water stress, a",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "groundwater",
+        "path": "/api/water/groundwater",
+        "price": "$0.10",
+        "description": "Groundwater levels (USGS)",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "Two-letter US state code — e.g. CA, TX, AZ, FL, KS",
+            "required": true
+          },
+          "limit": {
+            "type": "string",
+            "description": "Number of monitoring sites (5, 10, or 20)",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "streamflow",
+        "path": "/api/water/streamflow",
+        "price": "$0.10",
+        "description": "Streamflow — river discharge (USGS)",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "Two-letter US state code — e.g. CO, OR, TN",
+            "required": false
+          },
+          "site": {
+            "type": "string",
+            "description": "USGS site number — e.g. 09380000 (Colorado River at Lees Ferry)",
+            "required": false
+          },
+          "limit": {
+            "type": "string",
+            "description": "limit",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "drought",
+        "path": "/api/water/drought",
+        "price": "$0.10",
+        "description": "Drought status (US Drought Monitor)",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "Two-letter US state code — omit for national view",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "quality",
+        "path": "/api/water/quality",
+        "price": "$0.10",
+        "description": "Water quality (EPA WQP + USGS)",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "Two-letter US state code — e.g. MI, OH, PA",
+            "required": true
+          },
+          "parameter": {
+            "type": "string",
+            "description": "nitrates | phosphorus | ph | lead | arsenic | bacteria | pfas | turbidity",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "aquifer",
+        "path": "/api/water/aquifer",
+        "price": "$0.10",
+        "description": "Aquifer sustainability analysis",
+        "params": {
+          "aquifer": {
+            "type": "string",
+            "description": "Aquifer name — e.g. Ogallala, Central Valley, Floridan, Edwards, High Plains",
+            "required": true
+          },
+          "state": {
+            "type": "string",
+            "description": "State code for USGS data enrichment — e.g. KS, TX, CA",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "flood-risk",
+        "path": "/api/water/flood-risk",
+        "price": "$0.10",
+        "description": "Flood risk intelligence",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "City, county, or river — e.g. Nashville TN, Mississippi River Iowa",
+            "required": true
+          },
+          "state": {
+            "type": "string",
+            "description": "Two-letter US state code for USGS data — e.g. TN, IA, TX",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "global-stress",
+        "path": "/api/water/global-stress",
+        "price": "$0.10",
+        "description": "Global water stress by country/basin",
+        "params": {
+          "region": {
+            "type": "string",
+            "description": "Country, region, or river basin — e.g. India, Middle East, Nile Basin, Murray-Darling",
+            "required": true
+          },
+          "focus": {
+            "type": "string",
+            "description": "agriculture | municipal | industrial | conflict | investment | all",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "agriculture-use",
+        "path": "/api/water/agriculture-use",
+        "price": "$0.10",
+        "description": "Agricultural water use intelligence",
+        "params": {
+          "state": {
+            "type": "string",
+            "description": "Two-letter US state code — e.g. CA, ID, NE, WA, CO",
+            "required": true
+          },
+          "crop": {
+            "type": "string",
+            "description": "Crop type — e.g. alfalfa, cotton, corn, almonds, rice",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "supply-brief",
+        "path": "/api/water/supply-brief",
+        "price": "$0.10",
+        "description": "Municipal water supply brief",
+        "params": {
+          "location": {
+            "type": "string",
+            "description": "City or metro — e.g. Phoenix AZ, Las Vegas NV, Atlanta GA, Denver CO",
+            "required": true
+          },
+          "state": {
+            "type": "string",
+            "description": "Two-letter state code for data enrichment",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  },
+  "wealthpulse": {
+    "name": "WealthPulse",
+    "baseUrl": "https://wealthpulse-phi.vercel.app",
+    "description": "Personal finance intelligence API. 12 endpoints grounded in live FRED rate data — financial health, retirement, debt, credit cards, mortgage, Social Security, tax optimization, Roth vs Traditional, em",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "snapshot",
+        "path": "/api/wealth/snapshot",
+        "price": "$0.10",
+        "description": "Financial health snapshot",
+        "params": {
+          "age": {
+            "type": "string",
+            "description": "age",
+            "required": true
+          },
+          "income": {
+            "type": "string",
+            "description": "Annual income in USD",
+            "required": true
+          },
+          "savings": {
+            "type": "string",
+            "description": "savings",
+            "required": false
+          },
+          "debt": {
+            "type": "string",
+            "description": "debt",
+            "required": false
+          },
+          "expenses": {
+            "type": "string",
+            "description": "Monthly expenses in USD",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "retire",
+        "path": "/api/wealth/retire",
+        "price": "$0.10",
+        "description": "Retirement readiness projection",
+        "params": {
+          "age": {
+            "type": "string",
+            "description": "age",
+            "required": true
+          },
+          "income": {
+            "type": "string",
+            "description": "income",
+            "required": true
+          },
+          "savings": {
+            "type": "string",
+            "description": "savings",
+            "required": false
+          },
+          "retire_at": {
+            "type": "string",
+            "description": "retire_at",
+            "required": false
+          },
+          "target_income": {
+            "type": "string",
+            "description": "target_income",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "debt",
+        "path": "/api/wealth/debt",
+        "price": "$0.10",
+        "description": "Debt payoff strategy",
+        "params": {
+          "debts": {
+            "type": "string",
+            "description": "name:balance:rate format, comma-separated (e.g. credit-card:8500:24,car-loan:12000:6.5)",
+            "required": true
+          },
+          "extra": {
+            "type": "string",
+            "description": "extra",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "cards",
+        "path": "/api/wealth/cards",
+        "price": "$0.10",
+        "description": "Credit card optimization",
+        "params": {
+          "spend_profile": {
+            "type": "string",
+            "description": "spend_profile",
+            "required": true
+          },
+          "monthly": {
+            "type": "string",
+            "description": "monthly",
+            "required": false
+          },
+          "credit_score": {
+            "type": "string",
+            "description": "credit_score",
+            "required": false,
+            "example": "good"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "mortgage",
+        "path": "/api/wealth/mortgage",
+        "price": "$0.10",
+        "description": "Mortgage affordability analysis",
+        "params": {
+          "income": {
+            "type": "string",
+            "description": "income",
+            "required": true
+          },
+          "down": {
+            "type": "string",
+            "description": "down",
+            "required": true
+          },
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": false
+          },
+          "debt": {
+            "type": "string",
+            "description": "debt",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "debt-negotiate",
+        "path": "/api/wealth/debt-negotiate",
+        "price": "$0.10",
+        "description": "DIY debt negotiation protocol",
+        "params": {
+          "creditor": {
+            "type": "string",
+            "description": "creditor",
+            "required": true
+          },
+          "balance": {
+            "type": "string",
+            "description": "balance",
+            "required": false
+          },
+          "type": {
+            "type": "string",
+            "description": "credit_card | medical | personal | auto | student",
+            "required": false
+          },
+          "state": {
+            "type": "string",
+            "description": "state",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "advisor",
+        "path": "/api/wealth/advisor",
+        "price": "$0.10",
+        "description": "Financial advisor intelligence",
+        "params": {
+          "action": {
+            "type": "string",
+            "description": "action",
+            "required": true,
+            "example": "find"
+          },
+          "specialty": {
+            "type": "string",
+            "description": "Required for action=find",
+            "required": false
+          },
+          "advisors": {
+            "type": "string",
+            "description": "Required for action=compare",
+            "required": false
+          },
+          "name": {
+            "type": "string",
+            "description": "Required for action=vet",
+            "required": false
+          },
+          "location": {
+            "type": "string",
+            "description": "location",
+            "required": false
+          },
+          "situation": {
+            "type": "string",
+            "description": "situation",
+            "required": false
+          },
+          "firm": {
+            "type": "string",
+            "description": "For action=vet",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "ssa",
+        "path": "/api/wealth/ssa",
+        "price": "$0.10",
+        "description": "Social Security claiming strategy",
+        "params": {
+          "birth_year": {
+            "type": "string",
+            "description": "Year of birth (used to calculate Full Retirement Age)",
+            "required": true
+          },
+          "income": {
+            "type": "string",
+            "description": "Annual earnings (for benefit estimate context)",
+            "required": false
+          },
+          "marital_status": {
+            "type": "string",
+            "description": "marital_status",
+            "required": false,
+            "example": "single"
+          },
+          "health": {
+            "type": "string",
+            "description": "health",
+            "required": false,
+            "example": "good"
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "tax",
+        "path": "/api/wealth/tax",
+        "price": "$0.10",
+        "description": "Year-end tax optimization",
+        "params": {
+          "income": {
+            "type": "string",
+            "description": "income",
+            "required": true
+          },
+          "filing_status": {
+            "type": "string",
+            "description": "filing_status",
+            "required": false,
+            "example": "single"
+          },
+          "situation": {
+            "type": "string",
+            "description": "Comma-separated: RSU_vesting,home_sale,bonus,capital_gains,inherited_assets",
+            "required": false
+          },
+          "state": {
+            "type": "string",
+            "description": "state",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "roth",
+        "path": "/api/wealth/roth",
+        "price": "$0.10",
+        "description": "Roth vs Traditional IRA/401k decision",
+        "params": {
+          "income": {
+            "type": "string",
+            "description": "income",
+            "required": true
+          },
+          "age": {
+            "type": "string",
+            "description": "age",
+            "required": true
+          },
+          "filing_status": {
+            "type": "string",
+            "description": "filing_status",
+            "required": false,
+            "example": "single"
+          },
+          "employer_match": {
+            "type": "string",
+            "description": "employer_match",
+            "required": false,
+            "example": "yes"
+          },
+          "state": {
+            "type": "string",
+            "description": "state",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "emergency",
+        "path": "/api/wealth/emergency",
+        "price": "$0.10",
+        "description": "Emergency fund sizing",
+        "params": {
+          "income": {
+            "type": "string",
+            "description": "income",
+            "required": true
+          },
+          "expenses": {
+            "type": "string",
+            "description": "Monthly expenses in USD",
+            "required": false
+          },
+          "job_type": {
+            "type": "string",
+            "description": "job_type",
+            "required": false,
+            "example": "stable"
+          },
+          "dependents": {
+            "type": "string",
+            "description": "dependents",
+            "required": false
+          },
+          "current_fund": {
+            "type": "string",
+            "description": "Existing emergency fund in USD",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      },
+      {
+        "action": "inheritance",
+        "path": "/api/wealth/inheritance",
+        "price": "$0.10",
+        "description": "Inherited IRA and estate rules",
+        "params": {
+          "relationship": {
+            "type": "string",
+            "description": "relationship",
+            "required": true,
+            "example": "spouse"
+          },
+          "account_type": {
+            "type": "string",
+            "description": "account_type",
+            "required": false,
+            "example": "traditional"
+          },
+          "balance": {
+            "type": "string",
+            "description": "balance",
+            "required": false
+          },
+          "your_age": {
+            "type": "string",
+            "description": "your_age",
+            "required": false
+          },
+          "original_owner_age": {
+            "type": "string",
+            "description": "Original owner's age at time of death",
+            "required": false
+          },
+          "lang": {
+            "type": "string",
+            "description": "lang",
+            "required": false
+          }
+        }
+      }
+    ]
+  }
+};

@@ -1,0 +1,132 @@
+# PulseNetwork MCP Server
+
+> One MCP server. 67 AI-powered intelligence verticals. All x402-native, pay-per-query via USDC on Base.
+
+## What is PulseNetwork?
+
+PulseNetwork is the most comprehensive x402-native intelligence network available. Each vertical is a domain-specific API that synthesizes free public data (government APIs, research databases, real-time feeds) through Claude into structured, actionable intelligence — all gated by x402 micropayments on Base mainnet.
+
+This MCP server wraps all 67 verticals into a single integration. One private key, one configuration, access to everything.
+
+## How to Connect
+
+### Claude Desktop
+
+Add to your `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "pulsenetwork": {
+      "command": "npx",
+      "args": ["-y", "mcp-pulsenetwork"],
+      "env": {
+        "AGENT_PRIVATE_KEY": "0xYourWalletPrivateKey"
+      }
+    }
+  }
+}
+```
+
+### Payment
+
+Each tool call costs $0.05–$0.20 in USDC on Base mainnet, charged to the wallet at `AGENT_PRIVATE_KEY`. Fund your wallet with USDC on Base before use.
+
+## Available Tools (52 total)
+
+### discover
+Find the right vertical for any task. Returns categorized list of all 67 verticals.
+- `category`: finance | health | law | travel | real-estate | crypto | career | data | global | all
+
+### Finance & Markets
+- **macropulse** — Forex/macro intelligence: COT reports, Fed policy, inflation, currency analysis
+- **marketpulse** — Equity market intelligence: sector rotation, sentiment, weekly briefs
+- **alphapulse** — Stock alpha: earnings analysis, analyst sentiment, insider activity
+- **filingspulse** — SEC filings: 10-K/10-Q/8-K summaries, risk factors, insider trades
+- **wealthpulse** — Personal finance: retirement projections, debt strategy, credit card optimization
+- **debtpulse** — Debt relief: payoff strategies, negotiation scripts, collector rights
+- **taxpulse** — International tax: rates by country, nomad optimization, crypto treatment
+- **remittancepulse** — Money transfers: best rates/fees for any global corridor
+- **tradepulse** — Trade intelligence: tariffs, trade agreements, supply chain risk
+
+### Health & Wellness
+- **nutripulse** — Nutrition science: PubMed synthesis, supplement evidence, diet analysis
+- **fitpulse** — Fitness: custom training programs, workout plans, recovery science
+- **mindpulse** — Mental health: therapy matching, coping techniques, burnout assessment
+- **petpulse** — Pet health: symptom triage, nutrition, medication safety
+- **herbapulse** — Herbal medicine: herb profiles, drug interactions, traditional medicine
+- **seniorpulse** — Elder care: Medicare comparisons, care facility assessment, benefits eligibility
+- **clearcarepulse** — Healthcare prices: procedure costs, Medicare benchmarks, bill negotiation
+- **parentpulse** — Parenting: developmental milestones, child health triage, childcare options
+
+### Legal & Compliance
+- **legalpulse** — Legal info: contracts, tenant rights, business formation, employment law
+- **compliancepulse** — Regulatory compliance: industry regulations, deadlines, gap analysis
+- **policypulse** — Policy intelligence: federal/state bills, regulatory changes, impact analysis
+- **insurepulse** — Insurance: carrier comparisons, coverage gap analysis, policy audits
+- **esgpulse** — ESG/sustainability: ratings, CSRD compliance, carbon disclosures, EU taxonomy
+
+### Travel & Global
+- **travelpulse** — Travel: theme park wait times globally, crowd prediction, trip planning
+- **riskpulse** — Geopolitical risk: country risk scores, travel advisories, expat safety
+- **transitpulse** — Global transit: live alerts, city comparisons, car-free livability scores
+- **climatepulse** — Weather/climate: forecasts for any location on Earth, extreme weather
+- **immigrationpulse** — Immigration: visa requirements, PR pathways, nomad visas, citizenship
+
+### Real Estate & Home
+- **proppulse** — Real estate: mortgage rates, affordability, rent vs buy, market trends
+- **homepulse** — Home improvement: materials lists, how-to guides, cost benchmarks
+- **buildpulse** — Construction: project estimates, permits, contractor vetting, ROI
+
+### Crypto & Web3
+- **cryptopulse** — Crypto: DeFi yield, wallet security, tax treatment, exchange comparison
+- **onchainpulse** — On-chain analytics: protocol analysis, token metrics, wallet intelligence
+
+### Career & Education
+- **careerpulse** — Careers: salary benchmarks, negotiation strategy, skills gap, outlook
+- **edupulse** — Education: K-12 study guides, professional exam prep (NCLEX, CPA, LSAT, Bar)
+- **franchisepulse** — Franchises: FDD analysis, costs, earnings claims, sector comparison
+
+### Data & Research
+- **chronicapulse** — Historical newspapers: Library of Congress, 30M+ pages 1770-1963
+- **patentpulse** — Patents: USPTO search, pharma patent cliffs, FTO analysis
+- **biopulse** — Biodiversity: species occurrence, birding intelligence, conservation status
+- **safepulse** — Product safety: CPSC/FDA/NHTSA recalls across all consumer categories
+- **collectablespulse** — Collectibles: trading card prices, eBay sold history, underpriced listings
+- **findpulse** — Secondhand markets: eBay/Craigslist search, deal detection
+
+### Lifestyle & Consumer
+- **dealpulse** — Deals: real-time coupons, price comparisons, sale event intelligence
+- **mealpulse** — Meal planning: complete plans with recipes, grocery prices, shopping lists
+- **gamepulse** — Gaming: game deals, meta analysis, esports data, card market prices
+- **statEdge** — Sports: betting lines, player props, injury reports, fantasy waiver wire
+- **fanpulse** — Fandom: lore, character profiles, trivia, discographies (global franchises)
+- **grantpulse** — Grants: open funding opportunities for nonprofits, startups, researchers
+- **gridpulse** — Energy: electricity prices, grid stress, solar potential, EV infrastructure
+- **harvestpulse** — Local food: seasonal produce, farmers markets, CSA programs (global)
+- **vetpulse** — Veterans: VA benefits, disability ratings, GI Bill, healthcare enrollment
+
+## Language Support
+
+All verticals support the `lang` parameter. Pass any BCP-47 language code:
+`en | es | fr | de | zh | hi | ar | pt | ja | ko | it | ru | nl | sv | pl | tr | vi | id | th | tl | bn | ur | sw`
+
+Claude responds in the requested language natively.
+
+## Pricing
+
+| Price | Amount |
+|-------|--------|
+| $0.05 | 50,000 USDC atomic units |
+| $0.08 | 80,000 USDC atomic units |
+| $0.10 | 100,000 USDC atomic units |
+| $0.15 | 150,000 USDC atomic units |
+| $0.20 | 200,000 USDC atomic units |
+
+All payments settle on Base mainnet (eip155:8453) in USDC (0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913).
+
+## Source
+
+- GitHub: https://github.com/GTCC777/mcp-pulsenetwork
+- Network: Built on x402 protocol, Linux Foundation standard
+- Infrastructure: Vercel + Base + Anthropic Claude

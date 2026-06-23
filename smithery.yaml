@@ -1,0 +1,20 @@
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      agentPrivateKey:
+        type: string
+        description: >-
+          Your Base mainnet wallet private key (0x...). The wallet must hold
+          USDC on Base — each query costs $0.05–$0.20.
+    required:
+      - agentPrivateKey
+  commandFunction: |-
+    (config) => ({
+      command: "npx",
+      args: ["-y", "mcp-pulsenetwork"],
+      env: {
+        AGENT_PRIVATE_KEY: config.agentPrivateKey
+      }
+    })

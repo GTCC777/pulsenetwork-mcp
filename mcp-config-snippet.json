@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "pulsenetwork": {
+      "command": "npx",
+      "args": ["-y", "mcp-pulsenetwork"],
+      "env": {
+        "AGENT_PRIVATE_KEY": "<YOUR_BASE_WALLET_PRIVATE_KEY>"
+      }
+    }
+  }
+}

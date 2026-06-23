@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "name": "PulseNetwork MCP Server",
+  "description": "The PulseNetwork MCP Server gives any AI agent instant access to 67 domain-specific intelligence APIs — all x402-native, all pay-per-query via USDC on Base. One integration, 67 verticals. Covers personal finance, real estate, immigration, legal, healthcare, crypto, careers, sustainability, travel, sports, and more. Global coverage with multi-language support.",
+  "url": "https://github.com/GTCC777/mcp-pulsenetwork",
+  "type": "mcp",
+  "mcp": {
+    "transport": "stdio",
+    "command": "node",
+    "args": ["dist/index.js"],
+    "env": {
+      "AGENT_PRIVATE_KEY": "YOUR_WALLET_PRIVATE_KEY"
+    }
+  },
+  "payment": {
+    "protocol": "x402",
+    "network": "base-mainnet",
+    "currency": "USDC",
+    "pricing_model": "per_request",
+    "price_range": "$0.05 – $0.20 per tool call"
+  },
+  "tools_count": 52,
+  "verticals": [
+    "AlphaPulse", "AutoPulse", "BioPulse", "BuildPulse", "CareerPulse",
+    "ChronicaPulse", "ClearCarePulse", "ClimatePulse", "CollectablesPulse",
+    "CompliancePulse", "CryptoPulse", "DealPulse", "DebtPulse", "EduPulse",
+    "ESGPulse", "FanPulse", "FilingsPulse", "FindPulse", "FitPulse",
+    "FranchisePulse", "GamePulse", "GrantPulse", "GridPulse", "HarvestPulse",
+    "HerbaPulse", "HomePulse", "ImmigrationPulse", "InsurePulse", "LegalPulse",
+    "MacroPulse", "MarketPulse", "MealPulse", "MindPulse", "NutriPulse",
+    "OnchainPulse", "ParentPulse", "PatentPulse", "PetPulse", "PolicyPulse",
+    "PropPulse", "RemittancePulse", "RiskPulse", "SafePulse", "SeniorPulse",
+    "StatEdge", "TaxPulse", "TradePulse", "TransitPulse", "TravelPulse",
+    "VetPulse", "WealthPulse"
+  ],
+  "languages": ["en", "es", "fr", "de", "zh", "hi", "ar", "pt", "ja", "ko", "it", "ru", "nl", "sv", "pl", "tr", "vi", "id", "th", "tl", "bn", "ur", "sw"],
+  "categories": {
+    "finance": ["MacroPulse", "MarketPulse", "AlphaPulse", "FilingsPulse", "WealthPulse", "DebtPulse", "TaxPulse", "RemittancePulse", "TradePulse"],
+    "health": ["NutriPulse", "FitPulse", "MindPulse", "PetPulse", "HerbaPulse", "SeniorPulse", "ClearCarePulse", "ParentPulse"],
+    "law_compliance": ["LegalPulse", "CompliancePulse", "PolicyPulse", "InsurePulse", "ESGPulse"],
+    "travel_global": ["TravelPulse", "RiskPulse", "TransitPulse", "ClimatePulse", "ImmigrationPulse"],
+    "real_estate": ["PropPulse", "HomePulse", "BuildPulse"],
+    "crypto_web3": ["CryptoPulse", "OnchainPulse"],
+    "career_education": ["CareerPulse", "EduPulse", "FranchisePulse"],
+    "data_research": ["ChronicaPulse", "PatentPulse", "FilingsPulse", "BioPulse", "SafePulse"]
+  }
+}
