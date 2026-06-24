@@ -18,6 +18,70 @@ export interface Vertical {
 }
 
 export const VERTICALS: Record<string, Vertical> = {
+  "signalpulse": {
+    "name": "SignalPulse",
+    "baseUrl": "https://signalpulse-peach.vercel.app",
+    "description": "Institutional-grade trading & prediction-market intelligence for agents. Calibrated multi-engine reads across crypto, FX, macro-events, prediction markets (Polymarket/Kalshi/Manifold/PredictIt) and sports — de-vigged sportsbook consensus plus proprietary xG/EPA/Statcast/weather analytics. Agent analysis tier; the curated, sized, tracked calls are the premium service.",
+    "globalCoverage": "Global",
+    "endpoints": [
+      {
+        "action": "sample",
+        "path": "/api/scan/sample",
+        "price": "FREE",
+        "description": "FREE pick-of-the-day — a full-depth sample of the sports engine on one featured matchup. No payment, no key.",
+        "params": {}
+      },
+      {
+        "action": "game",
+        "path": "/api/scan/game",
+        "price": "$1.00",
+        "description": "Deep single-match analysis: de-vigged sportsbook consensus + proprietary stats/weather analytics + props; 3 ranked +EV plays with full reasoning.",
+        "params": {
+          "sport": { "type": "string", "description": "mlb | nba | nfl | nhl | wnba | soccer_epl | tennis | mma | esports", "required": true, "example": "mlb" },
+          "event": { "type": "string", "description": "matchup hint, e.g. yankees-red-sox", "required": false },
+          "market_type": { "type": "string", "description": "optional focus: moneyline | spread | total | props", "required": false }
+        }
+      },
+      {
+        "action": "predmarket",
+        "path": "/api/scan/predmarket",
+        "price": "$0.50",
+        "description": "Cross-venue prediction-market superforecaster across Polymarket/Kalshi/Manifold/PredictIt; calibrated probabilities, edge and full analysis (props included).",
+        "params": {
+          "category": { "type": "string", "description": "crypto | economics | geopolitics | politics | sports | esports", "required": true, "example": "sports" },
+          "horizon": { "type": "string", "description": "short | mid | long", "required": false }
+        }
+      },
+      {
+        "action": "crypto",
+        "path": "/api/scan/crypto",
+        "price": "$0.50",
+        "description": "Crypto market scan — multi-layer read of BTC/ETH and the top-25: regime, breadth, on-chain cycle, derivatives positioning, funding extremes, liquidations.",
+        "params": { "style": { "type": "string", "description": "scalp | intraday | swing", "required": false } }
+      },
+      {
+        "action": "market",
+        "path": "/api/scan/market",
+        "price": "$0.50",
+        "description": "Cross-asset scan across FX majors, metals and equity indices — the single best opportunity with full multi-layer rationale.",
+        "params": { "style": { "type": "string", "description": "scalp | intraday | swing", "required": false } }
+      },
+      {
+        "action": "forex",
+        "path": "/api/scan/forex",
+        "price": "$0.50",
+        "description": "FX scan across 28 pairs — ICT structure, carry, COT positioning, real yields and session timing.",
+        "params": { "style": { "type": "string", "description": "scalp | intraday | swing", "required": false } }
+      },
+      {
+        "action": "event",
+        "path": "/api/scan/event",
+        "price": "$0.50",
+        "description": "Macro-event scan — directional read around a scheduled print (NFP/CPI/Fed) using market and prediction-market signals.",
+        "params": { "event": { "type": "string", "description": "nfp | cpi | fomc …", "required": true, "example": "nfp" } }
+      }
+    ]
+  },
   "alphapulse": {
     "name": "AlphaPulse",
     "baseUrl": "https://alphapulse-omega.vercel.app",
