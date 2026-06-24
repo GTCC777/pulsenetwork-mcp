@@ -63,6 +63,18 @@ export const VERTICALS: Record<string, Vertical> = {
         }
       },
       {
+        "action": "h2h",
+        "path": "/api/scan/h2h",
+        "price": "$0.50",
+        "description": "Player head-to-head — a targeted read of two named players against each other (golf/tennis/MMA): the betting matchup verdict (favoured side, EV, edge) AND the fantasy h2h (who scores more DFS points) plus props. Golf SG/course-fit/history, tennis surface/form, combat style matchup.",
+        "params": {
+          "sport": { "type": "string", "description": "golf | tennis | mma …", "required": true, "example": "golf" },
+          "player_a": { "type": "string", "description": "first player (or players=a-vs-b)", "required": true, "example": "fitzpatrick" },
+          "player_b": { "type": "string", "description": "second player", "required": true, "example": "mcilroy" },
+          "market": { "type": "string", "description": "optional focus: matchup | props | fantasy", "required": false }
+        }
+      },
+      {
         "action": "crypto",
         "path": "/api/scan/crypto",
         "price": "$0.50",
