@@ -75,6 +75,17 @@ export const VERTICALS: Record<string, Vertical> = {
         }
       },
       {
+        "action": "compare",
+        "path": "/api/scan/compare",
+        "price": "$0.50",
+        "description": "Compare & rank 2+ named players against each other — golf 3-balls, DFS player pools, season-long start/sit, 'best of these': a ranked list with projections + the single best betting play + the best fantasy/DFS value (points-per-dollar). The N-way generalization of h2h.",
+        "params": {
+          "sport": { "type": "string", "description": "golf | tennis | mma …", "required": true, "example": "golf" },
+          "players": { "type": "string", "description": "2–12 names: a-vs-b-vs-c, comma-separated, or repeated player=", "required": true, "example": "scheffler-vs-schauffele-vs-morikawa" },
+          "market": { "type": "string", "description": "optional purpose: value | fantasy | props | start-sit", "required": false }
+        }
+      },
+      {
         "action": "crypto",
         "path": "/api/scan/crypto",
         "price": "$0.50",
