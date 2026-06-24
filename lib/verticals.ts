@@ -101,6 +101,17 @@ export const VERTICALS: Record<string, Vertical> = {
         }
       },
       {
+        "action": "player",
+        "path": "/api/scan/player",
+        "price": "$0.50",
+        "description": "Single-player stat-projected outlook — data-backed prop projections (the stat is projected from the underlying data even when no book posts a line) + the fantasy projection (points, floor/ceiling, start-worthiness) + the form/role/matchup read. Golf SG/course-fit; NFL/MLB/NBA usage/role/matchup. Betting props = analysis, fantasy = a direct call.",
+        "params": {
+          "sport": { "type": "string", "description": "mlb | nfl | nba | golf …", "required": true, "example": "mlb" },
+          "player": { "type": "string", "description": "a single player name", "required": true, "example": "aaron-judge" },
+          "market": { "type": "string", "description": "optional focus: a stat/prop, fantasy, or props", "required": false }
+        }
+      },
+      {
         "action": "crypto",
         "path": "/api/scan/crypto",
         "price": "$0.50",
