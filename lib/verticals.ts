@@ -53,6 +53,16 @@ export const VERTICALS: Record<string, Vertical> = {
         }
       },
       {
+        "action": "racing",
+        "path": "/api/scan/racing",
+        "price": "$0.50",
+        "description": "Today's GB/IRE racing card scanned for the single highest-EV selection + value picks, horse or greyhound; RPR/Topspeed, draw/trap bias, pace, going×form, trainer/jockey records, live exchange + forecast prices for genuine EV.",
+        "params": {
+          "type": { "type": "string", "description": "horse | greyhound (default horse)", "required": false, "example": "horse" },
+          "market_type": { "type": "string", "description": "optional focus: win | place | each-way | forecast | tricast", "required": false }
+        }
+      },
+      {
         "action": "crypto",
         "path": "/api/scan/crypto",
         "price": "$0.50",
