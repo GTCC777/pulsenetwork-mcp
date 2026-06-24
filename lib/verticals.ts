@@ -112,6 +112,16 @@ export const VERTICALS: Record<string, Vertical> = {
         }
       },
       {
+        "action": "ask",
+        "path": "/api/scan/ask",
+        "price": "$0.50",
+        "description": "Free-text front door — ask any sports/prediction-market question in plain language. Auto-detects the sport, pulls live intelligence, and answers with an explicit DATA-vs-OPINION split (every claim cites its stat; judgment labeled) + a betting/fantasy angle + best_endpoint (a pointer to the deepest named endpoint). Honest when out of coverage: it routes, it doesn't bluff.",
+        "params": {
+          "q": { "type": "string", "description": "a free-text sports/markets question (aliases: question, ask)", "required": true, "example": "is Aaron Judge a good DFS play tonight against Skubal" },
+          "sport": { "type": "string", "description": "optional — force the sport instead of auto-detecting", "required": false }
+        }
+      },
+      {
         "action": "crypto",
         "path": "/api/scan/crypto",
         "price": "$0.50",
