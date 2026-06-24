@@ -86,6 +86,21 @@ export const VERTICALS: Record<string, Vertical> = {
         }
       },
       {
+        "action": "fantasy",
+        "path": "/api/scan/fantasy",
+        "price": "$0.50",
+        "description": "Direct fantasy advice (fully open — explicit recommendations, not just analysis): start/sit, DFS lineup (salary cap, points-per-dollar), waiver pickups and trade analysis. Returns the committed call + a ranked board with projected points, floor/ceiling, usage & matchup + a lineup build or trade verdict. Projects fantasy points from usage×matchup (NFL/MLB/NBA/golf); market optional.",
+        "params": {
+          "sport": { "type": "string", "description": "nfl | mlb | nba | golf …", "required": true, "example": "nfl" },
+          "mode": { "type": "string", "description": "start-sit (default) | lineup | waiver | trade", "required": false, "example": "start-sit" },
+          "players": { "type": "string", "description": "candidate pool — 1–16 names (a-vs-b, comma, or repeated player=); required for start-sit/lineup/waiver", "required": false, "example": "saquon-barkley-vs-bijan-robinson" },
+          "give": { "type": "string", "description": "trade mode — player(s) you would send", "required": false },
+          "get": { "type": "string", "description": "trade mode — player(s) you would receive", "required": false },
+          "scoring": { "type": "string", "description": "optional: ppr | half-ppr | standard | dfs", "required": false },
+          "slots": { "type": "string", "description": "optional — how many to start", "required": false }
+        }
+      },
+      {
         "action": "crypto",
         "path": "/api/scan/crypto",
         "price": "$0.50",
