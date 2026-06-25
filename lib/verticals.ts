@@ -122,6 +122,15 @@ export const VERTICALS: Record<string, Vertical> = {
         }
       },
       {
+        "action": "golf",
+        "path": "/api/scan/golf",
+        "price": "$0.50",
+        "description": "Whole-field golf scan — reads the ENTIRE tournament field (PGA ShotLink strokes-gained + ESPN) and surfaces the single highest-EV play across every bet type (outright/each-way/top-N/matchup/make-cut/first-round-leader), led by course-fit + the tee-time weather wave. For named golfers use compare or h2h. Tournament weeks only.",
+        "params": {
+          "market": { "type": "string", "description": "optional bet-type hint: outright | each-way | top-10 | matchup | make-cut | first-round-leader | dfs", "required": false }
+        }
+      },
+      {
         "action": "crypto",
         "path": "/api/scan/crypto",
         "price": "$0.50",
